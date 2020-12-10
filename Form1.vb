@@ -76,6 +76,7 @@ Public Class Form1
 
             ' The drive name and its type is added to the list of drives
             Me.Disks2.Items.Add(drive.Name & " [" & drive_type & "]")
+
         Next
 
         ' It selects the first item in the list (ComboBox)
@@ -177,15 +178,15 @@ Public Class Form1
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If Disks.Text.Length = 0 Then
+        If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
-            If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS3\UPDATE") Then
+            If System.IO.Directory.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE") Then
             Else
                 Log1.Text = "Creating directories: PS3\UPDATE.."
-                System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PS3\UPDATE")
-                If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS3\UPDATE") Then
+                System.IO.Directory.CreateDirectory(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE")
+                If System.IO.Directory.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE") Then
                     Log1.Text = "Creating directories: PS3\UPDATE.. OK"
                 Else
                     Log1.Text = "FAIL"
@@ -193,8 +194,8 @@ Public Class Form1
             End If
 
             If File.Exists("PS3\PS3UPDAT.PUP") Then
-                FileCopy("PS3\PS3UPDAT.PUP", Mid(Disks.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP")
-                If File.Exists(Mid(Disks.Text, 1, 3) & "PS3\UPDATE\PS4UPDAT.PUP") Then
+                FileCopy("PS3\PS3UPDAT.PUP", Mid(Disks2.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP")
+                If File.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP") Then
                     Log1.Text = "Done."
                 Else
                     Log1.Text = "Fail !!"
