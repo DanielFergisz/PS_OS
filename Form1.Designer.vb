@@ -30,7 +30,7 @@ Partial Class Form1
         Me.R1 = New System.Windows.Forms.RadioButton()
         Me.D_OS = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.W_OS = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -64,7 +64,7 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.W_OS)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.Disks)
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
@@ -132,16 +132,16 @@ Partial Class Form1
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Firmware file v8.03:"
         '
-        'Button2
+        'W_OS
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.DarkRed
-        Me.Button2.Location = New System.Drawing.Point(33, 151)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(335, 32)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Prepare USB Drive"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.W_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.W_OS.ForeColor = System.Drawing.Color.DarkRed
+        Me.W_OS.Location = New System.Drawing.Point(33, 151)
+        Me.W_OS.Name = "W_OS"
+        Me.W_OS.Size = New System.Drawing.Size(335, 32)
+        Me.W_OS.TabIndex = 5
+        Me.W_OS.Text = "Prepare USB Drive"
+        Me.W_OS.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -298,7 +298,7 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Disks As ComboBox
     Friend WithEvents D_OS As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents W_OS As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Log1 As TextBox
     Friend WithEvents GroupBox1 As GroupBox

@@ -7,12 +7,12 @@ Public Class Form1
     Private wClient As Object
 
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
+        W_OS.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R1.Checked = True Then
-            '  wClient.DownloadFileAsync(New System.Uri("http://gofile.me/5l94k/1FMI65ml3"), appPath + "\PS4\PS4UPDATE.PUP")
             wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
         End If
         If R2.Checked = True Then
@@ -27,6 +27,7 @@ Public Class Form1
         Else
             Log1.Text = "Download Fail !!"
         End If
+        W_OS.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
         Disks.Items.Clear()
@@ -102,9 +103,11 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub W_OS_Click(sender As Object, e As EventArgs) Handles W_OS.Click
+        D_OS.Enabled = False
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
+
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE") Then
@@ -146,6 +149,7 @@ Public Class Form1
             End If
         End If
         ProgressBar1.Style = ProgressBarStyle.Blocks
+        D_OS.Enabled = True
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
