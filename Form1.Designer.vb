@@ -34,12 +34,12 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.W2_OS = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Disks2 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.R3 = New System.Windows.Forms.RadioButton()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.D2_OS = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Log1 = New System.Windows.Forms.TextBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
@@ -163,7 +163,7 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Button3)
+        Me.TabPage2.Controls.Add(Me.W2_OS)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Disks2)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
@@ -175,16 +175,16 @@ Partial Class Form1
         Me.TabPage2.Text = "PS3"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'W2_OS
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.DarkRed
-        Me.Button3.Location = New System.Drawing.Point(33, 151)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(335, 32)
-        Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Prepare USB Drive"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.W2_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.W2_OS.ForeColor = System.Drawing.Color.DarkRed
+        Me.W2_OS.Location = New System.Drawing.Point(33, 151)
+        Me.W2_OS.Name = "W2_OS"
+        Me.W2_OS.Size = New System.Drawing.Size(335, 32)
+        Me.W2_OS.TabIndex = 10
+        Me.W2_OS.Text = "Prepare USB Drive"
+        Me.W2_OS.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -207,7 +207,7 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.R3)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.D2_OS)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Location = New System.Drawing.Point(21, 6)
         Me.GroupBox2.Name = "GroupBox2"
@@ -228,14 +228,14 @@ Partial Class Form1
         Me.R3.Text = "Full"
         Me.R3.UseVisualStyleBackColor = True
         '
-        'Button1
+        'D2_OS
         '
-        Me.Button1.Location = New System.Drawing.Point(194, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 31)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Download"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.D2_OS.Location = New System.Drawing.Point(194, 21)
+        Me.D2_OS.Name = "D2_OS"
+        Me.D2_OS.Size = New System.Drawing.Size(131, 31)
+        Me.D2_OS.TabIndex = 1
+        Me.D2_OS.Text = "Download"
+        Me.D2_OS.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -307,9 +307,9 @@ Partial Class Form1
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer1 As Timer
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents D2_OS As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents W2_OS As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Disks2 As ComboBox
     Friend WithEvents R3 As RadioButton

@@ -28,6 +28,7 @@ Public Class Form1
             Log1.Text = "Download Fail !!"
         End If
         W_OS.Enabled = True
+        W2_OS.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
         Disks.Items.Clear()
@@ -172,7 +173,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
+        W2_OS.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
@@ -181,7 +183,8 @@ Public Class Form1
         wClient.Dispose()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles W2_OS.Click
+        D2_OS.Enabled = False
         If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
         Else
@@ -206,9 +209,10 @@ Public Class Form1
                 End If
             Else
                 Log1.Text = "Please Download Firmware First !!"
-                End If
+            End If
 
         End If
         ProgressBar1.Style = ProgressBarStyle.Blocks
+        D2_OS.Enabled = True
     End Sub
 End Class
