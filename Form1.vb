@@ -4,6 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
+    Private wClient As Object
 
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
@@ -11,6 +12,7 @@ Public Class Form1
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R1.Checked = True Then
+            '  wClient.DownloadFileAsync(New System.Uri("http://gofile.me/5l94k/1FMI65ml3"), appPath + "\PS4\PS4UPDATE.PUP")
             wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
         End If
         If R2.Checked = True Then
@@ -53,6 +55,33 @@ Public Class Form1
         ' Disks.SelectedIndex = 0
     End Sub
 
+    Private Sub Disks2_DropDown(sender As Object, e As EventArgs) Handles Disks2.DropDown
+        Disks2.Items.Clear()
+
+        For Each drive As IO.DriveInfo In IO.DriveInfo.GetDrives()
+
+            ' Detection drive type
+            Dim drive_type As String = ""
+            If drive.DriveType = DriveType.Fixed Then
+                drive_type = "Local Disk"
+            ElseIf drive.DriveType = DriveType.CDRom Then
+                drive_type = "CD-Rom drive"
+            ElseIf drive.DriveType = DriveType.Network Then
+                drive_type = "Network drive"
+            ElseIf drive.DriveType = DriveType.Removable Then
+                drive_type = "Removable Disk"
+            ElseIf drive.DriveType = DriveType.Unknown Then
+                drive_type = "Unknown"
+            End If
+
+            ' The drive name and its type is added to the list of drives
+            Me.Disks2.Items.Add(drive.Name & " [" & drive_type & "]")
+        Next
+
+        ' It selects the first item in the list (ComboBox)
+        ' Disks.SelectedIndex = 0
+    End Sub
+
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
@@ -65,6 +94,10 @@ Public Class Form1
         If Directory.Exists("PS4\UPDATE\") = True Then
         Else
             Directory.CreateDirectory("PS4\UPDATE\")
+        End If
+        If Directory.Exists("PS3\") = True Then
+        Else
+            Directory.CreateDirectory("PS3\")
         End If
     End Sub
 
@@ -126,5 +159,51 @@ Public Class Form1
         Else
             R2.ForeColor = Color.Black
         End If
+
+        If File.Exists("PS3\PS3UPDAT.PUP") Then
+            R3.ForeColor = Color.DarkGreen
+        Else
+            R3.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+        Dim wClient As New WebClient()
+        AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2020_1203_03373a581934f0d2b796156d2fb28b39/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
+        wClient.Dispose()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If Disks.Text.Length = 0 Then
+            Log1.Text = "Please select drive first !!"
+        Else
+            ProgressBar1.Style = ProgressBarStyle.Marquee
+            If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS3\UPDATE") Then
+            Else
+                Log1.Text = "Creating directories: PS3\UPDATE.."
+                System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PS3\UPDATE")
+                If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS3\UPDATE") Then
+                    Log1.Text = "Creating directories: PS3\UPDATE.. OK"
+                Else
+                    Log1.Text = "FAIL"
+                End If
+            End If
+
+            If File.Exists("PS3\PS3UPDAT.PUP") Then
+                FileCopy("PS3\PS3UPDAT.PUP", Mid(Disks.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP")
+                If File.Exists(Mid(Disks.Text, 1, 3) & "PS3\UPDATE\PS4UPDAT.PUP") Then
+                    Log1.Text = "Done."
+                Else
+                    Log1.Text = "Fail !!"
+                End If
+            Else
+                Log1.Text = "Please Download Firmware First !!"
+                End If
+
+        End If
+        ProgressBar1.Style = ProgressBarStyle.Blocks
     End Sub
 End Class

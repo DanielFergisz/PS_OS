@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Formularz przesłania metodę dispose, aby wyczyścić listę składników.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'UWAGA: następująca procedura jest wymagana przez Projektanta formularzy systemu Windows
     'Możesz to modyfikować, używając Projektanta formularzy systemu Windows. 
     'Nie należy modyfikować za pomocą edytora kodu.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -34,12 +34,21 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Disks2 = New System.Windows.Forms.ComboBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.R3 = New System.Windows.Forms.RadioButton()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Log1 = New System.Windows.Forms.TextBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -125,11 +134,13 @@ Partial Class Form1
         '
         'Button2
         '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.DarkRed
         Me.Button2.Location = New System.Drawing.Point(33, 151)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(335, 32)
         Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Prepare"
+        Me.Button2.Text = "Prepare USB Drive"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label1
@@ -143,7 +154,7 @@ Partial Class Form1
         '
         'Disks
         '
-        Me.Disks.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Disks.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks.FormattingEnabled = True
         Me.Disks.Location = New System.Drawing.Point(132, 117)
         Me.Disks.Name = "Disks"
@@ -152,6 +163,10 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button3)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.Disks2)
+        Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -159,6 +174,77 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PS3"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.DarkRed
+        Me.Button3.Location = New System.Drawing.Point(33, 151)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(335, 32)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Prepare USB Drive"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(18, 120)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 17)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Select  Drive:"
+        '
+        'Disks2
+        '
+        Me.Disks2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Disks2.FormattingEnabled = True
+        Me.Disks2.Location = New System.Drawing.Point(132, 117)
+        Me.Disks2.Name = "Disks2"
+        Me.Disks2.Size = New System.Drawing.Size(250, 24)
+        Me.Disks2.TabIndex = 8
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.R3)
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Location = New System.Drawing.Point(21, 6)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(361, 92)
+        Me.GroupBox2.TabIndex = 7
+        Me.GroupBox2.TabStop = False
+        '
+        'R3
+        '
+        Me.R3.AutoSize = True
+        Me.R3.Checked = True
+        Me.R3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R3.Location = New System.Drawing.Point(144, 58)
+        Me.R3.Name = "R3"
+        Me.R3.Size = New System.Drawing.Size(55, 21)
+        Me.R3.TabIndex = 5
+        Me.R3.TabStop = True
+        Me.R3.Text = "Full"
+        Me.R3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(194, 21)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 31)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Download"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(32, 28)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(130, 17)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Firmware file v4.87:"
         '
         'Log1
         '
@@ -197,6 +283,10 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,4 +306,11 @@ Partial Class Form1
     Friend WithEvents R1 As RadioButton
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Disks2 As ComboBox
+    Friend WithEvents R3 As RadioButton
 End Class
