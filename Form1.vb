@@ -182,7 +182,7 @@ Public Class Form1
 
         If R1.Checked = True Then
             If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash, please wait.."))
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             Else
                 Log1.Text = "Please Download Firmware First !!"
@@ -191,7 +191,7 @@ Public Class Form1
 
         If R2.Checked = True Then
             If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash, please wait.."))
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             Else
                 Log1.Text = "Please Download Firmware First !!"
@@ -213,7 +213,7 @@ Public Class Form1
         Me.Invoke(New MethodInvoker(Sub() D_D2 = Mid(Disks2.Text, 1, 3)))
 
         If File.Exists("PS3\PS3UPDAT.PUP") Then
-            Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash, please wait.."))
+            Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
             FileCopy("PS3\PS3UPDAT.PUP", D_D2 & "PS3\UPDATE\PS3UPDAT.PUP")
         Else
             Log1.Text = "Please Download Firmware First !!"
