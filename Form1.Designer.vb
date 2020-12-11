@@ -45,6 +45,7 @@ Partial Class Form1
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -293,6 +294,9 @@ Partial Class Form1
         'BackgroundWorker1
         '
         '
+        'BackgroundWorker2
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -341,4 +345,5 @@ Partial Class Form1
     Friend WithEvents Disks2 As ComboBox
     Friend WithEvents R3 As RadioButton
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
 End Class

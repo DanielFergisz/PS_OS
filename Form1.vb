@@ -108,7 +108,7 @@ Public Class Form1
         D_OS.Enabled = False
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
-
+            D_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE") Then
@@ -159,6 +159,7 @@ Public Class Form1
         D2_OS.Enabled = False
         If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
+            D2_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If System.IO.Directory.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE") Then
@@ -171,21 +172,8 @@ Public Class Form1
                     Log1.Text = "FAIL"
                 End If
             End If
-
-            If File.Exists("PS3\PS3UPDAT.PUP") Then
-                FileCopy("PS3\PS3UPDAT.PUP", Mid(Disks2.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP")
-                If File.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP") Then
-                    Log1.Text = "Done."
-                Else
-                    Log1.Text = "Fail !!"
-                End If
-            Else
-                Log1.Text = "Please Download Firmware First !!"
-            End If
-
+            BackgroundWorker2.RunWorkerAsync()
         End If
-        ProgressBar1.Style = ProgressBarStyle.Blocks
-        D2_OS.Enabled = True
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
@@ -194,7 +182,7 @@ Public Class Form1
 
         If R1.Checked = True Then
             If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash"))
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash, please wait.."))
                 FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             Else
                 Log1.Text = "Please Download Firmware First !!"
@@ -203,7 +191,7 @@ Public Class Form1
 
         If R2.Checked = True Then
             If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash"))
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash, please wait.."))
                 FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             Else
                 Log1.Text = "Please Download Firmware First !!"
@@ -218,5 +206,26 @@ Public Class Form1
         End If
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D_OS.Enabled = True
+    End Sub
+
+    Private Sub BackgroundWorker2_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker2.DoWork
+        Dim D_D2 As String
+        Me.Invoke(New MethodInvoker(Sub() D_D2 = Mid(Disks2.Text, 1, 3)))
+
+        If File.Exists("PS3\PS3UPDAT.PUP") Then
+            Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB Flash, please wait.."))
+            FileCopy("PS3\PS3UPDAT.PUP", D_D2 & "PS3\UPDATE\PS3UPDAT.PUP")
+        Else
+            Log1.Text = "Please Download Firmware First !!"
+        End If
+    End Sub
+    Private Sub BackgroundWorker2_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
+        If File.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE\PS3UPDAT.PUP") Then
+            Log1.Text = "Done."
+        Else
+            Log1.Text = "Fail !!"
+        End If
+        ProgressBar1.Style = ProgressBarStyle.Blocks
+        D2_OS.Enabled = True
     End Sub
 End Class
