@@ -111,6 +111,16 @@ Public Class Form1
             D_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
+            If F1.Checked = True Then
+                Log1.Text = "Formating.. Please wait..."
+                Process.Start("format.com", Mid(Disks.Text, 1, 2) & " /Q /FS:FAT32 /V:PS ")
+                Threading.Thread.Sleep(500)
+                SendKeys.Send("{ENTER}")
+                Threading.Thread.Sleep(15000)
+
+            End If
+
+
             If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE") Then
             Else
                 Log1.Text = "Creating directories: PS4\UPDATE.."
@@ -228,4 +238,5 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D2_OS.Enabled = True
     End Sub
+
 End Class

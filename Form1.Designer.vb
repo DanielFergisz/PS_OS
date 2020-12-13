@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.F1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.R2 = New System.Windows.Forms.RadioButton()
         Me.R1 = New System.Windows.Forms.RadioButton()
@@ -46,6 +47,8 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker3 = New System.ComponentModel.BackgroundWorker()
+        Me.F2 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -60,11 +63,12 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(405, 227)
+        Me.TabControl1.Size = New System.Drawing.Size(405, 268)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.F1)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.W_OS)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -72,11 +76,21 @@ Partial Class Form1
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TabPage1.Size = New System.Drawing.Size(397, 198)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(397, 239)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "PS4"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'F1
+        '
+        Me.F1.AutoSize = True
+        Me.F1.Location = New System.Drawing.Point(258, 152)
+        Me.F1.Name = "F1"
+        Me.F1.Size = New System.Drawing.Size(124, 21)
+        Me.F1.TabIndex = 7
+        Me.F1.Text = "Format: FAT32"
+        Me.F1.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -138,9 +152,9 @@ Partial Class Form1
         '
         Me.W_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W_OS.ForeColor = System.Drawing.Color.DarkRed
-        Me.W_OS.Location = New System.Drawing.Point(33, 151)
+        Me.W_OS.Location = New System.Drawing.Point(33, 188)
         Me.W_OS.Name = "W_OS"
-        Me.W_OS.Size = New System.Drawing.Size(335, 32)
+        Me.W_OS.Size = New System.Drawing.Size(335, 45)
         Me.W_OS.TabIndex = 5
         Me.W_OS.Text = "Prepare USB Drive"
         Me.W_OS.UseVisualStyleBackColor = True
@@ -166,14 +180,15 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.F2)
         Me.TabPage2.Controls.Add(Me.W2_OS)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Disks2)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TabPage2.Size = New System.Drawing.Size(397, 198)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(397, 239)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PS3"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -182,9 +197,9 @@ Partial Class Form1
         '
         Me.W2_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W2_OS.ForeColor = System.Drawing.Color.DarkRed
-        Me.W2_OS.Location = New System.Drawing.Point(33, 151)
+        Me.W2_OS.Location = New System.Drawing.Point(33, 188)
         Me.W2_OS.Name = "W2_OS"
-        Me.W2_OS.Size = New System.Drawing.Size(335, 32)
+        Me.W2_OS.Size = New System.Drawing.Size(335, 45)
         Me.W2_OS.TabIndex = 10
         Me.W2_OS.Text = "Prepare USB Drive"
         Me.W2_OS.UseVisualStyleBackColor = True
@@ -253,7 +268,7 @@ Partial Class Form1
         'Log1
         '
         Me.Log1.Enabled = False
-        Me.Log1.Location = New System.Drawing.Point(16, 245)
+        Me.Log1.Location = New System.Drawing.Point(16, 286)
         Me.Log1.Name = "Log1"
         Me.Log1.ReadOnly = True
         Me.Log1.Size = New System.Drawing.Size(397, 22)
@@ -261,7 +276,7 @@ Partial Class Form1
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(16, 276)
+        Me.ProgressBar1.Location = New System.Drawing.Point(16, 317)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(397, 23)
         Me.ProgressBar1.TabIndex = 2
@@ -277,17 +292,27 @@ Partial Class Form1
         'BackgroundWorker2
         '
         '
+        'F2
+        '
+        Me.F2.AutoSize = True
+        Me.F2.Location = New System.Drawing.Point(258, 152)
+        Me.F2.Name = "F2"
+        Me.F2.Size = New System.Drawing.Size(124, 21)
+        Me.F2.TabIndex = 11
+        Me.F2.Text = "Format: FAT32"
+        Me.F2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(429, 311)
+        Me.ClientSize = New System.Drawing.Size(429, 351)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.00"
+        Me.Text = "PS_OS v1.01"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -325,4 +350,7 @@ Partial Class Form1
     Friend WithEvents R3 As RadioButton
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents F1 As CheckBox
+    Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents F2 As CheckBox
 End Class
