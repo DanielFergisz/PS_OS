@@ -81,7 +81,7 @@ Partial Class Form1
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(549, 365)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "PS4"
+        Me.TabPage1.Text = "PlayStation 4"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'F1
@@ -203,7 +203,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(549, 365)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "PS3"
+        Me.TabPage2.Text = "PlayStation 3"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'F2
