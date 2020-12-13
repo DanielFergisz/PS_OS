@@ -105,18 +105,29 @@ Public Class Form1
     End Sub
 
     Private Sub W_OS_Click(sender As Object, e As EventArgs) Handles W_OS.Click
-        D_OS.Enabled = False
+        D_OS.Enabled = False                  'ps4
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If F1.Checked = True Then
-                Log1.Text = "Formating.. Please wait..."
-                Process.Start("format.com", Mid(Disks.Text, 1, 2) & " /Q /FS:FAT32 /V:PS ")
-                Threading.Thread.Sleep(500)
-                SendKeys.Send("{ENTER}")
-                Threading.Thread.Sleep(15000)
+                Log1.Text = "Formating..."   'Formatowanie dysku 
+                Dim startInfo As New ProcessStartInfo()
+                startInfo.FileName = "format.com"
+                startInfo.Arguments = Mid(Disks.Text, 1, 2) & " /fs:FAT32 /v:PlayStation /q "
+                startInfo.UseShellExecute = False
+                startInfo.CreateNoWindow = True
+                startInfo.RedirectStandardOutput = True
+                startInfo.RedirectStandardInput = True
+
+                Dim p As Process = Process.Start(startInfo)
+
+                Dim processInputStream As StreamWriter = p.StandardInput
+                processInputStream.Write(vbCr & vbLf)
+
+
+                p.WaitForExit()
 
             End If
 
@@ -155,7 +166,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
+    Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
         W2_OS.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -165,13 +176,32 @@ Public Class Form1
         wClient.Dispose()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles W2_OS.Click
-        D2_OS.Enabled = False
+    Private Sub W2_OS_Click(sender As Object, e As EventArgs) Handles W2_OS.Click
+        D2_OS.Enabled = False                  'PS3
         If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D2_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
+            If F2.Checked = True Then
+                Log1.Text = "Formating..."
+                Dim startInfo2 As New ProcessStartInfo()
+                startInfo2.FileName = "format.com"
+                startInfo2.Arguments = Mid(Disks2.Text, 1, 2) & " /fs:FAT32 /v:PSx /q "
+                startInfo2.UseShellExecute = False
+                startInfo2.CreateNoWindow = True
+                startInfo2.RedirectStandardOutput = True
+                startInfo2.RedirectStandardInput = True
+
+                Dim p2 As Process = Process.Start(startInfo2)
+
+                Dim processInputStream As StreamWriter = p2.StandardInput
+                processInputStream.Write(vbCr & vbLf)
+
+
+                p2.WaitForExit()
+
+            End If
             If System.IO.Directory.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE") Then
             Else
                 Log1.Text = "Creating directories: PS3\UPDATE.."
@@ -195,7 +225,7 @@ Public Class Form1
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             Else
-                Log1.Text = "Please Download Firmware First !!"
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
             End If
         End If
 
@@ -204,7 +234,7 @@ Public Class Form1
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             Else
-                Log1.Text = "Please Download Firmware First !!"
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
             End If
         End If
     End Sub
@@ -238,5 +268,4 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D2_OS.Enabled = True
     End Sub
-
 End Class
