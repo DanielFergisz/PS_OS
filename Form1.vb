@@ -126,11 +126,8 @@ Public Class Form1
                 Dim processInputStream As StreamWriter = p.StandardInput
                 processInputStream.Write(vbCr & vbLf)
 
-
                 p.WaitForExit()
-
             End If
-
 
             If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE") Then
             Else
@@ -140,6 +137,7 @@ Public Class Form1
                     Log1.Text = "Creating directories: PS4\UPDATE.. OK"
                 Else
                     Log1.Text = "FAIL"
+                    Exit Sub
                 End If
             End If
             BackgroundWorker1.RunWorkerAsync()
@@ -187,7 +185,7 @@ Public Class Form1
                 Log1.Text = "Formating..."
                 Dim startInfo2 As New ProcessStartInfo()
                 startInfo2.FileName = "format.com"
-                startInfo2.Arguments = Mid(Disks2.Text, 1, 2) & " /fs:FAT32 /v:PSx /q "
+                startInfo2.Arguments = Mid(Disks2.Text, 1, 2) & " /fs:FAT32 /v:PlayStation /q "
                 startInfo2.UseShellExecute = False
                 startInfo2.CreateNoWindow = True
                 startInfo2.RedirectStandardOutput = True
@@ -198,10 +196,10 @@ Public Class Form1
                 Dim processInputStream As StreamWriter = p2.StandardInput
                 processInputStream.Write(vbCr & vbLf)
 
-
                 p2.WaitForExit()
 
             End If
+
             If System.IO.Directory.Exists(Mid(Disks2.Text, 1, 3) & "PS3\UPDATE") Then
             Else
                 Log1.Text = "Creating directories: PS3\UPDATE.."
@@ -210,8 +208,10 @@ Public Class Form1
                     Log1.Text = "Creating directories: PS3\UPDATE.. OK"
                 Else
                     Log1.Text = "FAIL"
+                    Exit Sub
                 End If
             End If
+            'Threading.Thread.Sleep(20000)
             BackgroundWorker2.RunWorkerAsync()
         End If
     End Sub
