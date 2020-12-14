@@ -90,11 +90,42 @@ Public Class Form1
         ' Disks.SelectedIndex = 0
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Disks3_DropDown(sender As Object, e As EventArgs) Handles Disks3.DropDown
+        Disks3.Items.Clear()
 
+        For Each drive As IO.DriveInfo In IO.DriveInfo.GetDrives()
+
+            ' Detection drive type
+            Dim drive_type As String = ""
+            If drive.DriveType = DriveType.Fixed Then
+                drive_type = "Local Disk"
+            ElseIf drive.DriveType = DriveType.CDRom Then
+                drive_type = "CD-Rom drive"
+            ElseIf drive.DriveType = DriveType.Network Then
+                drive_type = "Network drive"
+            ElseIf drive.DriveType = DriveType.Removable Then
+                drive_type = "Removable Disk"
+            ElseIf drive.DriveType = DriveType.Unknown Then
+                drive_type = "Unknown"
+            End If
+
+            ' The drive name and its type is added to the list of drives
+            Me.Disks3.Items.Add(drive.Name & " [" & drive_type & "]")
+        Next
+
+        ' It selects the first item in the list (ComboBox)
+        ' Disks.SelectedIndex = 0
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Directory.Exists("PS5\FULL\") = True Then
+        Else
+            Directory.CreateDirectory("PS5\FULL\")
+        End If
+        If Directory.Exists("PS5\UPDATE\") = True Then
+        Else
+            Directory.CreateDirectory("PS5\UPDATE\")
+        End If
         If Directory.Exists("PS4\FULL\") = True Then
         Else
             Directory.CreateDirectory("PS4\FULL\")
@@ -159,6 +190,17 @@ Public Class Form1
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
+            R4.ForeColor = Color.DarkGreen
+        Else
+            R4.ForeColor = Color.Black
+        End If
+
+        If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+            R5.ForeColor = Color.DarkGreen
+        Else
+            R5.ForeColor = Color.Black
+        End If
         If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
             R1.ForeColor = Color.DarkGreen
         Else
@@ -334,6 +376,101 @@ Public Class Form1
             File.Delete("Updater_PS.exe")
         End If
 
+        Update.Enabled = True
+    End Sub
+
+    Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click
+        W3_OS.Enabled = False
+        D3_OS.Enabled = False
+        Update.Enabled = False
+        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+        Dim wClient As New WebClient()
+        AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+        If R4.Checked = True Then
+            wClient.DownloadFileAsync(New System.Uri("http://dus01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2020_1204/rec_08da8f8f7c3e8e7d5b46a48574e3dc03c3378cc7e89afb540def4b11497d0562/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+        End If
+        If R5.Checked = True Then
+            wClient.DownloadFileAsync(New System.Uri("http://dus01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2020_1204/sys_2b18b84f92498be8d2dff11fef8a8a10a715debac9fec9fd0e4c8f73e43e28e8/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+        End If
+        wClient.Dispose()
+    End Sub
+
+    Private Sub W3_OS_Click(sender As Object, e As EventArgs) Handles W3_OS.Click
+        D3_OS.Enabled = False
+        W3_OS.Enabled = False 'ps5
+        Update.Enabled = False
+        If Disks3.Text.Length = 0 Then
+            Log1.Text = "Please select drive first !!"
+            D3_OS.Enabled = True
+            W3_OS.Enabled = True
+            Update.Enabled = True
+        Else
+            ProgressBar1.Style = ProgressBarStyle.Marquee
+            If F3.Checked = True Then
+                Log1.Text = "Formating..."   'Formatowanie dysku 
+                Dim startInfo As New ProcessStartInfo()
+                startInfo.FileName = "format.com"
+                startInfo.Arguments = Mid(Disks3.Text, 1, 2) & " /fs:FAT32 /v:PlayStation /q "
+                startInfo.UseShellExecute = False
+                startInfo.CreateNoWindow = True
+                startInfo.RedirectStandardOutput = True
+                startInfo.RedirectStandardInput = True
+
+                Dim p As Process = Process.Start(startInfo)
+
+                Dim processInputStream As StreamWriter = p.StandardInput
+                processInputStream.Write(vbCr & vbLf)
+
+                p.WaitForExit()
+            End If
+
+            If System.IO.Directory.Exists(Mid(Disks3.Text, 1, 3) & "PS5\UPDATE") Then
+            Else
+                Log1.Text = "Creating directories: PS5\UPDATE.."
+                System.IO.Directory.CreateDirectory(Mid(Disks3.Text, 1, 3) & "PS5\UPDATE")
+                If System.IO.Directory.Exists(Mid(Disks3.Text, 1, 3) & "PS5\UPDATE") Then
+                    Log1.Text = "Creating directories: PS5\UPDATE.. OK"
+                Else
+                    Log1.Text = "FAIL"
+                    Exit Sub
+                End If
+            End If
+            BackgroundWorker4.RunWorkerAsync()
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker4_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker4.DoWork
+        Dim D_D As String
+        Me.Invoke(New MethodInvoker(Sub() D_D = Mid(Disks3.Text, 1, 3)))
+
+        If R4.Checked = True Then
+            If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D & "PS5\UPDATE\PS5UPDATE.PUP")
+            Else
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
+            End If
+        End If
+
+        If R5.Checked = True Then
+            If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D & "PS5\UPDATE\PS5UPDATE.PUP")
+            Else
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
+            End If
+        End If
+    End Sub
+    Private Sub BackgroundWorker4_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker4.RunWorkerCompleted
+        If File.Exists(Mid(Disks3.Text, 1, 3) & "PS5\UPDATE\PS5UPDATE.PUP") Then
+            Log1.Text = "Done."
+        Else
+            Log1.Text = "Fail !!"
+        End If
+        ProgressBar1.Style = ProgressBarStyle.Blocks
+        D3_OS.Enabled = True
+        W3_OS.Enabled = True
         Update.Enabled = True
     End Sub
 End Class
