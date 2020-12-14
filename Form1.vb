@@ -6,6 +6,17 @@ Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
     Private wClient As Object
 
+    Public Function CheckForInternetConnection() As Boolean
+        Try
+            Using client = New WebClient()
+                Using stream = client.OpenRead("http://www.google.com")
+                    Return True
+                End Using
+            End Using
+        Catch
+            Return False
+        End Try
+    End Function
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
         W_OS.Enabled = False
         D_OS.Enabled = False
@@ -120,6 +131,15 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If CheckForInternetConnection() = True Then
+        Else
+            Log1.Text = "Check internet connection !!"
+            D_OS.Enabled = False
+            D2_OS.Enabled = False
+            D3_OS.Enabled = False
+            Update.Hide()
+        End If
+
         If Directory.Exists("PS5\FULL\") = True Then
         Else
             Directory.CreateDirectory("PS5\FULL\")
