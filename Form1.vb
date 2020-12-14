@@ -297,11 +297,11 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Log1.Text = "Checking update.."
         Dim client As New Net.WebClient
-        Dim newVersion As String = client.DownloadString("http://dragondev.pl/apk/latestVersion.txt")
-        If newVersion <> "103" Then ' wersja porównywana z wersją na serwerze
-            client.DownloadFile("http://dragondev.pl/apk/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
+        Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
+        If newVersion <> "102" Then ' wersja porównywana z wersją na serwerze
+            client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
-            Log1.Text = "Downloading Updater..."
+            Log1.Text = "Downloading Updater v" + newVersion + "..."
             T_Update.Enabled = True
         Else
             Log1.Text = "You are using the latest version !!"

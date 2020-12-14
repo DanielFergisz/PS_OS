@@ -135,6 +135,7 @@ Partial Class Form1
         '
         'D_OS
         '
+        Me.D_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D_OS.Location = New System.Drawing.Point(194, 21)
         Me.D_OS.Name = "D_OS"
         Me.D_OS.Size = New System.Drawing.Size(131, 31)
@@ -262,6 +263,7 @@ Partial Class Form1
         '
         'D2_OS
         '
+        Me.D2_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D2_OS.Location = New System.Drawing.Point(194, 21)
         Me.D2_OS.Name = "D2_OS"
         Me.D2_OS.Size = New System.Drawing.Size(131, 31)
