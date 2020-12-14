@@ -33,6 +33,8 @@ Public Class Form1
         D_OS.Enabled = True
         D2_OS.Enabled = True
         W2_OS.Enabled = True
+        D3_OS.Enabled = True
+        W3_OS.Enabled = True
         Update.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
