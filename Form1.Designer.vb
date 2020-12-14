@@ -215,7 +215,7 @@ Partial Class Form1
         'F3
         '
         Me.F3.AutoSize = True
-        Me.F3.Location = New System.Drawing.Point(258, 153)
+        Me.F3.Location = New System.Drawing.Point(258, 152)
         Me.F3.Name = "F3"
         Me.F3.Size = New System.Drawing.Size(124, 21)
         Me.F3.TabIndex = 11
@@ -226,7 +226,7 @@ Partial Class Form1
         '
         Me.W3_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W3_OS.ForeColor = System.Drawing.Color.DarkRed
-        Me.W3_OS.Location = New System.Drawing.Point(33, 189)
+        Me.W3_OS.Location = New System.Drawing.Point(33, 188)
         Me.W3_OS.Name = "W3_OS"
         Me.W3_OS.Size = New System.Drawing.Size(335, 45)
         Me.W3_OS.TabIndex = 10
@@ -236,7 +236,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(18, 121)
+        Me.Label6.Location = New System.Drawing.Point(18, 120)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(92, 17)
         Me.Label6.TabIndex = 9
@@ -303,12 +303,12 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label5.Location = New System.Drawing.Point(21, 29)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label5.Location = New System.Drawing.Point(21, 28)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(163, 17)
+        Me.Label5.Size = New System.Drawing.Size(159, 17)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "FW file v20.02-02.30.00:"
+        Me.Label5.Text = "Fw file v20.02-02.30.00:"
         '
         'TabPage2
         '
