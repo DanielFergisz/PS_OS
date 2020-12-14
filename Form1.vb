@@ -274,13 +274,18 @@ Public Class Form1
         Dim client As New Net.WebClient
             Dim newVersion As String = client.DownloadString("http://dragondev.pl/apk/latestVersion.txt")
             If newVersion <> IO.File.ReadAllText("Version.txt") Then
-            client.DownloadFile("http://dragondev.pl/apk/" & newVersion & "/Updater_PS.exe", appPath + "\Updater_PS.exe")
+            client.DownloadFile("http://dragondev.pl/apk/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
             Threading.Thread.Sleep(5000)
             Process.Start("Updater_PS.exe")
+            For Each p As Process In Process.GetProcesses
+                If p.ProcessName = "PS_OS" Then
+                    p.Kill()
+                End If
+            Next
         Else
-                MsgBox("OK")
-            End If
+            MsgBox("You are using the latest version !!")
+        End If
 
 
     End Sub

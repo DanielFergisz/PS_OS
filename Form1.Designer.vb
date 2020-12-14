@@ -323,7 +323,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.02"
+        Me.Text = "PS_OS v1.02.1"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
