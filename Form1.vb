@@ -8,6 +8,7 @@ Public Class Form1
 
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
         W_OS.Enabled = False
+        D_OS.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
@@ -28,6 +29,8 @@ Public Class Form1
             Log1.Text = "Download Fail !!"
         End If
         W_OS.Enabled = True
+        D_OS.Enabled = True
+        D2_OS.Enabled = True
         W2_OS.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
@@ -110,10 +113,12 @@ Public Class Form1
     End Sub
 
     Private Sub W_OS_Click(sender As Object, e As EventArgs) Handles W_OS.Click
-        D_OS.Enabled = False                  'ps4
+        D_OS.Enabled = False
+        W_OS.Enabled = False 'ps4
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D_OS.Enabled = True
+            W_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If F1.Checked = True Then
@@ -171,6 +176,7 @@ Public Class Form1
 
     Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
         W2_OS.Enabled = False
+        D2_OS.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
@@ -180,10 +186,12 @@ Public Class Form1
     End Sub
 
     Private Sub W2_OS_Click(sender As Object, e As EventArgs) Handles W2_OS.Click
-        D2_OS.Enabled = False                  'PS3
+        D2_OS.Enabled = False
+        W2_OS.Enabled = False 'PS3
         If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D2_OS.Enabled = True
+            W2_OS.Enabled = True
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If F2.Checked = True Then
@@ -251,6 +259,7 @@ Public Class Form1
         End If
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D_OS.Enabled = True
+        W_OS.Enabled = True
     End Sub
 
     Private Sub BackgroundWorker2_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker2.DoWork
@@ -272,6 +281,7 @@ Public Class Form1
         End If
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D2_OS.Enabled = True
+        W2_OS.Enabled = True
     End Sub
 
     Private Sub Update_Click(sender As Object, e As EventArgs) Handles Update.Click
@@ -282,7 +292,7 @@ Public Class Form1
         If newVersion <> "103" Then ' wersja porównywana z wersją na serwerze
             client.DownloadFile("http://dragondev.pl/apk/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
-            Log1.Text = "Downloading update file.."
+            Log1.Text = "Downloading Updater..."
             T_Update.Enabled = True
         Else
             Log1.Text = "You are using the latest version !!"
