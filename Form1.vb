@@ -102,6 +102,11 @@ Public Class Form1
         Else
             Directory.CreateDirectory("PS3\")
         End If
+
+        If File.Exists("PS_OS.exe.old") Then
+            File.Delete("PS_OS.exe.old")
+        End If
+        Del_UP.Enabled = True
     End Sub
 
     Private Sub W_OS_Click(sender As Object, e As EventArgs) Handles W_OS.Click
@@ -269,24 +274,39 @@ Public Class Form1
         D2_OS.Enabled = True
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Update_Click(sender As Object, e As EventArgs) Handles Update.Click
+        ProgressBar1.Style = ProgressBarStyle.Marquee
         Log1.Text = "Checking update.."
         Dim client As New Net.WebClient
         Dim newVersion As String = client.DownloadString("http://dragondev.pl/apk/latestVersion.txt")
-        If newVersion <> "102" Then
+        If newVersion <> "103" Then ' wersja porównywana z wersją na serwerze
             client.DownloadFile("http://dragondev.pl/apk/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
-            Threading.Thread.Sleep(5000)
-            Process.Start("Updater_PS.exe")
-            For Each p As Process In Process.GetProcesses
-                If p.ProcessName = "PS_OS" Then
-                    p.Kill()
-                End If
-            Next
+            Log1.Text = "Downloading update file.."
+            T_Update.Enabled = True
         Else
             Log1.Text = "You are using the latest version !!"
+            ProgressBar1.Style = ProgressBarStyle.Blocks
         End If
 
+    End Sub
 
+    Private Sub T_Update_Tick(sender As Object, e As EventArgs) Handles T_Update.Tick
+        T_Update.Enabled = False
+        Process.Start("Updater_PS.exe")
+        For Each p As Process In Process.GetProcesses
+            If p.ProcessName = "PS_OS" Then
+                p.Kill()
+            End If
+        Next
+        ProgressBar1.Style = ProgressBarStyle.Blocks
+    End Sub
+
+    Private Sub Del_UP_Tick(sender As Object, e As EventArgs) Handles Del_UP.Tick
+        Del_UP.Enabled = False
+        If File.Exists("Updater_PS.exe") Then
+            File.Delete("Updater_PS.exe")
+        End If
+        Update.Enabled = True
     End Sub
 End Class

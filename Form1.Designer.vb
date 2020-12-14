@@ -49,7 +49,9 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker3 = New System.ComponentModel.BackgroundWorker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Update = New System.Windows.Forms.Button()
+        Me.T_Update = New System.Windows.Forms.Timer(Me.components)
+        Me.Del_UP = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -77,7 +79,7 @@ Partial Class Form1
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(397, 239)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "PlayStation 4"
@@ -188,7 +190,7 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(397, 239)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PlayStation 3"
@@ -279,10 +281,11 @@ Partial Class Form1
         'Log1
         '
         Me.Log1.Enabled = False
+        Me.Log1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Log1.Location = New System.Drawing.Point(16, 286)
         Me.Log1.Name = "Log1"
         Me.Log1.ReadOnly = True
-        Me.Log1.Size = New System.Drawing.Size(397, 22)
+        Me.Log1.Size = New System.Drawing.Size(397, 23)
         Me.Log1.TabIndex = 1
         '
         'ProgressBar1
@@ -303,22 +306,31 @@ Partial Class Form1
         'BackgroundWorker2
         '
         '
-        'Button1
+        'Update
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button1.Location = New System.Drawing.Point(297, 317)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(116, 26)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Check Update"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Update.Enabled = False
+        Me.Update.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Update.Location = New System.Drawing.Point(297, 317)
+        Me.Update.Name = "Update"
+        Me.Update.Size = New System.Drawing.Size(116, 26)
+        Me.Update.TabIndex = 8
+        Me.Update.Text = "Check Update"
+        Me.Update.UseVisualStyleBackColor = True
+        '
+        'T_Update
+        '
+        Me.T_Update.Interval = 4000
+        '
+        'Del_UP
+        '
+        Me.Del_UP.Interval = 2000
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(429, 351)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Update)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.TabControl1)
@@ -365,5 +377,7 @@ Partial Class Form1
     Friend WithEvents F1 As CheckBox
     Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker
     Friend WithEvents F2 As CheckBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Update As Button
+    Friend WithEvents T_Update As Timer
+    Friend WithEvents Del_UP As Timer
 End Class
