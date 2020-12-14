@@ -268,4 +268,20 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D2_OS.Enabled = True
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim client As New Net.WebClient
+            Dim newVersion As String = client.DownloadString("http://dragondev.pl/apk/latestVersion.txt")
+            If newVersion <> IO.File.ReadAllText("Version.txt") Then
+            client.DownloadFile("http://dragondev.pl/apk/" & newVersion & "/Updater_PS.exe", appPath + "\Updater_PS.exe")
+            client.Dispose()
+            Threading.Thread.Sleep(5000)
+            Process.Start("Updater_PS.exe")
+        Else
+                MsgBox("OK")
+            End If
+
+
+    End Sub
 End Class
