@@ -298,6 +298,10 @@ Public Class Form1
         Log1.Text = "Checking update.."
         Dim client As New Net.WebClient
         Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
+        Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
+        If FW <> "" Then
+            File.Create("newFirmware.fwx")
+        End If
         If newVersion <> "102" Then ' wersja porównywana z wersją na serwerze
             client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
@@ -323,9 +327,13 @@ Public Class Form1
 
     Private Sub Del_UP_Tick(sender As Object, e As EventArgs) Handles Del_UP.Tick
         Del_UP.Enabled = False
+        If File.Exists("newFirmware.fwx") Then
+            File.Delete("newFirmware.fwx")
+        End If
         If File.Exists("Updater_PS.exe") Then
             File.Delete("Updater_PS.exe")
         End If
+
         Update.Enabled = True
     End Sub
 End Class
