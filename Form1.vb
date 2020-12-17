@@ -495,4 +495,31 @@ Public Class Form1
         W3_OS.Enabled = True
         Update.Enabled = True
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles O1.Click
+        If Disks.Text.Length = 0 Then
+            Log1.Text = "Please select disk drive first !!!"
+        Else
+            Process.Start(Mid(Disks.Text, 1, 3))
+            Log1.Text = "Opening..."
+        End If
+    End Sub
+
+    Private Sub O2_Click(sender As Object, e As EventArgs) Handles O2.Click
+        If Disks3.Text.Length = 0 Then
+            Log1.Text = "Please select disk drive first !!!"
+        Else
+            Process.Start(Mid(Disks3.Text, 1, 3))
+            Log1.Text = "Opening..."
+        End If
+    End Sub
+
+    Private Sub O3_Click(sender As Object, e As EventArgs) Handles O3.Click
+        If Disks2.Text.Length = 0 Then
+            Log1.Text = "Please select disk drive first !!!"
+        Else
+            Process.Start(Mid(Disks2.Text, 1, 3))
+            Log1.Text = "Opening..."
+        End If
+    End Sub
 End Class
