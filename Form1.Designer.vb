@@ -461,19 +461,19 @@ Partial Class Form1
         '
         Me.Log1.Enabled = False
         Me.Log1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Log1.Location = New System.Drawing.Point(12, 232)
+        Me.Log1.Location = New System.Drawing.Point(9, 232)
         Me.Log1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Log1.Name = "Log1"
         Me.Log1.ReadOnly = True
-        Me.Log1.Size = New System.Drawing.Size(299, 20)
+        Me.Log1.Size = New System.Drawing.Size(302, 20)
         Me.Log1.TabIndex = 1
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(12, 259)
+        Me.ProgressBar1.Location = New System.Drawing.Point(9, 259)
         Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(206, 18)
+        Me.ProgressBar1.Size = New System.Drawing.Size(209, 18)
         Me.ProgressBar1.TabIndex = 2
         '
         'Timer1
