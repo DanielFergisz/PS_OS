@@ -138,6 +138,7 @@ Public Class Form1
             D_OS.Enabled = False
             D2_OS.Enabled = False
             D3_OS.Enabled = False
+            D4_OS.Enabled = False
             Update.Hide()
         End If
 
@@ -244,6 +245,11 @@ Public Class Form1
             R3.ForeColor = Color.DarkGreen
         Else
             R3.ForeColor = Color.Black
+        End If
+        If File.Exists("PSV/PSVUPDAT.PUP") Then
+            R6.ForeColor = Color.DarkGreen
+        Else
+            R6.ForeColor = Color.Black
         End If
     End Sub
 
@@ -529,8 +535,6 @@ Public Class Form1
     End Sub
 
     Private Sub D4_OS_Click(sender As Object, e As EventArgs) Handles D4_OS.Click
-        'http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP
-
         D4_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
@@ -540,5 +544,10 @@ Public Class Form1
         wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
         wClient.Dispose()
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Process.Start("PSV")
+        Log1.Text = "Opening..."
     End Sub
 End Class

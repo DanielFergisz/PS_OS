@@ -58,7 +58,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.R6 = New System.Windows.Forms.RadioButton()
         Me.D4_OS = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Log1 = New System.Windows.Forms.TextBox()
@@ -71,6 +71,7 @@ Partial Class Form1
         Me.T_Update = New System.Windows.Forms.Timer(Me.components)
         Me.Del_UP = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker4 = New System.ComponentModel.BackgroundWorker()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -489,6 +490,7 @@ Partial Class Form1
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.Button1)
         Me.TabPage4.Controls.Add(Me.GroupBox4)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
@@ -499,7 +501,7 @@ Partial Class Form1
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.RadioButton1)
+        Me.GroupBox4.Controls.Add(Me.R6)
         Me.GroupBox4.Controls.Add(Me.D4_OS)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Location = New System.Drawing.Point(16, 5)
@@ -510,19 +512,19 @@ Partial Class Form1
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
         '
-        'RadioButton1
+        'R6
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(108, 47)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(45, 17)
-        Me.RadioButton1.TabIndex = 5
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Full"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.R6.AutoSize = True
+        Me.R6.Checked = True
+        Me.R6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R6.Location = New System.Drawing.Point(108, 47)
+        Me.R6.Margin = New System.Windows.Forms.Padding(2)
+        Me.R6.Name = "R6"
+        Me.R6.Size = New System.Drawing.Size(45, 17)
+        Me.R6.TabIndex = 5
+        Me.R6.TabStop = True
+        Me.R6.Text = "Full"
+        Me.R6.UseVisualStyleBackColor = True
         '
         'D4_OS
         '
@@ -597,6 +599,17 @@ Partial Class Form1
         '
         'BackgroundWorker4
         '
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Maroon
+        Me.Button1.Location = New System.Drawing.Point(16, 104)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(271, 33)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Open folder"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -677,7 +690,8 @@ Partial Class Form1
     Friend WithEvents O3 As Button
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents R6 As RadioButton
     Friend WithEvents D4_OS As Button
     Friend WithEvents Label7 As Label
+    Friend WithEvents Button1 As Button
 End Class
