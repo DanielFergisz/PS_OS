@@ -47,6 +47,7 @@ Public Class Form1
         D3_OS.Enabled = True
         W3_OS.Enabled = True
         Update.Enabled = True
+        D4_OS.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
         Disks.Items.Clear()
@@ -159,6 +160,10 @@ Public Class Form1
         If Directory.Exists("PS3\") = True Then
         Else
             Directory.CreateDirectory("PS3\")
+        End If
+        If Directory.Exists("PSV\") = True Then
+        Else
+            Directory.CreateDirectory("PSV\")
         End If
 
         If File.Exists("PS_OS.exe.old") Then
@@ -521,5 +526,19 @@ Public Class Form1
             Process.Start(Mid(Disks2.Text, 1, 3))
             Log1.Text = "Opening..."
         End If
+    End Sub
+
+    Private Sub D4_OS_Click(sender As Object, e As EventArgs) Handles D4_OS.Click
+        'http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP
+
+        D4_OS.Enabled = False
+        Update.Enabled = False
+        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+        Dim wClient As New WebClient()
+        AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+        wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
+        wClient.Dispose()
+
     End Sub
 End Class
