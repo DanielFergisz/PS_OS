@@ -19,7 +19,12 @@ Public Class Form1
     End Function
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
         W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
         D_OS.Enabled = False
+        D2_OS.Enabled = False
+        D3_OS.Enabled = False
+        D4_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -41,13 +46,13 @@ Public Class Form1
             Log1.Text = "Download Fail !!"
         End If
         W_OS.Enabled = True
+        W2_OS.Enabled = True
+        W3_OS.Enabled = True
         D_OS.Enabled = True
         D2_OS.Enabled = True
-        W2_OS.Enabled = True
         D3_OS.Enabled = True
-        W3_OS.Enabled = True
-        Update.Enabled = True
         D4_OS.Enabled = True
+        Update.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
         Disks.Items.Clear()
@@ -254,8 +259,13 @@ Public Class Form1
     End Sub
 
     Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
+        W_OS.Enabled = False
         W2_OS.Enabled = False
+        W3_OS.Enabled = False
+        D_OS.Enabled = False
         D2_OS.Enabled = False
+        D3_OS.Enabled = False
+        D4_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -413,8 +423,13 @@ Public Class Form1
     End Sub
 
     Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
         W3_OS.Enabled = False
+        D_OS.Enabled = False
+        D2_OS.Enabled = False
         D3_OS.Enabled = False
+        D4_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -535,7 +550,13 @@ Public Class Form1
     End Sub
 
     Private Sub D4_OS_Click(sender As Object, e As EventArgs) Handles D4_OS.Click
+        D_OS.Enabled = False
+        D2_OS.Enabled = False
+        D3_OS.Enabled = False
         D4_OS.Enabled = False
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
