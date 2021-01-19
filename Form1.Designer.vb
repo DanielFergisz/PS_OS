@@ -75,6 +75,9 @@ Partial Class Form1
         Me.T_Update = New System.Windows.Forms.Timer(Me.components)
         Me.Del_UP = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker4 = New System.ComponentModel.BackgroundWorker()
+        Me.YT = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -646,11 +649,44 @@ Partial Class Form1
         'BackgroundWorker4
         '
         '
+        'YT
+        '
+        Me.YT.AutoSize = True
+        Me.YT.Location = New System.Drawing.Point(376, 530)
+        Me.YT.Name = "YT"
+        Me.YT.Size = New System.Drawing.Size(93, 25)
+        Me.YT.TabIndex = 9
+        Me.YT.TabStop = True
+        Me.YT.Text = "YouTube"
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Location = New System.Drawing.Point(475, 530)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(98, 25)
+        Me.LinkLabel2.TabIndex = 10
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Instagram"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.Label8.Location = New System.Drawing.Point(298, 530)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(65, 25)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "Visit:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(590, 526)
+        Me.ClientSize = New System.Drawing.Size(604, 568)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.LinkLabel2)
+        Me.Controls.Add(Me.YT)
         Me.Controls.Add(Me.Update)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Log1)
@@ -732,4 +768,7 @@ Partial Class Form1
     Friend WithEvents OF1 As Button
     Friend WithEvents OF2 As Button
     Friend WithEvents OF3 As Button
+    Friend WithEvents YT As LinkLabel
+    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents Label8 As Label
 End Class

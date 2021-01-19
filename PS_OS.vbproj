@@ -123,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\youtube.png" />
+    <None Include="Resources\instagram.png" />
+    <None Include="Resources\instagram1.png" />
+    <None Include="Resources\youtube1.png" />
     <Content Include="tool-icon-8071-Windows.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

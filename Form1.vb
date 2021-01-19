@@ -593,4 +593,12 @@ Public Class Form1
     Private Sub OF3_Click(sender As Object, e As EventArgs) Handles OF3.Click
         Process.Start("PS3\")
     End Sub
+
+    Private Sub YT_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles YT.LinkClicked
+        Process.Start("https://www.youtube.com/channel/UC3Bx_R2JYo_fiJtQEx8VVpQ")
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        Process.Start("https://www.instagram.com/repairboxpl/")
+    End Sub
 End Class
