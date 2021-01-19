@@ -567,8 +567,30 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub OF4_Click_1(sender As Object, e As EventArgs) Handles OF4.Click
         Process.Start("PSV")
         Log1.Text = "Opening..."
+    End Sub
+
+    Private Sub OF1_Click(sender As Object, e As EventArgs) Handles OF1.Click
+        If R1.Checked = True Then
+            Process.Start("PS4\FULL\")
+        End If
+        If R2.Checked = True Then
+            Process.Start("PS4\UPDATE\")
+        End If
+    End Sub
+
+    Private Sub OF2_Click(sender As Object, e As EventArgs) Handles OF2.Click
+        If R4.Checked = True Then
+            Process.Start("PS5\FULL\")
+        End If
+        If R5.Checked = True Then
+            Process.Start("PS5\UPDATE\")
+        End If
+    End Sub
+
+    Private Sub OF3_Click(sender As Object, e As EventArgs) Handles OF3.Click
+        Process.Start("PS3\")
     End Sub
 End Class
