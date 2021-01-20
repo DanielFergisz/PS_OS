@@ -672,18 +672,18 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label8.Location = New System.Drawing.Point(298, 530)
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Location = New System.Drawing.Point(168, 530)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 25)
+        Me.Label8.Size = New System.Drawing.Size(200, 25)
         Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Visit:"
+        Me.Label8.Text = "Visit and Follow:"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(604, 568)
+        Me.ClientSize = New System.Drawing.Size(588, 568)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.YT)
@@ -694,7 +694,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.06"
+        Me.Text = "PS_OS v1.07"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
