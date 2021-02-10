@@ -78,6 +78,7 @@ Partial Class Form1
         Me.YT = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Diskpart = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -104,6 +105,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Diskpart)
         Me.TabPage1.Controls.Add(Me.O1)
         Me.TabPage1.Controls.Add(Me.F1)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -134,7 +136,7 @@ Partial Class Form1
         'F1
         '
         Me.F1.AutoSize = True
-        Me.F1.Location = New System.Drawing.Point(356, 230)
+        Me.F1.Location = New System.Drawing.Point(297, 235)
         Me.F1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.F1.Name = "F1"
         Me.F1.Size = New System.Drawing.Size(162, 28)
@@ -679,6 +681,16 @@ Partial Class Form1
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Visit and Follow:"
         '
+        'Diskpart
+        '
+        Me.Diskpart.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Diskpart.Location = New System.Drawing.Point(485, 230)
+        Me.Diskpart.Name = "Diskpart"
+        Me.Diskpart.Size = New System.Drawing.Size(40, 39)
+        Me.Diskpart.TabIndex = 9
+        Me.Diskpart.Text = "Օ"
+        Me.Diskpart.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -771,4 +783,5 @@ Partial Class Form1
     Friend WithEvents YT As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents Label8 As Label
+    Friend WithEvents Diskpart As Button
 End Class
