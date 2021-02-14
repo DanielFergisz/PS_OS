@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Diskpart = New System.Windows.Forms.Button()
         Me.O1 = New System.Windows.Forms.Button()
         Me.F1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -78,7 +79,7 @@ Partial Class Form1
         Me.YT = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Diskpart = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -121,6 +122,16 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "PlayStation 4"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Diskpart
+        '
+        Me.Diskpart.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Diskpart.Location = New System.Drawing.Point(485, 230)
+        Me.Diskpart.Name = "Diskpart"
+        Me.Diskpart.Size = New System.Drawing.Size(40, 39)
+        Me.Diskpart.TabIndex = 9
+        Me.Diskpart.Text = "Օ"
+        Me.Diskpart.UseVisualStyleBackColor = True
         '
         'O1
         '
@@ -253,6 +264,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.Button1)
         Me.TabPage3.Controls.Add(Me.O2)
         Me.TabPage3.Controls.Add(Me.F3)
         Me.TabPage3.Controls.Add(Me.W3_OS)
@@ -281,7 +293,7 @@ Partial Class Form1
         'F3
         '
         Me.F3.AutoSize = True
-        Me.F3.Location = New System.Drawing.Point(356, 230)
+        Me.F3.Location = New System.Drawing.Point(297, 235)
         Me.F3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.F3.Name = "F3"
         Me.F3.Size = New System.Drawing.Size(171, 29)
@@ -681,15 +693,15 @@ Partial Class Form1
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Visit and Follow:"
         '
-        'Diskpart
+        'Button1
         '
-        Me.Diskpart.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Diskpart.Location = New System.Drawing.Point(485, 230)
-        Me.Diskpart.Name = "Diskpart"
-        Me.Diskpart.Size = New System.Drawing.Size(40, 39)
-        Me.Diskpart.TabIndex = 9
-        Me.Diskpart.Text = "Օ"
-        Me.Diskpart.UseVisualStyleBackColor = True
+        Me.Button1.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button1.Location = New System.Drawing.Point(485, 230)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(40, 39)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Օ"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -784,4 +796,5 @@ Partial Class Form1
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents Label8 As Label
     Friend WithEvents Diskpart As Button
+    Friend WithEvents Button1 As Button
 End Class
