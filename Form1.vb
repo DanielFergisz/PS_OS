@@ -436,10 +436,10 @@ Public Class Form1
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R4.Checked = True Then
-            wClient.DownloadFileAsync(New System.Uri("http://dus01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2020_1204/rec_08da8f8f7c3e8e7d5b46a48574e3dc03c3378cc7e89afb540def4b11497d0562/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/rec_9f4c41a562d0085ac0ed6d2e349e30a0c94c3ec7755519a488716e032f00aba7/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
         End If
         If R5.Checked = True Then
-            wClient.DownloadFileAsync(New System.Uri("http://dus01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2020_1204/sys_2b18b84f92498be8d2dff11fef8a8a10a715debac9fec9fd0e4c8f73e43e28e8/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/sys_4ab8750f0107a0416687292188d6dc074111133d6b3f5e84503199b52a3e3c9a/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
         End If
         wClient.Dispose()
     End Sub

@@ -38,6 +38,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.O2 = New System.Windows.Forms.Button()
         Me.F3 = New System.Windows.Forms.CheckBox()
         Me.W3_OS = New System.Windows.Forms.Button()
@@ -79,7 +80,6 @@ Partial Class Form1
         Me.YT = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -279,6 +279,16 @@ Partial Class Form1
         Me.TabPage3.Text = "PlayStation 5"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button1.Location = New System.Drawing.Point(485, 230)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(40, 39)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Օ"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'O2
         '
         Me.O2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
@@ -401,12 +411,12 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label5.Location = New System.Drawing.Point(29, 42)
+        Me.Label5.Location = New System.Drawing.Point(32, 44)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(204, 24)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Fw file v20.02-02.30.00:"
+        Me.Label5.Text = "Fw file v20.02-02.50.00:"
         '
         'TabPage2
         '
@@ -692,16 +702,6 @@ Partial Class Form1
         Me.Label8.Size = New System.Drawing.Size(200, 25)
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Visit and Follow:"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button1.Location = New System.Drawing.Point(485, 230)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(40, 39)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Օ"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
