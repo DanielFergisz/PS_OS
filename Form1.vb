@@ -4,6 +4,11 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
+    Dim appVer As SByte = "108"
+    Dim client As New Net.WebClient
+    Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
+    Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
+
     Private wClient As Object
 
     Public Function CheckForInternetConnection() As Boolean
@@ -138,6 +143,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If CheckForInternetConnection() = True Then
+            If newVersion > appVer Then
+                Log1.Text = " PS_OS new version is available !!!"
+            End If
         Else
             Log1.Text = "Check internet connection !!"
             D_OS.Enabled = False
@@ -381,13 +389,11 @@ Public Class Form1
     Private Sub Update_Click(sender As Object, e As EventArgs) Handles Update.Click
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Log1.Text = "Checking update.."
-        Dim client As New Net.WebClient
-        Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
-        Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
+
         If FW <> "" Then
             File.Create("newFirmware.fwx")
         End If
-        If newVersion > "108" Then ' wersja porównywana z wersją na serwerze
+        If newVersion > appVer Then ' wersja porównywana z wersją na serwerze
             client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
             Log1.Text = "Downloading Updater v" + newVersion + "..."
