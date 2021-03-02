@@ -393,6 +393,7 @@ Public Class Form1
         If FW <> "" Then
             File.Create("newFirmware.fwx")
         End If
+
         If newVersion > appVer Then ' wersja porównywana z wersją na serwerze
             client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
