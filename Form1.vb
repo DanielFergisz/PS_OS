@@ -387,7 +387,7 @@ Public Class Form1
         If FW <> "" Then
             File.Create("newFirmware.fwx")
         End If
-        If newVersion > "107" Then ' wersja porównywana z wersją na serwerze
+        If newVersion > "108" Then ' wersja porównywana z wersją na serwerze
             client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
             Log1.Text = "Downloading Updater v" + newVersion + "..."
