@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "108"
+    Dim appVer As SByte = "109"
     Dim client As New Net.WebClient
     Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
     Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
@@ -47,6 +47,7 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Blocks
         If Not e.Cancelled AndAlso e.Error Is Nothing Then  'po pobraniu pliku
             Log1.Text = "Download success"
+
         Else
             Log1.Text = "Download Fail !!"
         End If
@@ -78,12 +79,9 @@ Public Class Form1
                 drive_type = "Unknown"
             End If
 
-            ' The drive name and its type is added to the list of drives
             Me.Disks.Items.Add(drive.Name & " [" & drive_type & "]")
         Next
 
-        ' It selects the first item in the list (ComboBox)
-        ' Disks.SelectedIndex = 0
     End Sub
 
     Private Sub Disks2_DropDown(sender As Object, e As EventArgs) Handles Disks2.DropDown
@@ -105,13 +103,10 @@ Public Class Form1
                 drive_type = "Unknown"
             End If
 
-            ' The drive name and its type is added to the list of drives
             Me.Disks2.Items.Add(drive.Name & " [" & drive_type & "]")
 
         Next
 
-        ' It selects the first item in the list (ComboBox)
-        ' Disks.SelectedIndex = 0
     End Sub
 
     Private Sub Disks3_DropDown(sender As Object, e As EventArgs) Handles Disks3.DropDown
@@ -133,12 +128,9 @@ Public Class Form1
                 drive_type = "Unknown"
             End If
 
-            ' The drive name and its type is added to the list of drives
             Me.Disks3.Items.Add(drive.Name & " [" & drive_type & "]")
         Next
 
-        ' It selects the first item in the list (ComboBox)
-        ' Disks.SelectedIndex = 0
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -337,8 +329,6 @@ Public Class Form1
             If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
-            Else
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
             End If
         End If
 
@@ -346,17 +336,18 @@ Public Class Form1
             If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
-            Else
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
+
             End If
         End If
     End Sub
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        '  Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
         If File.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\PS4UPDATE.PUP") Then
             Log1.Text = "Done."
         Else
             Log1.Text = "Fail !!"
         End If
+
         ProgressBar1.Style = ProgressBarStyle.Blocks
         D_OS.Enabled = True
         W_OS.Enabled = True
@@ -370,8 +361,6 @@ Public Class Form1
         If File.Exists("PS3\PS3UPDAT.PUP") Then
             Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
             FileCopy("PS3\PS3UPDAT.PUP", D_D2 & "PS3\UPDATE\PS3UPDAT.PUP")
-        Else
-            Log1.Text = "Please Download Firmware First !!"
         End If
     End Sub
     Private Sub BackgroundWorker2_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
@@ -390,11 +379,10 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Log1.Text = "Checking update.."
 
-        If FW <> "" Then
-            File.Create("newFirmware.fwx")
-        End If
-
         If newVersion > appVer Then ' wersja porównywana z wersją na serwerze
+            If FW <> "" Then
+                File.Create("newFirmware.fwx")
+            End If
             client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
             Log1.Text = "Downloading Updater v" + newVersion + "..."
@@ -503,8 +491,6 @@ Public Class Form1
             If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D & "PS5\UPDATE\PS5UPDATE.PUP")
-            Else
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
             End If
         End If
 
@@ -512,8 +498,6 @@ Public Class Form1
             If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D & "PS5\UPDATE\PS5UPDATE.PUP")
-            Else
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
             End If
         End If
     End Sub
@@ -616,4 +600,5 @@ Public Class Form1
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Process.Start("diskpart.exe")
     End Sub
+
 End Class

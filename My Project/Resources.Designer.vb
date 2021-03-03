@@ -59,45 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property instagram() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("instagram", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property instagram1() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("instagram1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property youtube() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("youtube", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property youtube1() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("youtube1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
     End Module
 End Namespace
