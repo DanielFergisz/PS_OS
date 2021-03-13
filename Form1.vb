@@ -31,21 +31,65 @@ Public Class Form1
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         Update.Enabled = False
-        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        Log1.Text = "Checking file.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R1.Checked = True Then
-            wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+            If File.Exists("PS4\FULL\PS4UPDATE.PUP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                If ask = MsgBoxResult.Yes Then
+                    wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+            End If
         End If
         If R2.Checked = True Then
-            wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/sys_a261a9388c591adae9ac010c0b73483b/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+            If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                If ask = MsgBoxResult.Yes Then
+                    wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/sys_a261a9388c591adae9ac010c0b73483b/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/sys_a261a9388c591adae9ac010c0b73483b/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+            End If
         End If
         wClient.Dispose()
     End Sub
     Private Sub OnDownloadComplete(ByVal sender As Object, ByVal e As AsyncCompletedEventArgs)
         ProgressBar1.Style = ProgressBarStyle.Blocks
-        If Not e.Cancelled AndAlso e.Error Is Nothing Then  'po pobraniu pliku
+        If Not e.Cancelled AndAlso e.Error Is Nothing Then  ' downloading firmware
             Log1.Text = "Download success"
 
         Else
@@ -267,11 +311,33 @@ Public Class Form1
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         Update.Enabled = False
-        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
-        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2020_1203_03373a581934f0d2b796156d2fb28b39/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
+        If File.Exists("PS3\PS3UPDAT.PUP") = True Then
+            Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+            Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+            If ask = MsgBoxResult.Yes Then
+                wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2020_1203_03373a581934f0d2b796156d2fb28b39/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
+            End If
+            If ask = MsgBoxResult.No Then
+                W_OS.Enabled = True
+                W2_OS.Enabled = True
+                W3_OS.Enabled = True
+                D_OS.Enabled = True
+                D2_OS.Enabled = True
+                D3_OS.Enabled = True
+                D4_OS.Enabled = True
+                Update.Enabled = True
+                ProgressBar1.Style = ProgressBarStyle.Blocks
+                Log1.Text = "Download canceled "
+                Exit Sub
+            End If
+        Else
+            Log1.Text = "Downloading file, please wait.." ' downloading firmware
+            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2020_1203_03373a581934f0d2b796156d2fb28b39/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
+        End If
         wClient.Dispose()
     End Sub
 
@@ -426,15 +492,59 @@ Public Class Form1
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         Update.Enabled = False
-        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        Log1.Text = "Checking file.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R4.Checked = True Then
-            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/rec_9f4c41a562d0085ac0ed6d2e349e30a0c94c3ec7755519a488716e032f00aba7/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+            If File.Exists("PS5\FULL\PS5UPDATE.PUP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                If ask = MsgBoxResult.Yes Then
+                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/rec_9f4c41a562d0085ac0ed6d2e349e30a0c94c3ec7755519a488716e032f00aba7/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/rec_9f4c41a562d0085ac0ed6d2e349e30a0c94c3ec7755519a488716e032f00aba7/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+            End If
         End If
         If R5.Checked = True Then
-            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/sys_4ab8750f0107a0416687292188d6dc074111133d6b3f5e84503199b52a3e3c9a/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+            If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                If ask = MsgBoxResult.Yes Then
+                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/sys_4ab8750f0107a0416687292188d6dc074111133d6b3f5e84503199b52a3e3c9a/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/sys_4ab8750f0107a0416687292188d6dc074111133d6b3f5e84503199b52a3e3c9a/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+            End If
         End If
         wClient.Dispose()
     End Sub
@@ -549,11 +659,33 @@ Public Class Form1
         W2_OS.Enabled = False
         W3_OS.Enabled = False
         Update.Enabled = False
-        Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+        Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
-        wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
+        If File.Exists("PSV\PSVUPDAT.PUP") = True Then
+            Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+            Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+            If ask = MsgBoxResult.Yes Then
+                wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
+            End If
+            If ask = MsgBoxResult.No Then
+                W_OS.Enabled = True
+                W2_OS.Enabled = True
+                W3_OS.Enabled = True
+                D_OS.Enabled = True
+                D2_OS.Enabled = True
+                D3_OS.Enabled = True
+                D4_OS.Enabled = True
+                Update.Enabled = True
+                ProgressBar1.Style = ProgressBarStyle.Blocks
+                Log1.Text = "Download canceled "
+                Exit Sub
+            End If
+        Else
+            Log1.Text = "Downloading file, please wait.." ' downloading firmware
+            wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
+        End If
         wClient.Dispose()
 
     End Sub
