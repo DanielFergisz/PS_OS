@@ -80,6 +80,7 @@ Partial Class Form1
         Me.YT = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.ProgPrec = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -646,7 +647,7 @@ Partial Class Form1
         Me.ProgressBar1.Location = New System.Drawing.Point(12, 367)
         Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(425, 22)
+        Me.ProgressBar1.Size = New System.Drawing.Size(375, 22)
         Me.ProgressBar1.TabIndex = 2
         '
         'Timer1
@@ -713,12 +714,22 @@ Partial Class Form1
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Visit and Follow:"
         '
+        'ProgPrec
+        '
+        Me.ProgPrec.AutoSize = True
+        Me.ProgPrec.Location = New System.Drawing.Point(390, 369)
+        Me.ProgPrec.Name = "ProgPrec"
+        Me.ProgPrec.Size = New System.Drawing.Size(32, 17)
+        Me.ProgPrec.TabIndex = 10
+        Me.ProgPrec.Text = "[    ]"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 428)
         Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.ProgPrec)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.YT)
         Me.Controls.Add(Me.Update)
@@ -728,7 +739,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.09"
+        Me.Text = "PS_OS v1.10"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -809,4 +820,5 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Diskpart As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents ProgPrec As Label
 End Class

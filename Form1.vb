@@ -4,10 +4,11 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "109"
+    Dim appVer As SByte = "110"
     Dim client As New Net.WebClient
     Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
     Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
+
 
     Private wClient As Object
 
@@ -31,15 +32,16 @@ Public Class Form1
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         Update.Enabled = False
-        Log1.Text = "Checking file.." ' pobieranie pliku
+        Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R1.Checked = True Then
             If File.Exists("PS4\FULL\PS4UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                Log1.Text = "Downloading file, please wait.."
                 If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
                 End If
                 If ask = MsgBoxResult.No Then
@@ -56,15 +58,17 @@ Public Class Form1
                     Exit Sub
                 End If
             Else
-                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                Log1.Text = "Downloading file, please wait.."
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/rec_3e5241162736abd81a14e5922093c5c0/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
             End If
         End If
         If R2.Checked = True Then
             If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                Log1.Text = "Downloading file, please wait.."
                 If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/sys_a261a9388c591adae9ac010c0b73483b/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
                 End If
                 If ask = MsgBoxResult.No Then
@@ -81,15 +85,21 @@ Public Class Form1
                     Exit Sub
                 End If
             Else
-                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                Log1.Text = "Downloading file, please wait.."
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 wClient.DownloadFileAsync(New System.Uri("http://dus01.ps4.update.playstation.net/update/ps4/image/2020_1130/sys_a261a9388c591adae9ac010c0b73483b/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
             End If
         End If
         wClient.Dispose()
     End Sub
+    Private Sub ProgChanged(sender As Object, e As DownloadProgressChangedEventArgs)
+        ProgressBar1.Value = e.ProgressPercentage
+        ProgPrec.Text = "[ " + e.ProgressPercentage.ToString + "% ]"
+        Log1.Text = String.Format("{0} MB's / {1} MB's", (e.BytesReceived / 1024D / 1024D).ToString("0,00"), (e.TotalBytesToReceive / 1024D / 1024D).ToString("0,00"))
+    End Sub
     Private Sub OnDownloadComplete(ByVal sender As Object, ByVal e As AsyncCompletedEventArgs)
         ProgressBar1.Style = ProgressBarStyle.Blocks
-        If Not e.Cancelled AndAlso e.Error Is Nothing Then  ' downloading firmware
+        If Not e.Cancelled AndAlso e.Error Is Nothing Then
             Log1.Text = "Download success"
 
         Else
@@ -224,8 +234,9 @@ Public Class Form1
 
     Private Sub W_OS_Click(sender As Object, e As EventArgs) Handles W_OS.Click
         D_OS.Enabled = False
-        W_OS.Enabled = False 'ps4
+        W_OS.Enabled = False 'PS4
         Update.Enabled = False
+        ProgPrec.Text = "[  ]"
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D_OS.Enabled = True
@@ -234,7 +245,7 @@ Public Class Form1
         Else
             ProgressBar1.Style = ProgressBarStyle.Marquee
             If F1.Checked = True Then
-                Log1.Text = "Formating..."   'Formatowanie dysku 
+                Log1.Text = "Formating..."
                 Dim startInfo As New ProcessStartInfo()
                 startInfo.FileName = "format.com"
                 startInfo.Arguments = Mid(Disks.Text, 1, 2) & " /fs:FAT32 /v:PlayStation /q "
@@ -304,7 +315,7 @@ Public Class Form1
 
     Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
         W_OS.Enabled = False
-        W2_OS.Enabled = False
+        W2_OS.Enabled = False 'PS3
         W3_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
@@ -317,8 +328,9 @@ Public Class Form1
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If File.Exists("PS3\PS3UPDAT.PUP") = True Then
             Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-            Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+            Log1.Text = "Downloading file, please wait.."
             If ask = MsgBoxResult.Yes Then
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2020_1203_03373a581934f0d2b796156d2fb28b39/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
             End If
             If ask = MsgBoxResult.No Then
@@ -335,7 +347,8 @@ Public Class Form1
                 Exit Sub
             End If
         Else
-            Log1.Text = "Downloading file, please wait.." ' downloading firmware
+            Log1.Text = "Downloading file, please wait.."
+            AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
             wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2020_1203_03373a581934f0d2b796156d2fb28b39/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
         End If
         wClient.Dispose()
@@ -345,6 +358,7 @@ Public Class Form1
         D2_OS.Enabled = False
         W2_OS.Enabled = False 'PS3
         Update.Enabled = False
+        ProgPrec.Text = "[  ]"
         If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D2_OS.Enabled = True
@@ -407,7 +421,7 @@ Public Class Form1
         End If
     End Sub
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
-        '  Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Please Download Firmware First !!"))
+
         If File.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\PS4UPDATE.PUP") Then
             Log1.Text = "Done."
         Else
@@ -485,7 +499,7 @@ Public Class Form1
 
     Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click
         W_OS.Enabled = False
-        W2_OS.Enabled = False
+        W2_OS.Enabled = False  'PS5
         W3_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
@@ -499,8 +513,9 @@ Public Class Form1
         If R4.Checked = True Then
             If File.Exists("PS5\FULL\PS5UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                Log1.Text = "Downloading file, please wait.."
                 If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/rec_9f4c41a562d0085ac0ed6d2e349e30a0c94c3ec7755519a488716e032f00aba7/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 End If
                 If ask = MsgBoxResult.No Then
@@ -518,6 +533,7 @@ Public Class Form1
                 End If
             Else
                 Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/rec_9f4c41a562d0085ac0ed6d2e349e30a0c94c3ec7755519a488716e032f00aba7/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
             End If
         End If
@@ -526,6 +542,7 @@ Public Class Form1
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
                 Log1.Text = "Downloading file, please wait.." ' downloading firmware
                 If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/sys_4ab8750f0107a0416687292188d6dc074111133d6b3f5e84503199b52a3e3c9a/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 End If
                 If ask = MsgBoxResult.No Then
@@ -543,6 +560,7 @@ Public Class Form1
                 End If
             Else
                 Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0127/sys_4ab8750f0107a0416687292188d6dc074111133d6b3f5e84503199b52a3e3c9a/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
             End If
         End If
@@ -553,6 +571,7 @@ Public Class Form1
         D3_OS.Enabled = False
         W3_OS.Enabled = False 'ps5
         Update.Enabled = False
+        ProgPrec.Text = "[  ]"
         If Disks3.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D3_OS.Enabled = True
@@ -652,7 +671,7 @@ Public Class Form1
 
     Private Sub D4_OS_Click(sender As Object, e As EventArgs) Handles D4_OS.Click
         D_OS.Enabled = False
-        D2_OS.Enabled = False
+        D2_OS.Enabled = False  'PSVita
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         W_OS.Enabled = False
@@ -667,6 +686,7 @@ Public Class Form1
             Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
             Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
             If ask = MsgBoxResult.Yes Then
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
             End If
             If ask = MsgBoxResult.No Then
@@ -684,6 +704,7 @@ Public Class Form1
             End If
         Else
             Log1.Text = "Downloading file, please wait.." ' downloading firmware
+            AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
             wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
         End If
         wClient.Dispose()
