@@ -4,11 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "110"
-    Dim client As New Net.WebClient
-    Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
-    Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
-
+    Dim appVer As SByte = "111"
 
     Private wClient As Object
 
@@ -31,6 +27,7 @@ Public Class Form1
         D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
+        D5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -52,6 +49,7 @@ Public Class Form1
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
+                    D5_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -79,6 +77,7 @@ Public Class Form1
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
+                    D5_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -112,6 +111,7 @@ Public Class Form1
         D2_OS.Enabled = True
         D3_OS.Enabled = True
         D4_OS.Enabled = True
+        D5_OS.Enabled = True
         Update.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
@@ -189,6 +189,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If CheckForInternetConnection() = True Then
+            Dim client As New Net.WebClient
+            Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
+
             If newVersion > appVer Then
                 Log1.Text = " PS_OS new version is available !!!"
             End If
@@ -198,6 +201,7 @@ Public Class Form1
             D2_OS.Enabled = False
             D3_OS.Enabled = False
             D4_OS.Enabled = False
+            D5_OS.Enabled = False
             Update.Hide()
         End If
 
@@ -224,6 +228,10 @@ Public Class Form1
         If Directory.Exists("PSV\") = True Then
         Else
             Directory.CreateDirectory("PSV\")
+        End If
+        If Directory.Exists("PSP\") = True Then
+        Else
+            Directory.CreateDirectory("PSP\")
         End If
 
         If File.Exists("PS_OS.exe.old") Then
@@ -311,6 +319,11 @@ Public Class Form1
         Else
             R6.ForeColor = Color.Black
         End If
+        If File.Exists("PSP/EBOOT.PBP") Then
+            R7.ForeColor = Color.DarkGreen
+        Else
+            R7.ForeColor = Color.Black
+        End If
     End Sub
 
     Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
@@ -321,6 +334,7 @@ Public Class Form1
         D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
+        D5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -341,6 +355,7 @@ Public Class Form1
                 D2_OS.Enabled = True
                 D3_OS.Enabled = True
                 D4_OS.Enabled = True
+                D5_OS.Enabled = True
                 Update.Enabled = True
                 ProgressBar1.Style = ProgressBarStyle.Blocks
                 Log1.Text = "Download canceled "
@@ -458,6 +473,9 @@ Public Class Form1
     Private Sub Update_Click(sender As Object, e As EventArgs) Handles Update.Click
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Log1.Text = "Checking update.."
+        Dim client As New Net.WebClient
+        Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
+        Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
 
         If newVersion > appVer Then ' wersja porównywana z wersją na serwerze
             If FW <> "" Then
@@ -505,6 +523,7 @@ Public Class Form1
         D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
+        D5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -526,6 +545,7 @@ Public Class Form1
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
+                    D5_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -553,6 +573,7 @@ Public Class Form1
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
+                    D5_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -674,6 +695,7 @@ Public Class Form1
         D2_OS.Enabled = False  'PSVita
         D3_OS.Enabled = False
         D4_OS.Enabled = False
+        D5_OS.Enabled = False
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
@@ -697,6 +719,7 @@ Public Class Form1
                 D2_OS.Enabled = True
                 D3_OS.Enabled = True
                 D4_OS.Enabled = True
+                D5_OS.Enabled = True
                 Update.Enabled = True
                 ProgressBar1.Style = ProgressBarStyle.Blocks
                 Log1.Text = "Download canceled "
@@ -754,4 +777,50 @@ Public Class Form1
         Process.Start("diskpart.exe")
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles D5_OS.Click
+        D_OS.Enabled = False
+        D2_OS.Enabled = False  'PSVita
+        D3_OS.Enabled = False
+        D4_OS.Enabled = False
+        D5_OS.Enabled = False
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
+        Update.Enabled = False
+        Log1.Text = "Checking file.."
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+        Dim wClient As New WebClient()
+        AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+        If File.Exists("PSP\EBOOT.PBP") = True Then
+            Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+            Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+            If ask = MsgBoxResult.Yes Then
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.61/EBOOT.PBP"), appPath + "\PSP\EBOOT.PBP")
+            End If
+            If ask = MsgBoxResult.No Then
+                W_OS.Enabled = True
+                W2_OS.Enabled = True
+                W3_OS.Enabled = True
+                D_OS.Enabled = True
+                D2_OS.Enabled = True
+                D3_OS.Enabled = True
+                D4_OS.Enabled = True
+                D5_OS.Enabled = True
+                Update.Enabled = True
+                ProgressBar1.Style = ProgressBarStyle.Blocks
+                Log1.Text = "Download canceled "
+                Exit Sub
+            End If
+        Else
+            Log1.Text = "Downloading file, please wait.." ' downloading firmware
+            AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+            wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.61/EBOOT.PBP"), appPath + "\PSP\EBOOT.PBP")
+        End If
+        wClient.Dispose()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Process.Start("PSP\")
+    End Sub
 End Class
