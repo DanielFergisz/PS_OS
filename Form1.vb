@@ -31,6 +31,7 @@ Public Class Form1
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
+
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
         If R1.Checked = True Then
@@ -245,6 +246,7 @@ Public Class Form1
         W_OS.Enabled = False 'PS4
         Update.Enabled = False
         ProgPrec.Text = "[  ]"
+
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D_OS.Enabled = True
