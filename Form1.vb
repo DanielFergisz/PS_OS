@@ -481,7 +481,7 @@ Public Class Form1
             If FW <> "" Then
                 File.Create("newFirmware.fwx")
             End If
-            client.DownloadFile("http://repairbox.pl/PS_OS/" + newVersion + "/Updater_PS.exe", appPath + "\Updater_PS.exe")
+            client.DownloadFile("http://repairbox.pl/PS_OS/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
             Log1.Text = "Downloading Updater v" + newVersion + "..."
             T_Update.Enabled = True
