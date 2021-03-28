@@ -23,6 +23,7 @@ Public Class Form1
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
+        W4_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
         D3_OS.Enabled = False
@@ -46,6 +47,7 @@ Public Class Form1
                     W_OS.Enabled = True
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
+                    W4_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
@@ -74,6 +76,7 @@ Public Class Form1
                     W_OS.Enabled = True
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
+                    W4_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
@@ -108,6 +111,7 @@ Public Class Form1
         W_OS.Enabled = True
         W2_OS.Enabled = True
         W3_OS.Enabled = True
+        W4_OS.Enabled = True
         D_OS.Enabled = True
         D2_OS.Enabled = True
         D3_OS.Enabled = True
@@ -185,9 +189,30 @@ Public Class Form1
 
             Me.Disks3.Items.Add(drive.Name & " [" & drive_type & "]")
         Next
+    End Sub
+    Private Sub Disks4_DropDown(sender As Object, e As EventArgs) Handles Disks4.DropDown
+        Disks4.Items.Clear()
+
+        For Each drive As IO.DriveInfo In IO.DriveInfo.GetDrives()
+
+            ' Detection drive type
+            Dim drive_type As String = ""
+            If drive.DriveType = DriveType.Fixed Then
+                drive_type = "Local Disk"
+            ElseIf drive.DriveType = DriveType.CDRom Then
+                drive_type = "CD-Rom drive"
+            ElseIf drive.DriveType = DriveType.Network Then
+                drive_type = "Network drive"
+            ElseIf drive.DriveType = DriveType.Removable Then
+                drive_type = "Removable Disk"
+            ElseIf drive.DriveType = DriveType.Unknown Then
+                drive_type = "Unknown"
+            End If
+
+            Me.Disks4.Items.Add(drive.Name & " [" & drive_type & "]")
+        Next
 
     End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If CheckForInternetConnection() = True Then
             Dim client As New Net.WebClient
@@ -320,15 +345,20 @@ Public Class Form1
         Else
             R3.ForeColor = Color.Black
         End If
-        If File.Exists("PSV/PSVUPDAT.PUP") Then
+        If File.Exists("PSV\PSVUPDAT.PUP") Then
             R6.ForeColor = Color.DarkGreen
         Else
             R6.ForeColor = Color.Black
         End If
-        If File.Exists("PSP/EBOOT.PBP") Then
+        If File.Exists("PSP\6.61\EBOOT.PBP") Then
             R7.ForeColor = Color.DarkGreen
         Else
             R7.ForeColor = Color.Black
+        End If
+        If File.Exists("PSP\6.60\EBOOT.PBP") Then
+            R8.ForeColor = Color.DarkGreen
+        Else
+            R8.ForeColor = Color.Black
         End If
     End Sub
 
@@ -336,6 +366,7 @@ Public Class Form1
         W_OS.Enabled = False
         W2_OS.Enabled = False 'PS3
         W3_OS.Enabled = False
+        W4_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
         D3_OS.Enabled = False
@@ -357,6 +388,7 @@ Public Class Form1
                 W_OS.Enabled = True
                 W2_OS.Enabled = True
                 W3_OS.Enabled = True
+                W4_OS.Enabled = True
                 D_OS.Enabled = True
                 D2_OS.Enabled = True
                 D3_OS.Enabled = True
@@ -525,6 +557,7 @@ Public Class Form1
         W_OS.Enabled = False
         W2_OS.Enabled = False  'PS5
         W3_OS.Enabled = False
+        W4_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
         D3_OS.Enabled = False
@@ -547,6 +580,7 @@ Public Class Form1
                     W_OS.Enabled = True
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
+                    W4_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
@@ -575,6 +609,7 @@ Public Class Form1
                     W_OS.Enabled = True
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
+                    W4_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
@@ -640,20 +675,20 @@ Public Class Form1
     End Sub
 
     Private Sub BackgroundWorker4_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker4.DoWork
-        Dim D_D As String
-        Me.Invoke(New MethodInvoker(Sub() D_D = Mid(Disks3.Text, 1, 3)))
+        Dim D_D4 As String
+        Me.Invoke(New MethodInvoker(Sub() D_D4 = Mid(Disks3.Text, 1, 3)))
 
         If R4.Checked = True Then
             If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D & "PS5\UPDATE\PS5UPDATE.PUP")
+                FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
             End If
         End If
 
         If R5.Checked = True Then
             If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D & "PS5\UPDATE\PS5UPDATE.PUP")
+                FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
             End If
         End If
     End Sub
@@ -705,6 +740,7 @@ Public Class Form1
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
+        W4_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -721,6 +757,7 @@ Public Class Form1
                 W_OS.Enabled = True
                 W2_OS.Enabled = True
                 W3_OS.Enabled = True
+                W4_OS.Enabled = True
                 D_OS.Enabled = True
                 D2_OS.Enabled = True
                 D3_OS.Enabled = True
@@ -785,43 +822,76 @@ Public Class Form1
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles D5_OS.Click
         D_OS.Enabled = False
-        D2_OS.Enabled = False  'PSVita
+        D2_OS.Enabled = False  'PSP
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
+        W4_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
-        If File.Exists("PSP\EBOOT.PBP") = True Then
-            Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-            Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
-            If ask = MsgBoxResult.Yes Then
+        If R7.Checked = True Then
+            If File.Exists("PSP\6.61\EBOOT.PBP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                    wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.61/EBOOT.PBP"), appPath + "\PSP\6.61\EBOOT.PBP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    W4_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    D5_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-                wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.61/EBOOT.PBP"), appPath + "\PSP\EBOOT.PBP")
+                wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.61/EBOOT.PBP"), appPath + "\PSP\6.61\EBOOT.PBP")
             End If
-            If ask = MsgBoxResult.No Then
-                W_OS.Enabled = True
-                W2_OS.Enabled = True
-                W3_OS.Enabled = True
-                D_OS.Enabled = True
-                D2_OS.Enabled = True
-                D3_OS.Enabled = True
-                D4_OS.Enabled = True
-                D5_OS.Enabled = True
-                Update.Enabled = True
-                ProgressBar1.Style = ProgressBarStyle.Blocks
-                Log1.Text = "Download canceled "
-                Exit Sub
+        End If
+        If R8.Checked = True Then
+            If File.Exists("PSP\6.60\EBOOT.PBP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                    wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.60/EBOOT.PBP"), appPath + "\PSP\6.60\EBOOT.PBP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    W4_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    D5_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.60/EBOOT.PBP"), appPath + "\PSP\6.60\EBOOT.PBP")
             End If
-        Else
-            Log1.Text = "Downloading file, please wait.." ' downloading firmware
-            AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-            wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/6.61/EBOOT.PBP"), appPath + "\PSP\EBOOT.PBP")
         End If
         wClient.Dispose()
     End Sub
@@ -834,4 +904,88 @@ Public Class Form1
             Process.Start("PSP\6.60\")
         End If
     End Sub
+
+    Private Sub O4_Click(sender As Object, e As EventArgs) Handles O4.Click
+        If Disks4.Text.Length = 0 Then
+            Log1.Text = "Please select drive first !!!"
+        Else
+            Process.Start(Mid(Disks4.Text, 1, 3))
+            Log1.Text = "Opening..."
+        End If
+    End Sub
+
+    Private Sub W4_OS_Click(sender As Object, e As EventArgs) Handles W4_OS.Click
+        D4_OS.Enabled = False
+        W4_OS.Enabled = False 'PSP
+        Update.Enabled = False
+        ProgPrec.Text = "[ 0% ]"
+        If Disks4.Text.Length = 0 Then
+            Log1.Text = "Please select drive first !!"
+            D4_OS.Enabled = True
+            W4_OS.Enabled = True
+            Update.Enabled = True
+        Else
+            ProgressBar1.Style = ProgressBarStyle.Marquee
+            If F4.Checked = True Then
+                Log1.Text = "Formating..."   'Formatowanie dysku 
+                Dim startInfo As New ProcessStartInfo()
+                startInfo.FileName = "format.com"
+                startInfo.Arguments = Mid(Disks4.Text, 1, 2) & " /fs:FAT32 /v:PlayStation /q "
+                startInfo.UseShellExecute = False
+                startInfo.CreateNoWindow = True
+                startInfo.RedirectStandardOutput = True
+                startInfo.RedirectStandardInput = True
+
+                Dim p As Process = Process.Start(startInfo)
+
+                Dim processInputStream As StreamWriter = p.StandardInput
+                processInputStream.Write(vbCr & vbLf)
+
+                p.WaitForExit()
+            End If
+
+            If System.IO.Directory.Exists(Mid(Disks4.Text, 1, 3) & "PSP\GAME\UPDATE") Then
+            Else
+                Log1.Text = "Creating directories: PSP\GAME\UPDATE.."
+                System.IO.Directory.CreateDirectory(Mid(Disks4.Text, 1, 3) & "PSP\GAME\UPDATE")
+                If System.IO.Directory.Exists(Mid(Disks4.Text, 1, 3) & "PSP\GAME\UPDATE") Then
+                    Log1.Text = "Creating directories: PSP\GAME\UPDATE.. OK"
+                Else
+                    Log1.Text = "FAIL"
+                    Exit Sub
+                End If
+            End If
+            BackgroundWorker5.RunWorkerAsync()
+        End If
+    End Sub
+    Private Sub BackgroundWorker5_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker5.DoWork
+        Dim D_D5 As String
+        Me.Invoke(New MethodInvoker(Sub() D_D5 = Mid(Disks4.Text, 1, 3)))
+
+        If R7.Checked = True Then
+            If File.Exists("PSP\6.61\EBOOT.PBP") Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
+                FileCopy("PSP\6.61\EBOOT.PBP", D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
+            End If
+        End If
+
+        If R8.Checked = True Then
+            If File.Exists("PSP\6.60\EBOOT.PBP") Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
+                FileCopy("PSP\6.60\EBOOT.PBP", D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
+            End If
+        End If
+    End Sub
+    Private Sub BackgroundWorker5_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker5.RunWorkerCompleted
+        If File.Exists(Mid(Disks4.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") Then
+            Log1.Text = "Done."
+        Else
+            Log1.Text = "Fail !!"
+        End If
+        ProgressBar1.Style = ProgressBarStyle.Blocks
+        D4_OS.Enabled = True
+        W4_OS.Enabled = True
+        Update.Enabled = True
+    End Sub
+
 End Class
