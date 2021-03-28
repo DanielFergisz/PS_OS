@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "111"
+    Dim appVer As SByte = "112"
 
     Private wClient As Object
 
@@ -230,9 +230,13 @@ Public Class Form1
         Else
             Directory.CreateDirectory("PSV\")
         End If
-        If Directory.Exists("PSP\") = True Then
+        If Directory.Exists("PSP\6.61") = True Then
         Else
-            Directory.CreateDirectory("PSP\")
+            Directory.CreateDirectory("PSP\6.61")
+        End If
+        If Directory.Exists("PSP\6.60") = True Then
+        Else
+            Directory.CreateDirectory("PSP\6.60")
         End If
 
         If File.Exists("PS_OS.exe.old") Then
@@ -823,6 +827,11 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Process.Start("PSP\")
+        If R7.Checked = True Then
+            Process.Start("PSP\6.61")
+        End If
+        If R8.Checked = True Then
+            Process.Start("PSP\6.60\")
+        End If
     End Sub
 End Class

@@ -87,6 +87,12 @@ Partial Class Form1
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ProgPrec = New System.Windows.Forms.Label()
+        Me.R8 = New System.Windows.Forms.RadioButton()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.W4_OS = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -647,6 +653,11 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.Button3)
+        Me.TabPage5.Controls.Add(Me.CheckBox1)
+        Me.TabPage5.Controls.Add(Me.W4_OS)
+        Me.TabPage5.Controls.Add(Me.Label10)
+        Me.TabPage5.Controls.Add(Me.ComboBox1)
         Me.TabPage5.Controls.Add(Me.GroupBox5)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
@@ -657,6 +668,7 @@ Partial Class Form1
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.R8)
         Me.GroupBox5.Controls.Add(Me.Button2)
         Me.GroupBox5.Controls.Add(Me.R7)
         Me.GroupBox5.Controls.Add(Me.D5_OS)
@@ -686,13 +698,13 @@ Partial Class Form1
         Me.R7.AutoSize = True
         Me.R7.Checked = True
         Me.R7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.R7.Location = New System.Drawing.Point(178, 44)
+        Me.R7.Location = New System.Drawing.Point(171, 37)
         Me.R7.Margin = New System.Windows.Forms.Padding(2)
         Me.R7.Name = "R7"
-        Me.R7.Size = New System.Drawing.Size(45, 17)
+        Me.R7.Size = New System.Drawing.Size(57, 17)
         Me.R7.TabIndex = 5
         Me.R7.TabStop = True
-        Me.R7.Text = "Full"
+        Me.R7.Text = "v6.61"
         Me.R7.UseVisualStyleBackColor = True
         '
         'D5_OS
@@ -710,12 +722,12 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(32, 48)
+        Me.Label9.Location = New System.Drawing.Point(79, 47)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 13)
+        Me.Label9.Size = New System.Drawing.Size(68, 13)
         Me.Label9.TabIndex = 4
-        Me.Label9.Text = "Firmware file v6.61:"
+        Me.Label9.Text = "Firmware file:"
         '
         'Log1
         '
@@ -813,6 +825,73 @@ Partial Class Form1
         Me.ProgPrec.TabIndex = 10
         Me.ProgPrec.Text = "[    ]"
         '
+        'R8
+        '
+        Me.R8.AutoSize = True
+        Me.R8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R8.Location = New System.Drawing.Point(171, 59)
+        Me.R8.Name = "R8"
+        Me.R8.Size = New System.Drawing.Size(57, 17)
+        Me.R8.TabIndex = 10
+        Me.R8.TabStop = True
+        Me.R8.Text = "v6.60"
+        Me.R8.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button3.Location = New System.Drawing.Point(363, 117)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(28, 24)
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "..."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(87, 155)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(96, 17)
+        Me.CheckBox1.TabIndex = 16
+        Me.CheckBox1.Text = "Format: FAT32"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'W4_OS
+        '
+        Me.W4_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.W4_OS.ForeColor = System.Drawing.Color.DarkRed
+        Me.W4_OS.Location = New System.Drawing.Point(245, 155)
+        Me.W4_OS.Margin = New System.Windows.Forms.Padding(2)
+        Me.W4_OS.Name = "W4_OS"
+        Me.W4_OS.Size = New System.Drawing.Size(146, 61)
+        Me.W4_OS.TabIndex = 15
+        Me.W4_OS.Text = "Prepare SD Card"
+        Me.W4_OS.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(11, 122)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(71, 13)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "Select  Drive:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(87, 119)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(263, 20)
+        Me.ComboBox1.TabIndex = 13
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -829,7 +908,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.11"
+        Me.Text = "PS_OS v1.12"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -847,6 +926,7 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
@@ -920,4 +1000,10 @@ Partial Class Form1
     Friend WithEvents R7 As RadioButton
     Friend WithEvents D5_OS As Button
     Friend WithEvents Label9 As Label
+    Friend WithEvents R8 As RadioButton
+    Friend WithEvents Button3 As Button
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents W4_OS As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
