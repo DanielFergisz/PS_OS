@@ -249,7 +249,7 @@ Public Class Form1
         D_OS.Enabled = False
         W_OS.Enabled = False 'PS4
         Update.Enabled = False
-        ProgPrec.Text = "[  ]"
+        ProgPrec.Text = "[ 0% ]"
 
         If Disks.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
@@ -379,7 +379,7 @@ Public Class Form1
         D2_OS.Enabled = False
         W2_OS.Enabled = False 'PS3
         Update.Enabled = False
-        ProgPrec.Text = "[  ]"
+        ProgPrec.Text = "[ 0% ]"
         If Disks2.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D2_OS.Enabled = True
@@ -598,7 +598,7 @@ Public Class Form1
         D3_OS.Enabled = False
         W3_OS.Enabled = False 'ps5
         Update.Enabled = False
-        ProgPrec.Text = "[  ]"
+        ProgPrec.Text = "[ 0% ]"
         If Disks3.Text.Length = 0 Then
             Log1.Text = "Please select drive first !!"
             D3_OS.Enabled = True

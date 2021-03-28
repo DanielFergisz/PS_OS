@@ -821,9 +821,9 @@ Partial Class Form1
         Me.ProgPrec.Location = New System.Drawing.Point(292, 300)
         Me.ProgPrec.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.ProgPrec.Name = "ProgPrec"
-        Me.ProgPrec.Size = New System.Drawing.Size(25, 13)
+        Me.ProgPrec.Size = New System.Drawing.Size(33, 13)
         Me.ProgPrec.TabIndex = 10
-        Me.ProgPrec.Text = "[    ]"
+        Me.ProgPrec.Text = "[ 0% ]"
         '
         'R8
         '
