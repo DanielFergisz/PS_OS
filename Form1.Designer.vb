@@ -827,9 +827,6 @@ Partial Class Form1
         'BackgroundWorker2
         '
         '
-        'BackgroundWorker3
-        '
-        '
         'Update
         '
         Me.Update.Enabled = False
@@ -915,7 +912,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.12"
+        Me.Text = "PS_OS v1.13"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

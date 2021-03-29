@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "112"
+    Dim appVer As SByte = "113"
 
     Private wClient As Object
 
