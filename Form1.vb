@@ -246,7 +246,7 @@ Public Class Form1
             PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
 
             If newVersion > appVer Then
-                Log1.Text = " PS_OS new version is available !!!"
+                Log1.Text = " PS_OS new version is available !!!  -------->  Check Update"
             End If
         Else
             Log1.Text = "Check internet connection !!"
