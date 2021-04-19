@@ -121,7 +121,7 @@ Public Class Form1
     Private Sub ProgChanged(sender As Object, e As DownloadProgressChangedEventArgs)
         ProgressBar1.Value = e.ProgressPercentage
         ProgPrec.Text = "[ " + e.ProgressPercentage.ToString + "% ]"
-        Log1.Text = String.Format("{0} MB's / {1} MB's", (e.BytesReceived / 1024D / 1024D).ToString("0,00"), (e.TotalBytesToReceive / 1024D / 1024D).ToString("0,00"))
+        Log1.Text = "Downloading:  " + String.Format("{0} MB's / {1} MB's", (e.BytesReceived / 1024D / 1024D).ToString("0,00"), (e.TotalBytesToReceive / 1024D / 1024D).ToString("0,00"))
     End Sub
     Private Sub OnDownloadComplete(ByVal sender As Object, ByVal e As AsyncCompletedEventArgs)
         ProgressBar1.Style = ProgressBarStyle.Blocks
@@ -1031,5 +1031,6 @@ Public Class Form1
         W4_OS.Enabled = True
         Update.Enabled = True
     End Sub
+
 
 End Class

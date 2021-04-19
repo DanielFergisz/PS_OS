@@ -115,7 +115,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(418, 259)
@@ -132,9 +132,9 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.Disks)
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Size = New System.Drawing.Size(410, 233)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "PlayStation 4"
@@ -144,7 +144,7 @@ Partial Class Form1
         '
         Me.Diskpart.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Diskpart.Location = New System.Drawing.Point(87, 186)
-        Me.Diskpart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Diskpart.Margin = New System.Windows.Forms.Padding(2)
         Me.Diskpart.Name = "Diskpart"
         Me.Diskpart.Size = New System.Drawing.Size(96, 21)
         Me.Diskpart.TabIndex = 9
@@ -155,7 +155,7 @@ Partial Class Form1
         '
         Me.O1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.O1.Location = New System.Drawing.Point(363, 117)
-        Me.O1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.O1.Margin = New System.Windows.Forms.Padding(2)
         Me.O1.Name = "O1"
         Me.O1.Size = New System.Drawing.Size(28, 24)
         Me.O1.TabIndex = 8
@@ -166,7 +166,7 @@ Partial Class Form1
         '
         Me.F1.AutoSize = True
         Me.F1.Location = New System.Drawing.Point(87, 155)
-        Me.F1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.F1.Margin = New System.Windows.Forms.Padding(2)
         Me.F1.Name = "F1"
         Me.F1.Size = New System.Drawing.Size(96, 17)
         Me.F1.TabIndex = 7
@@ -182,9 +182,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(16, 5)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
@@ -194,7 +194,7 @@ Partial Class Form1
         '
         Me.OF1.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.OF1.Location = New System.Drawing.Point(260, 65)
-        Me.OF1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.OF1.Margin = New System.Windows.Forms.Padding(2)
         Me.OF1.Name = "OF1"
         Me.OF1.Size = New System.Drawing.Size(98, 25)
         Me.OF1.TabIndex = 7
@@ -207,7 +207,7 @@ Partial Class Form1
         Me.R2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R2.ForeColor = System.Drawing.Color.Black
         Me.R2.Location = New System.Drawing.Point(161, 55)
-        Me.R2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R2.Margin = New System.Windows.Forms.Padding(2)
         Me.R2.Name = "R2"
         Me.R2.Size = New System.Drawing.Size(66, 17)
         Me.R2.TabIndex = 6
@@ -221,7 +221,7 @@ Partial Class Form1
         Me.R1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R1.ForeColor = System.Drawing.Color.Black
         Me.R1.Location = New System.Drawing.Point(161, 31)
-        Me.R1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R1.Margin = New System.Windows.Forms.Padding(2)
         Me.R1.Name = "R1"
         Me.R1.Size = New System.Drawing.Size(45, 17)
         Me.R1.TabIndex = 5
@@ -234,7 +234,7 @@ Partial Class Form1
         Me.D_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D_OS.ForeColor = System.Drawing.Color.Red
         Me.D_OS.Location = New System.Drawing.Point(260, 16)
-        Me.D_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.D_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D_OS.Name = "D_OS"
         Me.D_OS.Size = New System.Drawing.Size(98, 44)
         Me.D_OS.TabIndex = 1
@@ -256,7 +256,7 @@ Partial Class Form1
         Me.W_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W_OS.Location = New System.Drawing.Point(245, 155)
-        Me.W_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.W_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.W_OS.Name = "W_OS"
         Me.W_OS.Size = New System.Drawing.Size(146, 61)
         Me.W_OS.TabIndex = 5
@@ -279,7 +279,7 @@ Partial Class Form1
         Me.Disks.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks.FormattingEnabled = True
         Me.Disks.Location = New System.Drawing.Point(87, 119)
-        Me.Disks.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Disks.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks.Name = "Disks"
         Me.Disks.Size = New System.Drawing.Size(263, 20)
         Me.Disks.TabIndex = 2
@@ -295,7 +295,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Disks3)
         Me.TabPage3.Controls.Add(Me.GroupBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(410, 233)
         Me.TabPage3.TabIndex = 2
@@ -306,7 +306,7 @@ Partial Class Form1
         '
         Me.Button1.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button1.Location = New System.Drawing.Point(87, 186)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 21)
         Me.Button1.TabIndex = 13
@@ -317,7 +317,7 @@ Partial Class Form1
         '
         Me.O2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.O2.Location = New System.Drawing.Point(363, 117)
-        Me.O2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.O2.Margin = New System.Windows.Forms.Padding(2)
         Me.O2.Name = "O2"
         Me.O2.Size = New System.Drawing.Size(28, 24)
         Me.O2.TabIndex = 12
@@ -328,7 +328,7 @@ Partial Class Form1
         '
         Me.F3.AutoSize = True
         Me.F3.Location = New System.Drawing.Point(87, 155)
-        Me.F3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.F3.Margin = New System.Windows.Forms.Padding(2)
         Me.F3.Name = "F3"
         Me.F3.Size = New System.Drawing.Size(96, 17)
         Me.F3.TabIndex = 11
@@ -340,7 +340,7 @@ Partial Class Form1
         Me.W3_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W3_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W3_OS.Location = New System.Drawing.Point(245, 155)
-        Me.W3_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.W3_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.W3_OS.Name = "W3_OS"
         Me.W3_OS.Size = New System.Drawing.Size(146, 61)
         Me.W3_OS.TabIndex = 10
@@ -363,7 +363,7 @@ Partial Class Form1
         Me.Disks3.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks3.FormattingEnabled = True
         Me.Disks3.Location = New System.Drawing.Point(87, 119)
-        Me.Disks3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Disks3.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks3.Name = "Disks3"
         Me.Disks3.Size = New System.Drawing.Size(263, 20)
         Me.Disks3.TabIndex = 8
@@ -376,9 +376,9 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.D3_OS)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 5)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
@@ -388,7 +388,7 @@ Partial Class Form1
         '
         Me.OF2.Font = New System.Drawing.Font("Verdana", 7.0!)
         Me.OF2.Location = New System.Drawing.Point(260, 65)
-        Me.OF2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.OF2.Margin = New System.Windows.Forms.Padding(2)
         Me.OF2.Name = "OF2"
         Me.OF2.Size = New System.Drawing.Size(98, 25)
         Me.OF2.TabIndex = 8
@@ -401,7 +401,7 @@ Partial Class Form1
         Me.R5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.R5.Location = New System.Drawing.Point(161, 55)
-        Me.R5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R5.Margin = New System.Windows.Forms.Padding(2)
         Me.R5.Name = "R5"
         Me.R5.Size = New System.Drawing.Size(66, 17)
         Me.R5.TabIndex = 6
@@ -415,7 +415,7 @@ Partial Class Form1
         Me.R4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.R4.Location = New System.Drawing.Point(161, 31)
-        Me.R4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R4.Margin = New System.Windows.Forms.Padding(2)
         Me.R4.Name = "R4"
         Me.R4.Size = New System.Drawing.Size(45, 17)
         Me.R4.TabIndex = 5
@@ -428,7 +428,7 @@ Partial Class Form1
         Me.D3_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D3_OS.ForeColor = System.Drawing.Color.Red
         Me.D3_OS.Location = New System.Drawing.Point(260, 16)
-        Me.D3_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.D3_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D3_OS.Name = "D3_OS"
         Me.D3_OS.Size = New System.Drawing.Size(98, 44)
         Me.D3_OS.TabIndex = 1
@@ -455,9 +455,9 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.Disks2)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Size = New System.Drawing.Size(410, 233)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PlayStation 3"
@@ -467,7 +467,7 @@ Partial Class Form1
         '
         Me.O3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.O3.Location = New System.Drawing.Point(363, 117)
-        Me.O3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.O3.Margin = New System.Windows.Forms.Padding(2)
         Me.O3.Name = "O3"
         Me.O3.Size = New System.Drawing.Size(28, 24)
         Me.O3.TabIndex = 12
@@ -478,7 +478,7 @@ Partial Class Form1
         '
         Me.F2.AutoSize = True
         Me.F2.Location = New System.Drawing.Point(87, 155)
-        Me.F2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.F2.Margin = New System.Windows.Forms.Padding(2)
         Me.F2.Name = "F2"
         Me.F2.Size = New System.Drawing.Size(96, 17)
         Me.F2.TabIndex = 11
@@ -490,7 +490,7 @@ Partial Class Form1
         Me.W2_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W2_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W2_OS.Location = New System.Drawing.Point(245, 155)
-        Me.W2_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.W2_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.W2_OS.Name = "W2_OS"
         Me.W2_OS.Size = New System.Drawing.Size(146, 61)
         Me.W2_OS.TabIndex = 10
@@ -513,7 +513,7 @@ Partial Class Form1
         Me.Disks2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks2.FormattingEnabled = True
         Me.Disks2.Location = New System.Drawing.Point(87, 119)
-        Me.Disks2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Disks2.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks2.Name = "Disks2"
         Me.Disks2.Size = New System.Drawing.Size(263, 20)
         Me.Disks2.TabIndex = 8
@@ -525,9 +525,9 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.D2_OS)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 5)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
@@ -537,7 +537,7 @@ Partial Class Form1
         '
         Me.OF3.Font = New System.Drawing.Font("Verdana", 7.0!)
         Me.OF3.Location = New System.Drawing.Point(260, 65)
-        Me.OF3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.OF3.Margin = New System.Windows.Forms.Padding(2)
         Me.OF3.Name = "OF3"
         Me.OF3.Size = New System.Drawing.Size(98, 25)
         Me.OF3.TabIndex = 8
@@ -550,7 +550,7 @@ Partial Class Form1
         Me.R3.Checked = True
         Me.R3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R3.Location = New System.Drawing.Point(178, 44)
-        Me.R3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R3.Margin = New System.Windows.Forms.Padding(2)
         Me.R3.Name = "R3"
         Me.R3.Size = New System.Drawing.Size(45, 17)
         Me.R3.TabIndex = 5
@@ -563,7 +563,7 @@ Partial Class Form1
         Me.D2_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D2_OS.ForeColor = System.Drawing.Color.Red
         Me.D2_OS.Location = New System.Drawing.Point(260, 16)
-        Me.D2_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.D2_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D2_OS.Name = "D2_OS"
         Me.D2_OS.Size = New System.Drawing.Size(98, 44)
         Me.D2_OS.TabIndex = 1
@@ -597,9 +597,9 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.D4_OS)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Location = New System.Drawing.Point(16, 5)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
@@ -622,7 +622,7 @@ Partial Class Form1
         Me.R6.Checked = True
         Me.R6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R6.Location = New System.Drawing.Point(178, 44)
-        Me.R6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R6.Margin = New System.Windows.Forms.Padding(2)
         Me.R6.Name = "R6"
         Me.R6.Size = New System.Drawing.Size(45, 17)
         Me.R6.TabIndex = 5
@@ -635,7 +635,7 @@ Partial Class Form1
         Me.D4_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D4_OS.ForeColor = System.Drawing.Color.Red
         Me.D4_OS.Location = New System.Drawing.Point(260, 16)
-        Me.D4_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.D4_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D4_OS.Name = "D4_OS"
         Me.D4_OS.Size = New System.Drawing.Size(98, 44)
         Me.D4_OS.TabIndex = 1
@@ -671,7 +671,7 @@ Partial Class Form1
         '
         Me.O4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.O4.Location = New System.Drawing.Point(363, 117)
-        Me.O4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.O4.Margin = New System.Windows.Forms.Padding(2)
         Me.O4.Name = "O4"
         Me.O4.Size = New System.Drawing.Size(28, 24)
         Me.O4.TabIndex = 17
@@ -682,7 +682,7 @@ Partial Class Form1
         '
         Me.F4.AutoSize = True
         Me.F4.Location = New System.Drawing.Point(87, 155)
-        Me.F4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.F4.Margin = New System.Windows.Forms.Padding(2)
         Me.F4.Name = "F4"
         Me.F4.Size = New System.Drawing.Size(96, 17)
         Me.F4.TabIndex = 16
@@ -694,7 +694,7 @@ Partial Class Form1
         Me.W4_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W4_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W4_OS.Location = New System.Drawing.Point(245, 155)
-        Me.W4_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.W4_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.W4_OS.Name = "W4_OS"
         Me.W4_OS.Size = New System.Drawing.Size(146, 61)
         Me.W4_OS.TabIndex = 15
@@ -717,7 +717,7 @@ Partial Class Form1
         Me.Disks4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks4.FormattingEnabled = True
         Me.Disks4.Location = New System.Drawing.Point(87, 119)
-        Me.Disks4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Disks4.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks4.Name = "Disks4"
         Me.Disks4.Size = New System.Drawing.Size(263, 20)
         Me.Disks4.TabIndex = 13
@@ -730,9 +730,9 @@ Partial Class Form1
         Me.GroupBox5.Controls.Add(Me.D5_OS)
         Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Location = New System.Drawing.Point(16, 5)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox5.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox5.TabIndex = 9
         Me.GroupBox5.TabStop = False
@@ -767,7 +767,7 @@ Partial Class Form1
         Me.R7.Checked = True
         Me.R7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R7.Location = New System.Drawing.Point(161, 31)
-        Me.R7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R7.Margin = New System.Windows.Forms.Padding(2)
         Me.R7.Name = "R7"
         Me.R7.Size = New System.Drawing.Size(57, 17)
         Me.R7.TabIndex = 5
@@ -780,7 +780,7 @@ Partial Class Form1
         Me.D5_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D5_OS.ForeColor = System.Drawing.Color.Red
         Me.D5_OS.Location = New System.Drawing.Point(260, 16)
-        Me.D5_OS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.D5_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D5_OS.Name = "D5_OS"
         Me.D5_OS.Size = New System.Drawing.Size(98, 44)
         Me.D5_OS.TabIndex = 1
@@ -802,7 +802,7 @@ Partial Class Form1
         Me.Log1.Enabled = False
         Me.Log1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Log1.Location = New System.Drawing.Point(9, 273)
-        Me.Log1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Log1.Margin = New System.Windows.Forms.Padding(2)
         Me.Log1.Name = "Log1"
         Me.Log1.ReadOnly = True
         Me.Log1.Size = New System.Drawing.Size(418, 20)
@@ -811,7 +811,7 @@ Partial Class Form1
         'ProgressBar1
         '
         Me.ProgressBar1.Location = New System.Drawing.Point(9, 298)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(281, 18)
         Me.ProgressBar1.TabIndex = 2
@@ -832,7 +832,7 @@ Partial Class Form1
         Me.Update.Enabled = False
         Me.Update.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Update.Location = New System.Drawing.Point(340, 297)
-        Me.Update.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Update.Margin = New System.Windows.Forms.Padding(2)
         Me.Update.Name = "Update"
         Me.Update.Size = New System.Drawing.Size(87, 21)
         Me.Update.TabIndex = 8
@@ -909,7 +909,7 @@ Partial Class Form1
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.TabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PS_OS v1.15"
