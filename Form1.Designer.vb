@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Diskpart = New System.Windows.Forms.Button()
@@ -94,6 +95,7 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ProgPrec = New System.Windows.Forms.Label()
         Me.BackgroundWorker5 = New System.ComponentModel.BackgroundWorker()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -105,6 +107,7 @@ Partial Class Form1
         Me.GroupBox4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -896,11 +899,21 @@ Partial Class Form1
         'BackgroundWorker5
         '
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 342)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(433, 33)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(438, 348)
+        Me.ClientSize = New System.Drawing.Size(439, 376)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ProgPrec)
         Me.Controls.Add(Me.LinkLabel2)
@@ -933,6 +946,7 @@ Partial Class Form1
         Me.TabPage5.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1011,4 +1025,5 @@ Partial Class Form1
     Friend WithEvents Label10 As Label
     Friend WithEvents Disks4 As ComboBox
     Friend WithEvents BackgroundWorker5 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
