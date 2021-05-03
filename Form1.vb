@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "116"
+    Dim appVer As SByte = "117" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -14,6 +14,7 @@ Public Class Form1
 
     Private wClient As Object
 
+    '############### Checking internet connection ###################
     Public Function CheckForInternetConnection() As Boolean
         Try
             Using client = New WebClient()
@@ -25,6 +26,7 @@ Public Class Form1
             Return False
         End Try
     End Function
+    '##################### PS4 Download ###########################
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
         W_OS.Enabled = False
         W2_OS.Enabled = False
@@ -41,6 +43,7 @@ Public Class Form1
 
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+
         If R1.Checked = True Then
             If File.Exists("PS4\FULL\PS4UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
