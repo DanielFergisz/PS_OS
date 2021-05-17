@@ -1035,5 +1035,11 @@ Public Class Form1
         Update.Enabled = True
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Process.Start("https://www.repairbox.pl")
+    End Sub
 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Process.Start("https://www.facebook.com/RepairBox-103885125218011")
+    End Sub
 End Class

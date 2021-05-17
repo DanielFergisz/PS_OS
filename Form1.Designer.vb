@@ -96,6 +96,7 @@ Partial Class Form1
         Me.ProgPrec = New System.Windows.Forms.Label()
         Me.BackgroundWorker5 = New System.ComponentModel.BackgroundWorker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -856,7 +857,7 @@ Partial Class Form1
         'YT
         '
         Me.YT.AutoSize = True
-        Me.YT.Location = New System.Drawing.Point(221, 326)
+        Me.YT.Location = New System.Drawing.Point(190, 326)
         Me.YT.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.YT.Name = "YT"
         Me.YT.Size = New System.Drawing.Size(51, 13)
@@ -867,7 +868,7 @@ Partial Class Form1
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(275, 326)
+        Me.LinkLabel2.Location = New System.Drawing.Point(255, 326)
         Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(53, 13)
@@ -879,7 +880,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label8.Location = New System.Drawing.Point(108, 326)
+        Me.Label8.Location = New System.Drawing.Point(73, 326)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(113, 13)
@@ -908,11 +909,22 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(322, 326)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(55, 13)
+        Me.LinkLabel1.TabIndex = 13
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Facebook"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(439, 376)
+        Me.ClientSize = New System.Drawing.Size(439, 377)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ProgPrec)
@@ -1026,4 +1038,5 @@ Partial Class Form1
     Friend WithEvents Disks4 As ComboBox
     Friend WithEvents BackgroundWorker5 As System.ComponentModel.BackgroundWorker
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
