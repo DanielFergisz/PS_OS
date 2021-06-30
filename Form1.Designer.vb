@@ -189,7 +189,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(298, 19)
+        Me.Button3.Location = New System.Drawing.Point(296, 20)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(42, 20)
         Me.Button3.TabIndex = 1
@@ -260,9 +260,9 @@ Partial Class Form1
         Me.Label11.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.Label11.Location = New System.Drawing.Point(25, 32)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(68, 17)
+        Me.Label11.Size = New System.Drawing.Size(73, 17)
         Me.Label11.TabIndex = 8
-        Me.Label11.Text = "FV 8.52"
+        Me.Label11.Text = "FW 8.52"
         '
         'OF1
         '
@@ -358,6 +358,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Label6)
         Me.TabPage3.Controls.Add(Me.Disks3)
         Me.TabPage3.Controls.Add(Me.GroupBox3)
+        Me.TabPage3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
@@ -394,7 +395,7 @@ Partial Class Form1
         Me.F3.Location = New System.Drawing.Point(87, 155)
         Me.F3.Margin = New System.Windows.Forms.Padding(2)
         Me.F3.Name = "F3"
-        Me.F3.Size = New System.Drawing.Size(96, 17)
+        Me.F3.Size = New System.Drawing.Size(108, 17)
         Me.F3.TabIndex = 11
         Me.F3.Text = "Format: FAT32"
         Me.F3.UseVisualStyleBackColor = True
@@ -417,7 +418,7 @@ Partial Class Form1
         Me.Label6.Location = New System.Drawing.Point(11, 122)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(71, 13)
+        Me.Label6.Size = New System.Drawing.Size(86, 13)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Select  Drive:"
         '
@@ -426,10 +427,10 @@ Partial Class Form1
         Me.Disks3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Disks3.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks3.FormattingEnabled = True
-        Me.Disks3.Location = New System.Drawing.Point(87, 119)
+        Me.Disks3.Location = New System.Drawing.Point(101, 119)
         Me.Disks3.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks3.Name = "Disks3"
-        Me.Disks3.Size = New System.Drawing.Size(263, 20)
+        Me.Disks3.Size = New System.Drawing.Size(249, 20)
         Me.Disks3.TabIndex = 8
         '
         'GroupBox3
@@ -446,15 +447,15 @@ Partial Class Form1
         Me.GroupBox3.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Downloader"
+        Me.GroupBox3.Text = "Download tool"
         '
         'OF2
         '
         Me.OF2.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.OF2.Location = New System.Drawing.Point(260, 65)
+        Me.OF2.Location = New System.Drawing.Point(249, 65)
         Me.OF2.Margin = New System.Windows.Forms.Padding(2)
         Me.OF2.Name = "OF2"
-        Me.OF2.Size = New System.Drawing.Size(98, 25)
+        Me.OF2.Size = New System.Drawing.Size(109, 25)
         Me.OF2.TabIndex = 8
         Me.OF2.Text = "Open"
         Me.OF2.UseVisualStyleBackColor = True
@@ -462,12 +463,12 @@ Partial Class Form1
         'R5
         '
         Me.R5.AutoSize = True
-        Me.R5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R5.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.R5.Location = New System.Drawing.Point(161, 55)
         Me.R5.Margin = New System.Windows.Forms.Padding(2)
         Me.R5.Name = "R5"
-        Me.R5.Size = New System.Drawing.Size(66, 17)
+        Me.R5.Size = New System.Drawing.Size(71, 17)
         Me.R5.TabIndex = 6
         Me.R5.Text = "Update"
         Me.R5.UseVisualStyleBackColor = True
@@ -476,12 +477,12 @@ Partial Class Form1
         '
         Me.R4.AutoSize = True
         Me.R4.Checked = True
-        Me.R4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.R4.Location = New System.Drawing.Point(161, 31)
         Me.R4.Margin = New System.Windows.Forms.Padding(2)
         Me.R4.Name = "R4"
-        Me.R4.Size = New System.Drawing.Size(45, 17)
+        Me.R4.Size = New System.Drawing.Size(49, 17)
         Me.R4.TabIndex = 5
         Me.R4.TabStop = True
         Me.R4.Text = "Full"
@@ -491,10 +492,10 @@ Partial Class Form1
         '
         Me.D3_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D3_OS.ForeColor = System.Drawing.Color.Red
-        Me.D3_OS.Location = New System.Drawing.Point(260, 16)
+        Me.D3_OS.Location = New System.Drawing.Point(249, 16)
         Me.D3_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D3_OS.Name = "D3_OS"
-        Me.D3_OS.Size = New System.Drawing.Size(98, 44)
+        Me.D3_OS.Size = New System.Drawing.Size(109, 44)
         Me.D3_OS.TabIndex = 1
         Me.D3_OS.Text = "Download"
         Me.D3_OS.UseVisualStyleBackColor = True
@@ -502,13 +503,14 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label5.Location = New System.Drawing.Point(32, 48)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label5.Location = New System.Drawing.Point(18, 45)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 13)
+        Me.Label5.Size = New System.Drawing.Size(128, 15)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Fw file v21.01-03.20.00:"
+        Me.Label5.Text = "FW 21.01-03.20.00"
         '
         'TabPage2
         '
@@ -518,6 +520,7 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Disks2)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
+        Me.TabPage2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
@@ -544,7 +547,7 @@ Partial Class Form1
         Me.F2.Location = New System.Drawing.Point(87, 155)
         Me.F2.Margin = New System.Windows.Forms.Padding(2)
         Me.F2.Name = "F2"
-        Me.F2.Size = New System.Drawing.Size(96, 17)
+        Me.F2.Size = New System.Drawing.Size(108, 17)
         Me.F2.TabIndex = 11
         Me.F2.Text = "Format: FAT32"
         Me.F2.UseVisualStyleBackColor = True
@@ -567,7 +570,7 @@ Partial Class Form1
         Me.Label4.Location = New System.Drawing.Point(11, 122)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 13)
+        Me.Label4.Size = New System.Drawing.Size(86, 13)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Select  Drive:"
         '
@@ -576,10 +579,10 @@ Partial Class Form1
         Me.Disks2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Disks2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks2.FormattingEnabled = True
-        Me.Disks2.Location = New System.Drawing.Point(87, 119)
+        Me.Disks2.Location = New System.Drawing.Point(101, 119)
         Me.Disks2.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks2.Name = "Disks2"
-        Me.Disks2.Size = New System.Drawing.Size(263, 20)
+        Me.Disks2.Size = New System.Drawing.Size(249, 20)
         Me.Disks2.TabIndex = 8
         '
         'GroupBox2
@@ -595,7 +598,7 @@ Partial Class Form1
         Me.GroupBox2.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Downloader"
+        Me.GroupBox2.Text = "Download tool"
         '
         'OF3
         '
@@ -612,11 +615,11 @@ Partial Class Form1
         '
         Me.R3.AutoSize = True
         Me.R3.Checked = True
-        Me.R3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
         Me.R3.Location = New System.Drawing.Point(178, 44)
         Me.R3.Margin = New System.Windows.Forms.Padding(2)
         Me.R3.Name = "R3"
-        Me.R3.Size = New System.Drawing.Size(45, 17)
+        Me.R3.Size = New System.Drawing.Size(49, 17)
         Me.R3.TabIndex = 5
         Me.R3.TabStop = True
         Me.R3.Text = "Full"
@@ -637,12 +640,14 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(32, 48)
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label3.Location = New System.Drawing.Point(55, 44)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(98, 13)
+        Me.Label3.Size = New System.Drawing.Size(73, 17)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Firmware file v4.88:"
+        Me.Label3.Text = "FW 4.88"
         '
         'TabPage4
         '
@@ -667,7 +672,7 @@ Partial Class Form1
         Me.GroupBox4.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Downloader"
+        Me.GroupBox4.Text = "Download tool"
         '
         'OF4
         '
@@ -684,11 +689,11 @@ Partial Class Form1
         '
         Me.R6.AutoSize = True
         Me.R6.Checked = True
-        Me.R6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R6.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R6.Location = New System.Drawing.Point(178, 44)
         Me.R6.Margin = New System.Windows.Forms.Padding(2)
         Me.R6.Name = "R6"
-        Me.R6.Size = New System.Drawing.Size(45, 17)
+        Me.R6.Size = New System.Drawing.Size(49, 17)
         Me.R6.TabIndex = 5
         Me.R6.TabStop = True
         Me.R6.Text = "Full"
@@ -709,12 +714,14 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(32, 48)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label7.Location = New System.Drawing.Point(55, 44)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(98, 13)
+        Me.Label7.Size = New System.Drawing.Size(68, 17)
         Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Firmware file v3.73:"
+        Me.Label7.Text = "FW 3.73"
         '
         'TabPage5
         '
@@ -724,6 +731,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.Label10)
         Me.TabPage5.Controls.Add(Me.Disks4)
         Me.TabPage5.Controls.Add(Me.GroupBox5)
+        Me.TabPage5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Size = New System.Drawing.Size(410, 233)
@@ -748,7 +756,7 @@ Partial Class Form1
         Me.F4.Location = New System.Drawing.Point(87, 155)
         Me.F4.Margin = New System.Windows.Forms.Padding(2)
         Me.F4.Name = "F4"
-        Me.F4.Size = New System.Drawing.Size(96, 17)
+        Me.F4.Size = New System.Drawing.Size(108, 17)
         Me.F4.TabIndex = 16
         Me.F4.Text = "Format: FAT32"
         Me.F4.UseVisualStyleBackColor = True
@@ -771,7 +779,7 @@ Partial Class Form1
         Me.Label10.Location = New System.Drawing.Point(11, 122)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(71, 13)
+        Me.Label10.Size = New System.Drawing.Size(86, 13)
         Me.Label10.TabIndex = 14
         Me.Label10.Text = "Select  Drive:"
         '
@@ -780,10 +788,10 @@ Partial Class Form1
         Me.Disks4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Disks4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks4.FormattingEnabled = True
-        Me.Disks4.Location = New System.Drawing.Point(87, 119)
+        Me.Disks4.Location = New System.Drawing.Point(101, 119)
         Me.Disks4.Margin = New System.Windows.Forms.Padding(2)
         Me.Disks4.Name = "Disks4"
-        Me.Disks4.Size = New System.Drawing.Size(263, 20)
+        Me.Disks4.Size = New System.Drawing.Size(249, 20)
         Me.Disks4.TabIndex = 13
         '
         'GroupBox5
@@ -800,15 +808,15 @@ Partial Class Form1
         Me.GroupBox5.Size = New System.Drawing.Size(375, 99)
         Me.GroupBox5.TabIndex = 9
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Downloader"
+        Me.GroupBox5.Text = "Download tool"
         '
         'R8
         '
         Me.R8.AutoSize = True
-        Me.R8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R8.Location = New System.Drawing.Point(161, 55)
         Me.R8.Name = "R8"
-        Me.R8.Size = New System.Drawing.Size(57, 17)
+        Me.R8.Size = New System.Drawing.Size(61, 17)
         Me.R8.TabIndex = 10
         Me.R8.TabStop = True
         Me.R8.Text = "v6.60"
@@ -829,11 +837,11 @@ Partial Class Form1
         '
         Me.R7.AutoSize = True
         Me.R7.Checked = True
-        Me.R7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R7.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R7.Location = New System.Drawing.Point(161, 31)
         Me.R7.Margin = New System.Windows.Forms.Padding(2)
         Me.R7.Name = "R7"
-        Me.R7.Size = New System.Drawing.Size(57, 17)
+        Me.R7.Size = New System.Drawing.Size(61, 17)
         Me.R7.TabIndex = 5
         Me.R7.TabStop = True
         Me.R7.Text = "v6.61"
@@ -854,12 +862,14 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(79, 47)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label9.Location = New System.Drawing.Point(91, 43)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(68, 13)
+        Me.Label9.Size = New System.Drawing.Size(36, 17)
         Me.Label9.TabIndex = 4
-        Me.Label9.Text = "Firmware file:"
+        Me.Label9.Text = "FW:"
         '
         'Log1
         '
