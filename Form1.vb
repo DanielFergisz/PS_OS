@@ -1042,4 +1042,24 @@ Public Class Form1
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Process.Start("https://www.facebook.com/RepairBox-103885125218011")
     End Sub
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RB1.CheckedChanged
+        If RB1.Checked = True Then
+            Downloader.Enabled = True
+            SelectFile.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RB2_CheckedChanged(sender As Object, e As EventArgs) Handles RB2.CheckedChanged
+        If RB2.Checked = True Then
+            Downloader.Enabled = False
+            SelectFile.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim path As String = OpenFileDialog1.FileName
+            DirF.Text = path
+        End If
+    End Sub
 End Class
