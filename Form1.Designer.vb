@@ -510,7 +510,7 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(128, 15)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "FW 21.01-03.20.00"
+        Me.Label5.Text = "FW 21.01-03.21.00"
         '
         'TabPage2
         '

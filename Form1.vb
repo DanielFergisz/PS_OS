@@ -488,18 +488,26 @@ Public Class Form1
         Dim D_D As String
         Me.Invoke(New MethodInvoker(Sub() D_D = Mid(Disks.Text, 1, 3)))
 
-        If R1.Checked = True Then
-            If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+        If RB1.Checked = True Then
+            If R1.Checked = True Then
+                If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                    FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+                End If
+            End If
+
+            If R2.Checked = True Then
+                If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                    FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+                End If
             End If
         End If
 
-        If R2.Checked = True Then
-            If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
+        If RB2.Checked = True Then
+            If File.Exists(DirF.Text) Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
-
+                FileCopy(DirF.Text, D_D & "PS4\UPDATE\PS4UPDATE.PUP")
             End If
         End If
     End Sub
@@ -607,7 +615,7 @@ Public Class Form1
                     If PS5_F <> "" Then
                         wClient.DownloadFileAsync(New System.Uri(PS5_F), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                     Else
-                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0531/rec_9f2b60af77379323154ddbb6aa5570b87e084d94d3ff228b56d848431a63d8a9/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0629/rec_a2977d50207ac38a207d1af82d77ac1c5cdaa6e05f131c8577bd6cf23623b3cc/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                     End If
                 End If
                 If ask = MsgBoxResult.No Then
@@ -631,10 +639,11 @@ Public Class Form1
                 If PS5_F <> "" Then
                     wClient.DownloadFileAsync(New System.Uri(PS5_F), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 Else
-                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0531/rec_9f2b60af77379323154ddbb6aa5570b87e084d94d3ff228b56d848431a63d8a9/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0629/rec_a2977d50207ac38a207d1af82d77ac1c5cdaa6e05f131c8577bd6cf23623b3cc/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 End If
             End If
         End If
+
 
         If R5.Checked = True Then
             If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") = True Then
@@ -645,7 +654,7 @@ Public Class Form1
                     If PS5_U <> "" Then
                         wClient.DownloadFileAsync(New System.Uri(PS5_U), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                     Else
-                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0531/sys_de5a49b7572a963ebced720aa17fecb58694a27b7d762bbf524ae754d0f0ebe8/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0629/sys_4a9351cc6d27e570cc6c64b0c57987524083fca0efe423ba36aed42d82437b3f/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                     End If
                 End If
                 If ask = MsgBoxResult.No Then
@@ -669,7 +678,7 @@ Public Class Form1
                 If PS5_U <> "" Then
                     wClient.DownloadFileAsync(New System.Uri(PS5_U), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 Else
-                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0531/sys_de5a49b7572a963ebced720aa17fecb58694a27b7d762bbf524ae754d0f0ebe8/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0629/sys_4a9351cc6d27e570cc6c64b0c57987524083fca0efe423ba36aed42d82437b3f/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 End If
             End If
         End If
