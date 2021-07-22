@@ -258,6 +258,7 @@ Public Class Form1
             D3_OS.Enabled = False
             D4_OS.Enabled = False
             D5_OS.Enabled = False
+            RB1.Enabled = False
             Update.Hide()
         End If
 
