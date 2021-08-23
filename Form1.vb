@@ -530,9 +530,18 @@ Public Class Form1
         Dim D_D2 As String
         Me.Invoke(New MethodInvoker(Sub() D_D2 = Mid(Disks2.Text, 1, 3)))
 
-        If File.Exists("PS3\PS3UPDAT.PUP") Then
-            Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-            FileCopy("PS3\PS3UPDAT.PUP", D_D2 & "PS3\UPDATE\PS3UPDAT.PUP")
+        If RB5.Checked = True Then
+            If File.Exists("PS3\PS3UPDAT.PUP") Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                FileCopy("PS3\PS3UPDAT.PUP", D_D2 & "PS3\UPDATE\PS3UPDAT.PUP")
+            End If
+        End If
+
+        If RB6.Checked = True Then
+            If File.Exists(DirF2.Text) Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                FileCopy(DirF3.Text, D_D2 & "PS3\UPDATE\PS3UPDAT.PUP")
+            End If
         End If
     End Sub
     Private Sub BackgroundWorker2_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
@@ -735,17 +744,26 @@ Public Class Form1
         Dim D_D4 As String
         Me.Invoke(New MethodInvoker(Sub() D_D4 = Mid(Disks3.Text, 1, 3)))
 
-        If R4.Checked = True Then
-            If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+        If RB3.Checked = True Then
+            If R4.Checked = True Then
+                If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                    FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                End If
+            End If
+
+            If R5.Checked = True Then
+                If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                    FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                End If
             End If
         End If
 
-        If R5.Checked = True Then
-            If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+        If RB4.Checked = True Then
+            If File.Exists(DirF2.Text) Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                FileCopy(DirF2.Text, D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
             End If
         End If
     End Sub
@@ -1019,17 +1037,26 @@ Public Class Form1
         Dim D_D5 As String
         Me.Invoke(New MethodInvoker(Sub() D_D5 = Mid(Disks4.Text, 1, 3)))
 
-        If R7.Checked = True Then
-            If File.Exists("PSP\6.61\EBOOT.PBP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
-                FileCopy("PSP\6.61\EBOOT.PBP", D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
+        If RB7.Checked = True Then
+            If R7.Checked = True Then
+                If File.Exists("PSP\6.61\EBOOT.PBP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
+                    FileCopy("PSP\6.61\EBOOT.PBP", D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
+                End If
+            End If
+
+            If R8.Checked = True Then
+                If File.Exists("PSP\6.60\EBOOT.PBP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
+                    FileCopy("PSP\6.60\EBOOT.PBP", D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
+                End If
             End If
         End If
 
-        If R8.Checked = True Then
-            If File.Exists("PSP\6.60\EBOOT.PBP") Then
-                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
-                FileCopy("PSP\6.60\EBOOT.PBP", D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
+        If RB8.Checked = True Then
+            If File.Exists(DirF4.Text) Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                FileCopy(DirF4.Text, D_D5 & "PSP\GAME\UPDATE\EBOOT.PBP")
             End If
         End If
     End Sub
@@ -1072,4 +1099,72 @@ Public Class Form1
             DirF.Text = path
         End If
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Process.Start("diskpart.exe")
+    End Sub
+
+    Private Sub RB3_CheckedChanged(sender As Object, e As EventArgs) Handles RB3.CheckedChanged
+        If RB3.Checked = True Then
+            Downloader2.Enabled = True
+            SelectFile2.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RB5_CheckedChanged(sender As Object, e As EventArgs) Handles RB5.CheckedChanged
+        If RB5.Checked = True Then
+            Downloader3.Enabled = True
+            SelectFile3.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RB7_CheckedChanged(sender As Object, e As EventArgs) Handles RB7.CheckedChanged
+        If RB7.Checked = True Then
+            Downloader4.Enabled = True
+            SelectFile4.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RB4_CheckedChanged(sender As Object, e As EventArgs) Handles RB4.CheckedChanged
+        If RB4.Checked = True Then
+            Downloader2.Enabled = False
+            SelectFile2.Enabled = True
+        End If
+    End Sub
+
+    Private Sub RB6_CheckedChanged(sender As Object, e As EventArgs) Handles RB6.CheckedChanged
+        If RB6.Checked = True Then
+            Downloader3.Enabled = False
+            SelectFile3.Enabled = True
+        End If
+    End Sub
+
+    Private Sub RB8_CheckedChanged(sender As Object, e As EventArgs) Handles RB8.CheckedChanged
+        If RB8.Checked = True Then
+            Downloader4.Enabled = False
+            SelectFile4.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim path2 As String = OpenFileDialog1.FileName
+            DirF2.Text = path2
+        End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim path3 As String = OpenFileDialog1.FileName
+            DirF3.Text = path3
+        End If
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim path4 As String = OpenFileDialog1.FileName
+            DirF4.Text = path4
+        End If
+    End Sub
+
 End Class
