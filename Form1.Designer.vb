@@ -44,6 +44,11 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.RB4 = New System.Windows.Forms.RadioButton()
+        Me.SelectFile2 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.DirF2 = New System.Windows.Forms.TextBox()
+        Me.RB3 = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.O2 = New System.Windows.Forms.Button()
         Me.F3 = New System.Windows.Forms.CheckBox()
@@ -57,6 +62,12 @@ Partial Class Form1
         Me.D3_OS = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.RB5 = New System.Windows.Forms.RadioButton()
+        Me.RB6 = New System.Windows.Forms.RadioButton()
+        Me.SelectFile3 = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.DirF3 = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.O3 = New System.Windows.Forms.Button()
         Me.F2 = New System.Windows.Forms.CheckBox()
         Me.W2_OS = New System.Windows.Forms.Button()
@@ -74,6 +85,11 @@ Partial Class Form1
         Me.D4_OS = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.RB7 = New System.Windows.Forms.RadioButton()
+        Me.RB8 = New System.Windows.Forms.RadioButton()
+        Me.SelectFile4 = New System.Windows.Forms.GroupBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.DirF4 = New System.Windows.Forms.TextBox()
         Me.O4 = New System.Windows.Forms.Button()
         Me.F4 = New System.Windows.Forms.CheckBox()
         Me.W4_OS = New System.Windows.Forms.Button()
@@ -103,38 +119,23 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.RB3 = New System.Windows.Forms.RadioButton()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.SelectFile2 = New System.Windows.Forms.GroupBox()
-        Me.SelectFile3 = New System.Windows.Forms.GroupBox()
-        Me.SelectFile4 = New System.Windows.Forms.GroupBox()
-        Me.DirF2 = New System.Windows.Forms.TextBox()
-        Me.DirF3 = New System.Windows.Forms.TextBox()
-        Me.DirF4 = New System.Windows.Forms.TextBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.RB4 = New System.Windows.Forms.RadioButton()
-        Me.RB6 = New System.Windows.Forms.RadioButton()
-        Me.RB8 = New System.Windows.Forms.RadioButton()
-        Me.RB5 = New System.Windows.Forms.RadioButton()
-        Me.RB7 = New System.Windows.Forms.RadioButton()
+        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SelectFile.SuspendLayout()
         Me.Downloader.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.SelectFile2.SuspendLayout()
         Me.Downloader2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.SelectFile3.SuspendLayout()
         Me.Downloader3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.SelectFile4.SuspendLayout()
         Me.Downloader4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SelectFile2.SuspendLayout()
-        Me.SelectFile3.SuspendLayout()
-        Me.SelectFile4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -389,6 +390,55 @@ Partial Class Form1
         Me.TabPage3.Text = "PlayStation 5"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'RB4
+        '
+        Me.RB4.AutoSize = True
+        Me.RB4.Location = New System.Drawing.Point(16, 108)
+        Me.RB4.Name = "RB4"
+        Me.RB4.Size = New System.Drawing.Size(14, 13)
+        Me.RB4.TabIndex = 16
+        Me.RB4.UseVisualStyleBackColor = True
+        '
+        'SelectFile2
+        '
+        Me.SelectFile2.Controls.Add(Me.Button5)
+        Me.SelectFile2.Controls.Add(Me.DirF2)
+        Me.SelectFile2.Enabled = False
+        Me.SelectFile2.Location = New System.Drawing.Point(40, 85)
+        Me.SelectFile2.Name = "SelectFile2"
+        Me.SelectFile2.Size = New System.Drawing.Size(351, 53)
+        Me.SelectFile2.TabIndex = 15
+        Me.SelectFile2.TabStop = False
+        Me.SelectFile2.Text = "Firmware file"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(296, 20)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(42, 20)
+        Me.Button5.TabIndex = 1
+        Me.Button5.Text = "..."
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'DirF2
+        '
+        Me.DirF2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.DirF2.Location = New System.Drawing.Point(15, 20)
+        Me.DirF2.Name = "DirF2"
+        Me.DirF2.Size = New System.Drawing.Size(275, 20)
+        Me.DirF2.TabIndex = 0
+        '
+        'RB3
+        '
+        Me.RB3.AutoSize = True
+        Me.RB3.Checked = True
+        Me.RB3.Location = New System.Drawing.Point(16, 41)
+        Me.RB3.Name = "RB3"
+        Me.RB3.Size = New System.Drawing.Size(14, 13)
+        Me.RB3.TabIndex = 14
+        Me.RB3.TabStop = True
+        Me.RB3.UseVisualStyleBackColor = True
+        '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
@@ -555,6 +605,65 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PlayStation 3"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'RB5
+        '
+        Me.RB5.AutoSize = True
+        Me.RB5.Checked = True
+        Me.RB5.Location = New System.Drawing.Point(16, 41)
+        Me.RB5.Name = "RB5"
+        Me.RB5.Size = New System.Drawing.Size(14, 13)
+        Me.RB5.TabIndex = 16
+        Me.RB5.TabStop = True
+        Me.RB5.UseVisualStyleBackColor = True
+        '
+        'RB6
+        '
+        Me.RB6.AutoSize = True
+        Me.RB6.Location = New System.Drawing.Point(16, 108)
+        Me.RB6.Name = "RB6"
+        Me.RB6.Size = New System.Drawing.Size(14, 13)
+        Me.RB6.TabIndex = 15
+        Me.RB6.UseVisualStyleBackColor = True
+        '
+        'SelectFile3
+        '
+        Me.SelectFile3.Controls.Add(Me.Button6)
+        Me.SelectFile3.Controls.Add(Me.DirF3)
+        Me.SelectFile3.Enabled = False
+        Me.SelectFile3.Location = New System.Drawing.Point(40, 85)
+        Me.SelectFile3.Name = "SelectFile3"
+        Me.SelectFile3.Size = New System.Drawing.Size(351, 53)
+        Me.SelectFile3.TabIndex = 14
+        Me.SelectFile3.TabStop = False
+        Me.SelectFile3.Text = "Firmware file"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(296, 20)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(42, 20)
+        Me.Button6.TabIndex = 1
+        Me.Button6.Text = "..."
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'DirF3
+        '
+        Me.DirF3.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.DirF3.Location = New System.Drawing.Point(15, 20)
+        Me.DirF3.Name = "DirF3"
+        Me.DirF3.Size = New System.Drawing.Size(275, 20)
+        Me.DirF3.TabIndex = 0
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button4.Location = New System.Drawing.Point(102, 195)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(96, 21)
+        Me.Button4.TabIndex = 13
+        Me.Button4.Text = "Diskpart"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'O3
         '
@@ -768,6 +877,55 @@ Partial Class Form1
         Me.TabPage5.Text = "PSP"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'RB7
+        '
+        Me.RB7.AutoSize = True
+        Me.RB7.Checked = True
+        Me.RB7.Location = New System.Drawing.Point(16, 41)
+        Me.RB7.Name = "RB7"
+        Me.RB7.Size = New System.Drawing.Size(14, 13)
+        Me.RB7.TabIndex = 20
+        Me.RB7.TabStop = True
+        Me.RB7.UseVisualStyleBackColor = True
+        '
+        'RB8
+        '
+        Me.RB8.AutoSize = True
+        Me.RB8.Location = New System.Drawing.Point(16, 108)
+        Me.RB8.Name = "RB8"
+        Me.RB8.Size = New System.Drawing.Size(14, 13)
+        Me.RB8.TabIndex = 19
+        Me.RB8.UseVisualStyleBackColor = True
+        '
+        'SelectFile4
+        '
+        Me.SelectFile4.Controls.Add(Me.Button7)
+        Me.SelectFile4.Controls.Add(Me.DirF4)
+        Me.SelectFile4.Enabled = False
+        Me.SelectFile4.Location = New System.Drawing.Point(40, 85)
+        Me.SelectFile4.Name = "SelectFile4"
+        Me.SelectFile4.Size = New System.Drawing.Size(351, 53)
+        Me.SelectFile4.TabIndex = 18
+        Me.SelectFile4.TabStop = False
+        Me.SelectFile4.Text = "Firmware file"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(296, 20)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(42, 20)
+        Me.Button7.TabIndex = 1
+        Me.Button7.Text = "..."
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'DirF4
+        '
+        Me.DirF4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.DirF4.Location = New System.Drawing.Point(15, 20)
+        Me.DirF4.Name = "DirF4"
+        Me.DirF4.Size = New System.Drawing.Size(275, 20)
+        Me.DirF4.TabIndex = 0
+        '
         'O4
         '
         Me.O4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
@@ -930,9 +1088,6 @@ Partial Class Form1
         'BackgroundWorker2
         '
         '
-        'BackgroundWorker3
-        '
-        '
         'Update
         '
         Me.Update.Enabled = False
@@ -1023,164 +1178,11 @@ Partial Class Form1
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.Filter = "IPS File|*.pup"
+        Me.OpenFileDialog1.Filter = "PUP File|*.pup"
         '
-        'RB3
+        'OpenFileDialog2
         '
-        Me.RB3.AutoSize = True
-        Me.RB3.Checked = True
-        Me.RB3.Location = New System.Drawing.Point(16, 41)
-        Me.RB3.Name = "RB3"
-        Me.RB3.Size = New System.Drawing.Size(14, 13)
-        Me.RB3.TabIndex = 14
-        Me.RB3.TabStop = True
-        Me.RB3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button4.Location = New System.Drawing.Point(102, 195)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(96, 21)
-        Me.Button4.TabIndex = 13
-        Me.Button4.Text = "Diskpart"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'SelectFile2
-        '
-        Me.SelectFile2.Controls.Add(Me.Button5)
-        Me.SelectFile2.Controls.Add(Me.DirF2)
-        Me.SelectFile2.Enabled = False
-        Me.SelectFile2.Location = New System.Drawing.Point(40, 85)
-        Me.SelectFile2.Name = "SelectFile2"
-        Me.SelectFile2.Size = New System.Drawing.Size(351, 53)
-        Me.SelectFile2.TabIndex = 15
-        Me.SelectFile2.TabStop = False
-        Me.SelectFile2.Text = "Firmware file"
-        '
-        'SelectFile3
-        '
-        Me.SelectFile3.Controls.Add(Me.Button6)
-        Me.SelectFile3.Controls.Add(Me.DirF3)
-        Me.SelectFile3.Enabled = False
-        Me.SelectFile3.Location = New System.Drawing.Point(40, 85)
-        Me.SelectFile3.Name = "SelectFile3"
-        Me.SelectFile3.Size = New System.Drawing.Size(351, 53)
-        Me.SelectFile3.TabIndex = 14
-        Me.SelectFile3.TabStop = False
-        Me.SelectFile3.Text = "Firmware file"
-        '
-        'SelectFile4
-        '
-        Me.SelectFile4.Controls.Add(Me.Button7)
-        Me.SelectFile4.Controls.Add(Me.DirF4)
-        Me.SelectFile4.Enabled = False
-        Me.SelectFile4.Location = New System.Drawing.Point(40, 85)
-        Me.SelectFile4.Name = "SelectFile4"
-        Me.SelectFile4.Size = New System.Drawing.Size(351, 53)
-        Me.SelectFile4.TabIndex = 18
-        Me.SelectFile4.TabStop = False
-        Me.SelectFile4.Text = "Firmware file"
-        '
-        'DirF2
-        '
-        Me.DirF2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.DirF2.Location = New System.Drawing.Point(15, 20)
-        Me.DirF2.Name = "DirF2"
-        Me.DirF2.Size = New System.Drawing.Size(275, 20)
-        Me.DirF2.TabIndex = 0
-        '
-        'DirF3
-        '
-        Me.DirF3.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.DirF3.Location = New System.Drawing.Point(15, 20)
-        Me.DirF3.Name = "DirF3"
-        Me.DirF3.Size = New System.Drawing.Size(275, 20)
-        Me.DirF3.TabIndex = 0
-        '
-        'DirF4
-        '
-        Me.DirF4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.DirF4.Location = New System.Drawing.Point(15, 20)
-        Me.DirF4.Name = "DirF4"
-        Me.DirF4.Size = New System.Drawing.Size(275, 20)
-        Me.DirF4.TabIndex = 0
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(296, 20)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(42, 20)
-        Me.Button5.TabIndex = 1
-        Me.Button5.Text = "..."
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(296, 20)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(42, 20)
-        Me.Button6.TabIndex = 1
-        Me.Button6.Text = "..."
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(296, 20)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(42, 20)
-        Me.Button7.TabIndex = 1
-        Me.Button7.Text = "..."
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'RB4
-        '
-        Me.RB4.AutoSize = True
-        Me.RB4.Location = New System.Drawing.Point(16, 108)
-        Me.RB4.Name = "RB4"
-        Me.RB4.Size = New System.Drawing.Size(14, 13)
-        Me.RB4.TabIndex = 16
-        Me.RB4.UseVisualStyleBackColor = True
-        '
-        'RB6
-        '
-        Me.RB6.AutoSize = True
-        Me.RB6.Location = New System.Drawing.Point(16, 108)
-        Me.RB6.Name = "RB6"
-        Me.RB6.Size = New System.Drawing.Size(14, 13)
-        Me.RB6.TabIndex = 15
-        Me.RB6.UseVisualStyleBackColor = True
-        '
-        'RB8
-        '
-        Me.RB8.AutoSize = True
-        Me.RB8.Location = New System.Drawing.Point(16, 108)
-        Me.RB8.Name = "RB8"
-        Me.RB8.Size = New System.Drawing.Size(14, 13)
-        Me.RB8.TabIndex = 19
-        Me.RB8.UseVisualStyleBackColor = True
-        '
-        'RB5
-        '
-        Me.RB5.AutoSize = True
-        Me.RB5.Checked = True
-        Me.RB5.Location = New System.Drawing.Point(16, 41)
-        Me.RB5.Name = "RB5"
-        Me.RB5.Size = New System.Drawing.Size(14, 13)
-        Me.RB5.TabIndex = 16
-        Me.RB5.TabStop = True
-        Me.RB5.UseVisualStyleBackColor = True
-        '
-        'RB7
-        '
-        Me.RB7.AutoSize = True
-        Me.RB7.Checked = True
-        Me.RB7.Location = New System.Drawing.Point(16, 41)
-        Me.RB7.Name = "RB7"
-        Me.RB7.Size = New System.Drawing.Size(14, 13)
-        Me.RB7.TabIndex = 20
-        Me.RB7.TabStop = True
-        Me.RB7.UseVisualStyleBackColor = True
+        Me.OpenFileDialog2.Filter = "Eboot File|*.pbp"
         '
         'Form1
         '
@@ -1210,10 +1212,14 @@ Partial Class Form1
         Me.Downloader.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.SelectFile2.ResumeLayout(False)
+        Me.SelectFile2.PerformLayout()
         Me.Downloader2.ResumeLayout(False)
         Me.Downloader2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.SelectFile3.ResumeLayout(False)
+        Me.SelectFile3.PerformLayout()
         Me.Downloader3.ResumeLayout(False)
         Me.Downloader3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
@@ -1221,15 +1227,11 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.SelectFile4.ResumeLayout(False)
+        Me.SelectFile4.PerformLayout()
         Me.Downloader4.ResumeLayout(False)
         Me.Downloader4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SelectFile2.ResumeLayout(False)
-        Me.SelectFile2.PerformLayout()
-        Me.SelectFile3.ResumeLayout(False)
-        Me.SelectFile3.PerformLayout()
-        Me.SelectFile4.ResumeLayout(False)
-        Me.SelectFile4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1332,4 +1334,5 @@ Partial Class Form1
     Friend WithEvents RB6 As RadioButton
     Friend WithEvents RB7 As RadioButton
     Friend WithEvents RB8 As RadioButton
+    Friend WithEvents OpenFileDialog2 As OpenFileDialog
 End Class

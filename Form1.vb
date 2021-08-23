@@ -1161,8 +1161,8 @@ Public Class Form1
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-            Dim path4 As String = OpenFileDialog1.FileName
+        If OpenFileDialog2.ShowDialog() = DialogResult.OK Then
+            Dim path4 As String = OpenFileDialog2.FileName
             DirF4.Text = path4
         End If
     End Sub
