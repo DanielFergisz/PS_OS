@@ -537,7 +537,7 @@ Partial Class Form1
         Me.R5.AutoSize = True
         Me.R5.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.R5.Location = New System.Drawing.Point(147, 43)
+        Me.R5.Location = New System.Drawing.Point(145, 43)
         Me.R5.Margin = New System.Windows.Forms.Padding(2)
         Me.R5.Name = "R5"
         Me.R5.Size = New System.Drawing.Size(71, 17)
@@ -551,7 +551,7 @@ Partial Class Form1
         Me.R4.Checked = True
         Me.R4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.R4.Location = New System.Drawing.Point(147, 19)
+        Me.R4.Location = New System.Drawing.Point(145, 19)
         Me.R4.Margin = New System.Windows.Forms.Padding(2)
         Me.R4.Name = "R4"
         Me.R4.Size = New System.Drawing.Size(49, 17)
@@ -577,7 +577,7 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label5.Location = New System.Drawing.Point(14, 35)
+        Me.Label5.Location = New System.Drawing.Point(10, 36)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(129, 13)
@@ -1199,10 +1199,12 @@ Partial Class Form1
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.20"
+        Me.Text = "PS_OS v1.21"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

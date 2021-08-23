@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "120" 'App Version
+    Dim appVer As SByte = "121" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -259,6 +259,9 @@ Public Class Form1
             D4_OS.Enabled = False
             D5_OS.Enabled = False
             RB1.Enabled = False
+            RB3.Enabled = False
+            RB5.Enabled = False
+            RB7.Enabled = False
             Update.Hide()
         End If
 
