@@ -27,7 +27,7 @@ Public Class Form1
         End Try
     End Function
     '##################### PS4 Download ###########################
-    Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click
+    Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click  'PS4
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
@@ -52,7 +52,7 @@ Public Class Form1
                     AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     Try
                         wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\PS4UPDATE.PUP")
-                    Catch
+                    Catch 'wyjątek / else
                         wClient.DownloadFileAsync(New System.Uri("http://deu01.ps4.update.playstation.net/update/ps4/image/2021_0901/rec_674420f041cb5845aae85928751ccd0e/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
                     End Try
                 End If
@@ -396,9 +396,9 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
+    Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click  'PS3
         W_OS.Enabled = False
-        W2_OS.Enabled = False 'PS3
+        W2_OS.Enabled = False
         W3_OS.Enabled = False
         W4_OS.Enabled = False
         D_OS.Enabled = False
@@ -604,9 +604,9 @@ Public Class Form1
         Update.Enabled = True
     End Sub
 
-    Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click
+    Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click  'PS5
         W_OS.Enabled = False
-        W2_OS.Enabled = False  'PS5
+        W2_OS.Enabled = False
         W3_OS.Enabled = False
         W4_OS.Enabled = False
         D_OS.Enabled = False
@@ -809,9 +809,9 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub D4_OS_Click(sender As Object, e As EventArgs) Handles D4_OS.Click
+    Private Sub D4_OS_Click(sender As Object, e As EventArgs) Handles D4_OS.Click  'PSVita
         D_OS.Enabled = False
-        D2_OS.Enabled = False  'PSVita
+        D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
@@ -898,9 +898,9 @@ Public Class Form1
         Process.Start("diskpart.exe")
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles D5_OS.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles D5_OS.Click  'PSP
         D_OS.Enabled = False
-        D2_OS.Enabled = False  'PSP
+        D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
