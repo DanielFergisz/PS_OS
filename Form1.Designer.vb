@@ -309,6 +309,7 @@ Partial Class Form1
         Me.R2.Size = New System.Drawing.Size(71, 17)
         Me.R2.TabIndex = 6
         Me.R2.Text = "Update"
+        Me.ToolTip1.SetToolTip(Me.R2, "Update File")
         Me.R2.UseVisualStyleBackColor = True
         '
         'R1
@@ -324,6 +325,7 @@ Partial Class Form1
         Me.R1.TabIndex = 5
         Me.R1.TabStop = True
         Me.R1.Text = "Full"
+        Me.ToolTip1.SetToolTip(Me.R1, "Full Firmware File")
         Me.R1.UseVisualStyleBackColor = True
         '
         'D_OS
@@ -551,6 +553,7 @@ Partial Class Form1
         Me.R5.Size = New System.Drawing.Size(71, 17)
         Me.R5.TabIndex = 6
         Me.R5.Text = "Update"
+        Me.ToolTip1.SetToolTip(Me.R5, "Update File")
         Me.R5.UseVisualStyleBackColor = True
         '
         'R4
@@ -566,6 +569,7 @@ Partial Class Form1
         Me.R4.TabIndex = 5
         Me.R4.TabStop = True
         Me.R4.Text = "Full"
+        Me.ToolTip1.SetToolTip(Me.R4, "Full Firmware File")
         Me.R4.UseVisualStyleBackColor = True
         '
         'D3_OS
@@ -770,6 +774,7 @@ Partial Class Form1
         Me.R3.TabIndex = 5
         Me.R3.TabStop = True
         Me.R3.Text = "Full"
+        Me.ToolTip1.SetToolTip(Me.R3, "Full Firmware File")
         Me.R3.UseVisualStyleBackColor = True
         '
         'D2_OS
@@ -1073,9 +1078,9 @@ Partial Class Form1
         Me.Label9.Location = New System.Drawing.Point(44, 33)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(36, 17)
+        Me.Label9.Size = New System.Drawing.Size(31, 17)
         Me.Label9.TabIndex = 4
-        Me.Label9.Text = "FW:"
+        Me.Label9.Text = "FW"
         '
         'Log1
         '
