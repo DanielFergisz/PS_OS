@@ -331,8 +331,9 @@ Partial Class Form1
         '
         'D_OS
         '
+        Me.D_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.D_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.D_OS.ForeColor = System.Drawing.Color.Red
+        Me.D_OS.ForeColor = System.Drawing.Color.Blue
         Me.D_OS.Location = New System.Drawing.Point(218, 15)
         Me.D_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D_OS.Name = "D_OS"
@@ -344,6 +345,7 @@ Partial Class Form1
         '
         'W_OS
         '
+        Me.W_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.W_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W_OS.Location = New System.Drawing.Point(245, 175)
@@ -483,6 +485,7 @@ Partial Class Form1
         '
         'W3_OS
         '
+        Me.W3_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.W3_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W3_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W3_OS.Location = New System.Drawing.Point(245, 175)
@@ -575,8 +578,9 @@ Partial Class Form1
         '
         'D3_OS
         '
+        Me.D3_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.D3_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.D3_OS.ForeColor = System.Drawing.Color.Red
+        Me.D3_OS.ForeColor = System.Drawing.Color.Blue
         Me.D3_OS.Location = New System.Drawing.Point(218, 15)
         Me.D3_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D3_OS.Name = "D3_OS"
@@ -704,6 +708,7 @@ Partial Class Form1
         '
         'W2_OS
         '
+        Me.W2_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.W2_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W2_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W2_OS.Location = New System.Drawing.Point(245, 175)
@@ -780,8 +785,9 @@ Partial Class Form1
         '
         'D2_OS
         '
+        Me.D2_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.D2_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.D2_OS.ForeColor = System.Drawing.Color.Red
+        Me.D2_OS.ForeColor = System.Drawing.Color.Blue
         Me.D2_OS.Location = New System.Drawing.Point(218, 15)
         Me.D2_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D2_OS.Name = "D2_OS"
@@ -832,7 +838,7 @@ Partial Class Form1
         '
         Me.OF4.Font = New System.Drawing.Font("Verdana", 7.0!)
         Me.OF4.ForeColor = System.Drawing.Color.Black
-        Me.OF4.Location = New System.Drawing.Point(241, 44)
+        Me.OF4.Location = New System.Drawing.Point(239, 44)
         Me.OF4.Name = "OF4"
         Me.OF4.Size = New System.Drawing.Size(117, 25)
         Me.OF4.TabIndex = 9
@@ -856,9 +862,10 @@ Partial Class Form1
         '
         'D4_OS
         '
+        Me.D4_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.D4_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.D4_OS.ForeColor = System.Drawing.Color.Red
-        Me.D4_OS.Location = New System.Drawing.Point(241, 14)
+        Me.D4_OS.ForeColor = System.Drawing.Color.Blue
+        Me.D4_OS.Location = New System.Drawing.Point(239, 15)
         Me.D4_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D4_OS.Name = "D4_OS"
         Me.D4_OS.Size = New System.Drawing.Size(117, 25)
@@ -972,6 +979,7 @@ Partial Class Form1
         '
         'W4_OS
         '
+        Me.W4_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.W4_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.W4_OS.ForeColor = System.Drawing.Color.DarkRed
         Me.W4_OS.Location = New System.Drawing.Point(245, 175)
@@ -1060,8 +1068,9 @@ Partial Class Form1
         '
         'D5_OS
         '
+        Me.D5_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.D5_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.D5_OS.ForeColor = System.Drawing.Color.Red
+        Me.D5_OS.ForeColor = System.Drawing.Color.Blue
         Me.D5_OS.Location = New System.Drawing.Point(218, 15)
         Me.D5_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D5_OS.Name = "D5_OS"
@@ -1070,6 +1079,7 @@ Partial Class Form1
         Me.D5_OS.Text = "Download"
         Me.ToolTip1.SetToolTip(Me.D5_OS, "Download firmware file")
         Me.D5_OS.UseVisualStyleBackColor = True
+        Me.D5_OS.UseWaitCursor = True
         '
         'Label9
         '
