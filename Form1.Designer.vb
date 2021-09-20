@@ -813,7 +813,6 @@ Partial Class Form1
         '
         Me.R3.AutoSize = True
         Me.R3.Checked = True
-        Me.R3.Enabled = False
         Me.R3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
         Me.R3.Location = New System.Drawing.Point(140, 32)
         Me.R3.Margin = New System.Windows.Forms.Padding(2)
@@ -892,7 +891,6 @@ Partial Class Form1
         '
         Me.R6.AutoSize = True
         Me.R6.Checked = True
-        Me.R6.Enabled = False
         Me.R6.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R6.Location = New System.Drawing.Point(161, 32)
         Me.R6.Margin = New System.Windows.Forms.Padding(2)

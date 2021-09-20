@@ -564,12 +564,8 @@ Public Class Form1
         Log1.Text = "Checking update.."
         Dim client As New Net.WebClient
         Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
-        Dim FW As String = client.DownloadString("http://repairbox.pl/PS_OS/newFirmware.txt")
 
         If newVersion > appVer Then ' wersja porównywana z wersją na serwerze
-            If FW <> "" Then
-                File.Create("newFirmware.fwx")
-            End If
             client.DownloadFile("http://repairbox.pl/PS_OS/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
             Log1.Text = "Downloading Updater: v" + newVersion + "..."
