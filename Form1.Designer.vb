@@ -121,6 +121,10 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SelectFile.SuspendLayout()
@@ -156,6 +160,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button8)
         Me.TabPage1.Controls.Add(Me.RB2)
         Me.TabPage1.Controls.Add(Me.RB1)
         Me.TabPage1.Controls.Add(Me.SelectFile)
@@ -229,10 +234,10 @@ Partial Class Form1
         'Diskpart
         '
         Me.Diskpart.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Diskpart.Location = New System.Drawing.Point(102, 195)
+        Me.Diskpart.Location = New System.Drawing.Point(120, 195)
         Me.Diskpart.Margin = New System.Windows.Forms.Padding(2)
         Me.Diskpart.Name = "Diskpart"
-        Me.Diskpart.Size = New System.Drawing.Size(96, 21)
+        Me.Diskpart.Size = New System.Drawing.Size(93, 21)
         Me.Diskpart.TabIndex = 9
         Me.Diskpart.Text = "Diskpart"
         Me.Diskpart.UseVisualStyleBackColor = True
@@ -251,7 +256,7 @@ Partial Class Form1
         'F1
         '
         Me.F1.AutoSize = True
-        Me.F1.Location = New System.Drawing.Point(102, 174)
+        Me.F1.Location = New System.Drawing.Point(120, 175)
         Me.F1.Margin = New System.Windows.Forms.Padding(2)
         Me.F1.Name = "F1"
         Me.F1.Size = New System.Drawing.Size(108, 17)
@@ -381,6 +386,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.Button9)
         Me.TabPage3.Controls.Add(Me.RB4)
         Me.TabPage3.Controls.Add(Me.SelectFile2)
         Me.TabPage3.Controls.Add(Me.RB3)
@@ -453,10 +459,10 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button1.Location = New System.Drawing.Point(102, 195)
+        Me.Button1.Location = New System.Drawing.Point(120, 195)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(96, 21)
+        Me.Button1.Size = New System.Drawing.Size(93, 21)
         Me.Button1.TabIndex = 13
         Me.Button1.Text = "Diskpart"
         Me.Button1.UseVisualStyleBackColor = True
@@ -475,7 +481,7 @@ Partial Class Form1
         'F3
         '
         Me.F3.AutoSize = True
-        Me.F3.Location = New System.Drawing.Point(102, 174)
+        Me.F3.Location = New System.Drawing.Point(120, 175)
         Me.F3.Margin = New System.Windows.Forms.Padding(2)
         Me.F3.Name = "F3"
         Me.F3.Size = New System.Drawing.Size(108, 17)
@@ -604,6 +610,7 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button10)
         Me.TabPage2.Controls.Add(Me.RB5)
         Me.TabPage2.Controls.Add(Me.RB6)
         Me.TabPage2.Controls.Add(Me.SelectFile3)
@@ -677,9 +684,9 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Verdana", 6.857143!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button4.Location = New System.Drawing.Point(102, 195)
+        Me.Button4.Location = New System.Drawing.Point(120, 195)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(96, 21)
+        Me.Button4.Size = New System.Drawing.Size(93, 21)
         Me.Button4.TabIndex = 13
         Me.Button4.Text = "Diskpart"
         Me.Button4.UseVisualStyleBackColor = True
@@ -698,7 +705,7 @@ Partial Class Form1
         'F2
         '
         Me.F2.AutoSize = True
-        Me.F2.Location = New System.Drawing.Point(102, 174)
+        Me.F2.Location = New System.Drawing.Point(120, 175)
         Me.F2.Margin = New System.Windows.Forms.Padding(2)
         Me.F2.Name = "F2"
         Me.F2.Size = New System.Drawing.Size(108, 17)
@@ -772,6 +779,7 @@ Partial Class Form1
         '
         Me.R3.AutoSize = True
         Me.R3.Checked = True
+        Me.R3.Enabled = False
         Me.R3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
         Me.R3.Location = New System.Drawing.Point(140, 32)
         Me.R3.Margin = New System.Windows.Forms.Padding(2)
@@ -850,8 +858,9 @@ Partial Class Form1
         '
         Me.R6.AutoSize = True
         Me.R6.Checked = True
+        Me.R6.Enabled = False
         Me.R6.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.R6.Location = New System.Drawing.Point(144, 33)
+        Me.R6.Location = New System.Drawing.Point(161, 32)
         Me.R6.Margin = New System.Windows.Forms.Padding(2)
         Me.R6.Name = "R6"
         Me.R6.Size = New System.Drawing.Size(49, 17)
@@ -888,6 +897,7 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.Button11)
         Me.TabPage5.Controls.Add(Me.RB7)
         Me.TabPage5.Controls.Add(Me.RB8)
         Me.TabPage5.Controls.Add(Me.SelectFile4)
@@ -969,7 +979,7 @@ Partial Class Form1
         'F4
         '
         Me.F4.AutoSize = True
-        Me.F4.Location = New System.Drawing.Point(102, 174)
+        Me.F4.Location = New System.Drawing.Point(120, 175)
         Me.F4.Margin = New System.Windows.Forms.Padding(2)
         Me.F4.Name = "F4"
         Me.F4.Size = New System.Drawing.Size(108, 17)
@@ -1032,7 +1042,7 @@ Partial Class Form1
         '
         Me.R8.AutoSize = True
         Me.R8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.R8.Location = New System.Drawing.Point(110, 47)
+        Me.R8.Location = New System.Drawing.Point(127, 47)
         Me.R8.Name = "R8"
         Me.R8.Size = New System.Drawing.Size(61, 17)
         Me.R8.TabIndex = 10
@@ -1057,7 +1067,7 @@ Partial Class Form1
         Me.R7.AutoSize = True
         Me.R7.Checked = True
         Me.R7.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.R7.Location = New System.Drawing.Point(110, 23)
+        Me.R7.Location = New System.Drawing.Point(127, 23)
         Me.R7.Margin = New System.Windows.Forms.Padding(2)
         Me.R7.Name = "R7"
         Me.R7.Size = New System.Drawing.Size(61, 17)
@@ -1220,6 +1230,51 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.Filter = "Eboot File|*.pbp"
         '
+        'Button8
+        '
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button8.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.Black
+        Me.Button8.Location = New System.Drawing.Point(15, 195)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(59, 21)
+        Me.Button8.TabIndex = 11
+        Me.Button8.Text = "Help"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button9.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button9.Location = New System.Drawing.Point(15, 195)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(59, 21)
+        Me.Button9.TabIndex = 17
+        Me.Button9.Text = "Help"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button10.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button10.Location = New System.Drawing.Point(15, 195)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(59, 21)
+        Me.Button10.TabIndex = 17
+        Me.Button10.Text = "Help"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button11.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button11.Location = New System.Drawing.Point(15, 195)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(59, 21)
+        Me.Button11.TabIndex = 21
+        Me.Button11.Text = "Help"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1374,4 +1429,8 @@ Partial Class Form1
     Friend WithEvents RB8 As RadioButton
     Friend WithEvents OpenFileDialog2 As OpenFileDialog
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button11 As Button
 End Class
