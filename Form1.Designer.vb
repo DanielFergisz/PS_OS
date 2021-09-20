@@ -26,6 +26,7 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.RB2 = New System.Windows.Forms.RadioButton()
         Me.RB1 = New System.Windows.Forms.RadioButton()
         Me.SelectFile = New System.Windows.Forms.GroupBox()
@@ -44,6 +45,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.RB4 = New System.Windows.Forms.RadioButton()
         Me.SelectFile2 = New System.Windows.Forms.GroupBox()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -62,6 +64,7 @@ Partial Class Form1
         Me.D3_OS = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.RB5 = New System.Windows.Forms.RadioButton()
         Me.RB6 = New System.Windows.Forms.RadioButton()
         Me.SelectFile3 = New System.Windows.Forms.GroupBox()
@@ -85,6 +88,7 @@ Partial Class Form1
         Me.D4_OS = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.RB7 = New System.Windows.Forms.RadioButton()
         Me.RB8 = New System.Windows.Forms.RadioButton()
         Me.SelectFile4 = New System.Windows.Forms.GroupBox()
@@ -121,10 +125,6 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SelectFile.SuspendLayout()
@@ -180,6 +180,18 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "PlayStation 4"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button8.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.Black
+        Me.Button8.Location = New System.Drawing.Point(15, 195)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(59, 21)
+        Me.Button8.TabIndex = 11
+        Me.Button8.Text = "Help"
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'RB2
         '
@@ -406,6 +418,17 @@ Partial Class Form1
         Me.TabPage3.Text = "PlayStation 5"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Button9
+        '
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button9.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button9.Location = New System.Drawing.Point(15, 195)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(59, 21)
+        Me.Button9.TabIndex = 17
+        Me.Button9.Text = "Help"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
         'RB4
         '
         Me.RB4.AutoSize = True
@@ -630,6 +653,17 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PlayStation 3"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button10.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button10.Location = New System.Drawing.Point(15, 195)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(59, 21)
+        Me.Button10.TabIndex = 17
+        Me.Button10.Text = "Help"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'RB5
         '
@@ -888,7 +922,7 @@ Partial Class Form1
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label7.Location = New System.Drawing.Point(50, 33)
+        Me.Label7.Location = New System.Drawing.Point(49, 33)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 17)
@@ -914,6 +948,17 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "PSP"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button11.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button11.Location = New System.Drawing.Point(15, 195)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(59, 21)
+        Me.Button11.TabIndex = 21
+        Me.Button11.Text = "Help"
+        Me.Button11.UseVisualStyleBackColor = True
         '
         'RB7
         '
@@ -1183,7 +1228,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label8.Location = New System.Drawing.Point(73, 325)
+        Me.Label8.Location = New System.Drawing.Point(70, 325)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(113, 13)
@@ -1230,55 +1275,11 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.Filter = "Eboot File|*.pbp"
         '
-        'Button8
-        '
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button8.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.Black
-        Me.Button8.Location = New System.Drawing.Point(15, 195)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(59, 21)
-        Me.Button8.TabIndex = 11
-        Me.Button8.Text = "Help"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button9.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button9.Location = New System.Drawing.Point(15, 195)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(59, 21)
-        Me.Button9.TabIndex = 17
-        Me.Button9.Text = "Help"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button10.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button10.Location = New System.Drawing.Point(15, 195)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(59, 21)
-        Me.Button10.TabIndex = 17
-        Me.Button10.Text = "Help"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button11.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Button11.Location = New System.Drawing.Point(15, 195)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(59, 21)
-        Me.Button11.TabIndex = 21
-        Me.Button11.Text = "Help"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(439, 377)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.PictureBox1)

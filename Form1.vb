@@ -441,9 +441,9 @@ Public Class Form1
         wClient.Dispose()
     End Sub
 
-    Private Sub W2_OS_Click(sender As Object, e As EventArgs) Handles W2_OS.Click
+    Private Sub W2_OS_Click(sender As Object, e As EventArgs) Handles W2_OS.Click 'PS3
         D2_OS.Enabled = False
-        W2_OS.Enabled = False 'PS3
+        W2_OS.Enabled = False
         Update.Enabled = False
         ProgPrec.Text = "[ 0% ]"
         If Disks2.Text.Length = 0 Then
@@ -572,7 +572,7 @@ Public Class Form1
             End If
             client.DownloadFile("http://repairbox.pl/PS_OS/Updater_PS.exe", appPath + "\Updater_PS.exe")
             client.Dispose()
-            Log1.Text = "Downloading Updater v" + newVersion + "..."
+            Log1.Text = "Downloading Updater: v" + newVersion + "..."
             T_Update.Enabled = True
         Else
             Log1.Text = "You are using the latest version !!"
@@ -1185,4 +1185,5 @@ Public Class Form1
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         H_PSP.Show()
     End Sub
+
 End Class

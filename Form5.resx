@@ -121,6 +121,13 @@
     <value>1. Select v6.60 or v6.61 and click [ Download ] button
 2. Select external USB Drive (Memory Stick or connected PSP)
 3. If you want to format card, select Format: FAT32
-4. Click: [ Prepare SD Card ] button</value>
+4. Click: [ Prepare SD Card ] button
+
+5. Remove Memory Stick or disconnect PSP from PC
+6. If you are using a card, insert it into the PSP
+7. Go to Settings
+8. Select: System Update -&gt; Update via Storage Media
+9. Click [ OK ] button
+10. Wait for the update to be installed</value>
   </data>
 </root>

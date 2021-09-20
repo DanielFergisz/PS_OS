@@ -117,4 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>1. Click [ Download ] button
+2. Select external USB Drive
+3. If you want to format USB drive, select Format: FAT32
+4. Click: [ Prepare USB Drive ] button
+
+5. Unplug the usb flash drive and connect to PS3 (right USB port)
+6. Press and hold the power button on the console 
+7. After turning off, press and hold the power button again 
+8. After 4 beeps, release the power button. Wait to start safe mode
+9. Connect DualShock 3 to PS3 with a usb cable
+10. Click PS button
+11. Please select: "6. System Update"
+12. Press and hold START and SELECT buttons at the same time
+13. After restart, click PS button
+14. Select on the controller: 
+      Press right, press down (Accept), press right, press X button
+15. Wait for the software to install on the console disk</value>
+  </data>
+  <data name="RichTextBox2.Text" xml:space="preserve">
+    <value>1. Click [ Download ] button
+2. Select external USB Drive
+3. If you want to format USB drive, select Format: FAT32
+4. Click: [ Prepare USB Drive ] button
+
+5. Unplug the usb flash drive and connect to PS3 (right USB port)
+6. Go to Settings -&gt; System Update
+7. Update via Storage Media
+8. Click OK
+9. Select on the controller: 
+- Press right 
+- Press down (Accept) 
+- Press right 
+- Click [ Start ] button
+10. Wait for the update to be installed</value>
+  </data>
 </root>
