@@ -12,6 +12,10 @@ Public Class Form1
     Dim PS5_F As String
     Dim PS5_U As String
 
+    Dim PS5_F_Local As String
+    Dim PS5_U_Local As String
+
+
     Private wClient As Object
 
     '############### Checking internet connection ###################
@@ -247,6 +251,9 @@ Public Class Form1
             PS4_U = client.DownloadString("http://repairbox.pl/PS_OS/PS4_U.txt")
             PS5_F = client.DownloadString("http://repairbox.pl/PS_OS/PS5_F.txt")
             PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
+
+            PS5_F_Local = "http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_1013/rec_e947874a2c2e496e4dda163179f04891ee5300c5036a39d8ad928faddb3f0368/PS5UPDATE.PUP"
+            PS5_U_Local = "http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_1013/sys_d293f181b67115656f18e1b08adc937fc67f7e31bd32d4fd1d85144418de2c95/PS5UPDATE.PUP"
 
             If newVersion > appVer Then
                 Log1.Text = " PS_OS new version is available !!!  -------->  Check Update"
@@ -624,7 +631,7 @@ Public Class Form1
                     Try
                         wClient.DownloadFileAsync(New System.Uri(PS5_F), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                     Catch
-                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0924/rec_e224b886cbb2887042d080d7726c48bcdf3d00aed2a0a3c0b5243b7365896aed/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS5_F_Local), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -648,7 +655,7 @@ Public Class Form1
                 Try
                     wClient.DownloadFileAsync(New System.Uri(PS5_F), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0924/rec_e224b886cbb2887042d080d7726c48bcdf3d00aed2a0a3c0b5243b7365896aed/PS5UPDATE.PUP"), appPath + "\PS5\FULL\PS5UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS5_F_Local), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 End Try
             End If
         End If
@@ -663,7 +670,7 @@ Public Class Form1
                     Try
                         wClient.DownloadFileAsync(New System.Uri(PS5_U), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                     Catch
-                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0924/sys_0ab456b5bbd26d6b2571ed027fcf68459d91e4d040e9d63e610eb5987bc0565c/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS5_U_Local), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -687,7 +694,7 @@ Public Class Form1
                 Try
                     wClient.DownloadFileAsync(New System.Uri(PS5_U), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_0924/sys_0ab456b5bbd26d6b2571ed027fcf68459d91e4d040e9d63e610eb5987bc0565c/PS5UPDATE.PUP"), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS5_U_Local), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 End Try
             End If
         End If
