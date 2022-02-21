@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As SByte = "126" 'App Version
+    Dim appVer As Int32 = "128" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -57,7 +57,7 @@ Public Class Form1
                     Try
                         wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\PS4UPDATE.PUP")
                     Catch 'wyjątek / else
-                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps4.update.playstation.net/update/ps4/image/2021_0901/rec_674420f041cb5845aae85928751ccd0e/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri("https://pc.ps4.update.playstation.net/update/ps4/image/2022_0217/rec_9af7bed8d37dbe16c42651ba6984d12c/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -81,7 +81,7 @@ Public Class Form1
                 Try
                     wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\PS4UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps4.update.playstation.net/update/ps4/image/2021_0901/rec_674420f041cb5845aae85928751ccd0e/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri("https://pc.ps4.update.playstation.net/update/ps4/image/2022_0217/rec_9af7bed8d37dbe16c42651ba6984d12c/PS4UPDATE.PUP"), appPath + "\PS4\FULL\PS4UPDATE.PUP")
                 End Try
             End If
         End If
@@ -95,7 +95,7 @@ Public Class Form1
                     Try
                         wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
                     Catch
-                        wClient.DownloadFileAsync(New System.Uri("http://deu01.ps4.update.playstation.net/update/ps4/image/2021_0901/sys_e923e6d210399f236177e332843e2754/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri("https://pc.ps4.update.playstation.net/update/ps4/image/2022_0217/sys_a3946f9d0822ff60a1ae3c68ab754eab/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -119,7 +119,7 @@ Public Class Form1
                 Try
                     wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri("http://deu01.ps4.update.playstation.net/update/ps4/image/2021_0901/sys_e923e6d210399f236177e332843e2754/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri("https://pc.ps4.update.playstation.net/update/ps4/image/2022_0217/sys_a3946f9d0822ff60a1ae3c68ab754eab/PS4UPDATE.PUP"), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
                 End Try
             End If
         End If
@@ -252,8 +252,8 @@ Public Class Form1
             PS5_F = client.DownloadString("http://repairbox.pl/PS_OS/PS5_F.txt")
             PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
 
-            PS5_F_Local = "http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_1013/rec_e947874a2c2e496e4dda163179f04891ee5300c5036a39d8ad928faddb3f0368/PS5UPDATE.PUP"
-            PS5_U_Local = "http://deu01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_1013/sys_d293f181b67115656f18e1b08adc937fc67f7e31bd32d4fd1d85144418de2c95/PS5UPDATE.PUP"
+            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_1117/rec_6867d2bb99a8369a98e4129dae937d611618466ae700e5bc52e1c365dca0a7c6/PS5UPDATE.PUP"
+            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2021_1117/sys_5a9888a72c3f34cf831dfe24671afe7868db8e17c38172d12e095d81436b1851/PS5UPDATE.PUP"
 
             If newVersion > appVer Then
                 Log1.Text = " PS_OS new version is available !!!  -------->  Check Update"
