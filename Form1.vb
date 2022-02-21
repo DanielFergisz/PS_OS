@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As Int32 = "128" 'App Version
+    Dim appVer As Int32 = "129" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String

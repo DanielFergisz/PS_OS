@@ -1139,12 +1139,12 @@ Partial Class Form1
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label9.Location = New System.Drawing.Point(44, 33)
+        Me.Label9.Location = New System.Drawing.Point(35, 34)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(31, 17)
+        Me.Label9.Size = New System.Drawing.Size(73, 17)
         Me.Label9.TabIndex = 4
-        Me.Label9.Text = "FW"
+        Me.Label9.Text = "Firmware"
         '
         'Log1
         '
@@ -1294,7 +1294,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.28"
+        Me.Text = "PS_OS v1.29"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
