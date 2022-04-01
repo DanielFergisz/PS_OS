@@ -52,15 +52,15 @@ Public Class Form1
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
 
         If R1.Checked = True Then
-            If File.Exists("PS4\FULL\PS4UPDATE.PUP") = True Then
+            If File.Exists("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
                 Log1.Text = "Downloading file, please wait.."
                 If ask = MsgBoxResult.Yes Then
                     AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     Try
-                        wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
                     Catch 'wyjątek / else
-                        wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -79,26 +79,30 @@ Public Class Form1
                     Exit Sub
                 End If
             Else
+                If Directory.Exists("PS5\FULL\" + ps4ver.Text) = True Then
+                Else
+                    Directory.CreateDirectory("PS5\FULL\" + ps4ver.Text)
+                End If
                 Log1.Text = "Downloading file, please wait.."
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 Try
-                    wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
                 End Try
             End If
         End If
 
         If R2.Checked = True Then
-            If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") = True Then
+            If File.Exists("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
                 Log1.Text = "Downloading file, please wait.."
                 If ask = MsgBoxResult.Yes Then
                     AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     Try
-                        wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
                     Catch
-                        wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -117,12 +121,16 @@ Public Class Form1
                     Exit Sub
                 End If
             Else
+                If Directory.Exists("PS4\UPDATE\" + ps4ver.Text) = True Then
+                Else
+                    Directory.CreateDirectory("PS4\UPDATE\" + ps4ver.Text)
+                End If
                 Log1.Text = "Downloading file, please wait.."
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 Try
-                    wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
                 End Try
             End If
         End If
@@ -348,12 +356,12 @@ Public Class Form1
                 p.WaitForExit()
             End If
 
-            If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE") Then
+            If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\") Then
             Else
-                Log1.Text = "Creating directories: PS4\UPDATE.."
-                System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PS4\UPDATE")
-                If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE") Then
-                    Log1.Text = "Creating directories: PS4\UPDATE.. OK"
+                Log1.Text = "Creating directories: PS4\UPDATE\" + ps4ver.Text + ".."
+                System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\")
+                If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\") Then
+                    Log1.Text = "Creating directories: PS4\UPDATE\.. OK"
                 Else
                     Log1.Text = "FAIL"
                     Exit Sub
@@ -375,13 +383,13 @@ Public Class Form1
         Else
             R5.ForeColor = Color.Black
         End If
-        If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
+        If File.Exists("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
             R1.ForeColor = Color.DarkGreen
         Else
             R1.ForeColor = Color.Black
         End If
 
-        If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
+        If File.Exists("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
             R2.ForeColor = Color.DarkGreen
         Else
             R2.ForeColor = Color.Black
@@ -507,16 +515,16 @@ Public Class Form1
 
         If RB1.Checked = True Then
             If R1.Checked = True Then
-                If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
+                If File.Exists("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
                     Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                    FileCopy("PS4\FULL\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+                    FileCopy("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
                 End If
             End If
 
             If R2.Checked = True Then
-                If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
+                If File.Exists("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
                     Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                    FileCopy("PS4\UPDATE\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+                    FileCopy("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
                 End If
             End If
         End If
