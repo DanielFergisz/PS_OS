@@ -84,14 +84,17 @@ Public Class Form1
                 Else
                     Directory.CreateDirectory("PS4\FULL\" + ps4ver_server.Text)
                 End If
+
                 Log1.Text = "Downloading file, please wait.."
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+
                 Try
                     wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                 Catch
                     wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                 End Try
-                If ps4ver.Text <> ps4ver_server.Text Then
+
+                If ps4ver.Text <> "" Then
                     Directory.Delete("PS4\FULL\" + ps4ver.Text, True)
                 End If
             End If
@@ -141,7 +144,7 @@ Public Class Form1
                     Catch
                         wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                     End Try
-                If ps4ver.Text <> ps4ver_server.Text Then
+                If ps4ver.Text <> "" Then
                     Directory.Delete("PS4\UPDATE\" + ps4ver.Text, True)
                 End If
             End If
@@ -712,7 +715,7 @@ Public Class Form1
                 Catch
                     wClient.DownloadFileAsync(New System.Uri(PS5_F_Local), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 End Try
-                If ps5ver.Text <> ps5ver_server.Text Then
+                If ps5ver.Text <> "" Then
                     Directory.Delete("PS5\FULL\" + ps5ver.Text, True)
                 End If
             End If
@@ -754,7 +757,7 @@ Public Class Form1
                 Catch
                     wClient.DownloadFileAsync(New System.Uri(PS5_U_Local), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 End Try
-                If ps5ver.Text <> ps5ver_server.Text Then
+                If ps5ver.Text <> "" Then
                     Directory.Delete("PS5\UPDATE\" + ps5ver.Text, True)
                 End If
             End If
