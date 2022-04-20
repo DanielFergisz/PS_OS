@@ -51,16 +51,17 @@ Public Class Form1
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
 
+        '////////// FULL /////////////////
         If R1.Checked = True Then
-            If File.Exists("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP") = True Then
+            If File.Exists("PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
                 Log1.Text = "Downloading file, please wait.."
                 If ask = MsgBoxResult.Yes Then
                     AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                     Try
-                        wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                     Catch 'wyjątek / else
-                        wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
+                        wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                     End Try
                 End If
                 If ask = MsgBoxResult.No Then
@@ -79,61 +80,72 @@ Public Class Form1
                     Exit Sub
                 End If
             Else
-                If Directory.Exists("PS5\FULL\" + ps4ver.Text) = True Then
+                If Directory.Exists("PS4\FULL\" + ps4ver_server.Text) = True Then
                 Else
-                    Directory.CreateDirectory("PS5\FULL\" + ps4ver.Text)
+                    Directory.CreateDirectory("PS4\FULL\" + ps4ver_server.Text)
                 End If
                 Log1.Text = "Downloading file, please wait.."
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
                 Try
-                    wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS4_F), appPath + "\PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                 Catch
-                    wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP")
+                    wClient.DownloadFileAsync(New System.Uri(PS4_F_Local), appPath + "\PS4\FULL\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
                 End Try
+                If ps4ver.Text <> ps4ver_server.Text Then
+                    Directory.Delete("PS4\FULL\" + ps4ver.Text, True)
+                End If
             End If
-        End If
+            End If
 
+        '///////////// UPDATE ///////////////
         If R2.Checked = True Then
-            If File.Exists("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP") = True Then
-                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-                Log1.Text = "Downloading file, please wait.."
-                If ask = MsgBoxResult.Yes Then
-                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-                    Try
-                        wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
-                    Catch
-                        wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
-                    End Try
-                End If
-                If ask = MsgBoxResult.No Then
-                    W_OS.Enabled = True
-                    W2_OS.Enabled = True
-                    W3_OS.Enabled = True
-                    W4_OS.Enabled = True
-                    D_OS.Enabled = True
-                    D2_OS.Enabled = True
-                    D3_OS.Enabled = True
-                    D4_OS.Enabled = True
-                    D5_OS.Enabled = True
-                    Update.Enabled = True
-                    ProgressBar1.Style = ProgressBarStyle.Blocks
-                    Log1.Text = "Download canceled "
-                    Exit Sub
-                End If
-            Else
-                If Directory.Exists("PS4\UPDATE\" + ps4ver.Text) = True Then
+                If File.Exists("PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP") = True Then
+                    Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                    Log1.Text = "Downloading file, please wait.."
+                    If ask = MsgBoxResult.Yes Then
+                        AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+
+                        Try
+                            wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                        Catch
+                            wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                        End Try
+                    End If
+
+                    If ask = MsgBoxResult.No Then
+                        W_OS.Enabled = True
+                        W2_OS.Enabled = True
+                        W3_OS.Enabled = True
+                        W4_OS.Enabled = True
+                        D_OS.Enabled = True
+                        D2_OS.Enabled = True
+                        D3_OS.Enabled = True
+                        D4_OS.Enabled = True
+                        D5_OS.Enabled = True
+                        Update.Enabled = True
+                        ProgressBar1.Style = ProgressBarStyle.Blocks
+                        Log1.Text = "Download canceled "
+                        Exit Sub
+                    End If
                 Else
-                    Directory.CreateDirectory("PS4\UPDATE\" + ps4ver.Text)
+                    If Directory.Exists("PS4\UPDATE\" + ps4ver_server.Text) = True Then
+                    Else
+                        Directory.CreateDirectory("PS4\UPDATE\" + ps4ver_server.Text)
+                    End If
+
+                    Log1.Text = "Downloading file, please wait.."
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+
+                    Try
+                        wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                    Catch
+                        wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                    End Try
+                If ps4ver.Text <> ps4ver_server.Text Then
+                    Directory.Delete("PS4\UPDATE\" + ps4ver.Text, True)
                 End If
-                Log1.Text = "Downloading file, please wait.."
-                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-                Try
-                    wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
-                Catch
-                    wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP")
-                End Try
             End If
-        End If
+            End If
         wClient.Dispose()
     End Sub
     Private Sub ProgChanged(sender As Object, e As DownloadProgressChangedEventArgs)
@@ -257,11 +269,25 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If CheckForInternetConnection() = True Then
             Dim client As New Net.WebClient
-            Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
-            PS4_F = client.DownloadString("http://repairbox.pl/PS_OS/PS4_F.txt")
-            PS4_U = client.DownloadString("http://repairbox.pl/PS_OS/PS4_U.txt")
-            PS5_F = client.DownloadString("http://repairbox.pl/PS_OS/PS5_F.txt")
-            PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
+            Try
+                Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
+
+                PS4_F = client.DownloadString("http://repairbox.pl/PS_OS/PS4_F.txt")
+                PS4_U = client.DownloadString("http://repairbox.pl/PS_OS/PS4_U.txt")
+                PS5_F = client.DownloadString("http://repairbox.pl/PS_OS/PS5_F.txt")
+                PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
+
+                ps4ver_server.Text = client.DownloadString("http://repairbox.pl/PS_OS/ps4_ver.txt")
+                ps5ver_server.Text = client.DownloadString("http://repairbox.pl/PS_OS/ps5_ver.txt")
+
+
+                If newVersion > appVer Then
+                    Log1.Text = " PS_OS new version is available !!!  -------->  Check Update"
+                End If
+
+            Catch
+                Log1.Text = "Server error !!"
+            End Try
 
             PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0316/rec_028896220519726f78007ef3b9c7cd2e4df67f87babe533f61e908569220084f/PS5UPDATE.PUP"
             PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0316/sys_10de0a8b4663fb08050aa587abe8240859f9ad05a36f370aac9717300dc15ad3/PS5UPDATE.PUP"
@@ -269,9 +295,7 @@ Public Class Form1
             PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0307/rec_e3b319239ae0cd4e585db81e4e35dabc/PS4UPDATE.PUP"
             PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0307/sys_1e2874a9203dfb8b1c01c18a42e1fcca/PS4UPDATE.PUP"
 
-            If newVersion > appVer Then
-                Log1.Text = " PS_OS new version is available !!!  -------->  Check Update"
-            End If
+
         Else
             Log1.Text = "Check internet connection !!"
             D_OS.Enabled = False
@@ -323,6 +347,30 @@ Public Class Form1
             File.Delete("PS_OS.exe.old")
         End If
         Del_UP.Enabled = True
+
+        '////////////// read version ////////////////
+        For Each Dir As String In Directory.GetDirectories("PS4\FULL\")
+            ps4ver.Text = Mid(Dir, 10, 4)
+        Next
+
+        For Each Dir As String In Directory.GetDirectories("PS5\FULL\")
+            ps5ver.Text = Mid(Dir, 10, 14)
+        Next
+
+        '///////////////// delete old files //////////////////
+        If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
+            File.Delete("PS4\FULL\PS4UPDATE.PUP")
+        End If
+        If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
+            File.Delete("PS4\UPDATE\PS4UPDATE.PUP")
+        End If
+        If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
+            File.Delete("PS5\FULL\PS5UPDATE.PUP")
+        End If
+        If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+            File.Delete("PS5\UPDATE\PS5UPDATE.PUP")
+        End If
+
     End Sub
 
     Private Sub W_OS_Click(sender As Object, e As EventArgs) Handles W_OS.Click
@@ -372,29 +420,6 @@ Public Class Form1
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
-            R4.ForeColor = Color.DarkGreen
-        Else
-            R4.ForeColor = Color.Black
-        End If
-
-        If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
-            R5.ForeColor = Color.DarkGreen
-        Else
-            R5.ForeColor = Color.Black
-        End If
-        If File.Exists("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
-            R1.ForeColor = Color.DarkGreen
-        Else
-            R1.ForeColor = Color.Black
-        End If
-
-        If File.Exists("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
-            R2.ForeColor = Color.DarkGreen
-        Else
-            R2.ForeColor = Color.Black
-        End If
-
         If File.Exists("PS3\PS3UPDAT.PUP") Then
             R3.ForeColor = Color.DarkGreen
         Else
@@ -417,7 +442,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click  'PS3
+    '############################## PS3 ##################################
+    Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
@@ -504,7 +530,6 @@ Public Class Form1
                     Exit Sub
                 End If
             End If
-            'Threading.Thread.Sleep(20000)
             BackgroundWorker2.RunWorkerAsync()
         End If
     End Sub
@@ -607,6 +632,20 @@ Public Class Form1
             End If
         Next
         ProgressBar1.Style = ProgressBarStyle.Blocks
+
+        '/////////// delete old files ///////////////
+        If File.Exists("PS4\UPDATE\PS4UPDATE.PUP") Then
+            File.Delete("PS4\UPDATE\PS4UPDATE.PUP")
+        End If
+        If File.Exists("PS4\FULL\PS4UPDATE.PUP") Then
+            File.Delete("PS4\FULL\PS4UPDATE.PUP")
+        End If
+        If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
+            File.Delete("PS5\FULL\PS5UPDATE.PUP")
+        End If
+        If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+            File.Delete("PS5\UPDATE\PS5UPDATE.PUP")
+        End If
     End Sub
 
     Private Sub Del_UP_Tick(sender As Object, e As EventArgs) Handles Del_UP.Tick
@@ -620,8 +659,8 @@ Public Class Form1
 
         Update.Enabled = True
     End Sub
-
-    Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click  'PS5
+    '//////////////////// PS5 ///////////////////////////
+    Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
@@ -636,6 +675,8 @@ Public Class Form1
         ProgressBar1.Style = ProgressBarStyle.Marquee
         Dim wClient As New WebClient()
         AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+
+        '/////////// FULL /////////////
         If R4.Checked = True Then
             If File.Exists("PS5\FULL\PS5UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
@@ -671,10 +712,13 @@ Public Class Form1
                 Catch
                     wClient.DownloadFileAsync(New System.Uri(PS5_F_Local), appPath + "\PS5\FULL\PS5UPDATE.PUP")
                 End Try
+                If ps5ver.Text <> ps5ver_server.Text Then
+                    Directory.Delete("PS5\FULL\" + ps5ver.Text, True)
+                End If
             End If
         End If
 
-
+        '/////////// UPDATE /////////////
         If R5.Checked = True Then
             If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") = True Then
                 Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
@@ -710,6 +754,9 @@ Public Class Form1
                 Catch
                     wClient.DownloadFileAsync(New System.Uri(PS5_U_Local), appPath + "\PS5\UPDATE\PS5UPDATE.PUP")
                 End Try
+                If ps5ver.Text <> ps5ver_server.Text Then
+                    Directory.Delete("PS5\UPDATE\" + ps5ver.Text, True)
+                End If
             End If
         End If
         wClient.Dispose()
@@ -1203,4 +1250,35 @@ Public Class Form1
         H_PSP.Show()
     End Sub
 
+    Private Sub R1_CheckedChanged(sender As Object, e As EventArgs) Handles R1.CheckedChanged
+        ps4ver.Clear()
+        If Directory.Exists("PS4\FULL\") Then
+            For Each Dir As String In Directory.GetDirectories("PS4\FULL\")
+                ps4ver.Text = Mid(Dir, 10, 4)
+            Next
+        End If
+    End Sub
+
+    Private Sub R2_CheckedChanged(sender As Object, e As EventArgs) Handles R2.CheckedChanged
+        ps4ver.Clear()
+        For Each Dir As String In Directory.GetDirectories("PS4\UPDATE\")
+            ps4ver.Text = Mid(Dir, 12, 4)
+        Next
+    End Sub
+
+    Private Sub R4_CheckedChanged(sender As Object, e As EventArgs) Handles R4.CheckedChanged
+        ps5ver.Clear()
+        If Directory.Exists("PS5\FULL\") Then
+            For Each Dir As String In Directory.GetDirectories("PS5\FULL\")
+                ps5ver.Text = Mid(Dir, 10, 14)
+            Next
+        End If
+    End Sub
+
+    Private Sub R5_CheckedChanged(sender As Object, e As EventArgs) Handles R5.CheckedChanged
+        ps5ver.Clear()
+        For Each Dir As String In Directory.GetDirectories("PS5\UPDATE\")
+            ps5ver.Text = Mid(Dir, 12, 14)
+        Next
+    End Sub
 End Class

@@ -36,7 +36,10 @@ Partial Class Form1
         Me.O1 = New System.Windows.Forms.Button()
         Me.F1 = New System.Windows.Forms.CheckBox()
         Me.Downloader = New System.Windows.Forms.GroupBox()
-        Me.ps4ver = New System.Windows.Forms.Label()
+        Me.ps4ver = New System.Windows.Forms.TextBox()
+        Me.ps4ver_server = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.OF1 = New System.Windows.Forms.Button()
         Me.R2 = New System.Windows.Forms.RadioButton()
         Me.R1 = New System.Windows.Forms.RadioButton()
@@ -58,11 +61,14 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Disks3 = New System.Windows.Forms.ComboBox()
         Me.Downloader2 = New System.Windows.Forms.GroupBox()
+        Me.ps5ver_server = New System.Windows.Forms.TextBox()
+        Me.ps5ver = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.OF2 = New System.Windows.Forms.Button()
         Me.R5 = New System.Windows.Forms.RadioButton()
         Me.R4 = New System.Windows.Forms.RadioButton()
         Me.D3_OS = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.RB5 = New System.Windows.Forms.RadioButton()
@@ -279,6 +285,9 @@ Partial Class Form1
         'Downloader
         '
         Me.Downloader.Controls.Add(Me.ps4ver)
+        Me.Downloader.Controls.Add(Me.ps4ver_server)
+        Me.Downloader.Controls.Add(Me.Label11)
+        Me.Downloader.Controls.Add(Me.Label2)
         Me.Downloader.Controls.Add(Me.OF1)
         Me.Downloader.Controls.Add(Me.R2)
         Me.Downloader.Controls.Add(Me.R1)
@@ -295,14 +304,37 @@ Partial Class Form1
         '
         'ps4ver
         '
-        Me.ps4ver.AutoSize = True
-        Me.ps4ver.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.ps4ver.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.ps4ver.Location = New System.Drawing.Point(59, 33)
+        Me.ps4ver.Enabled = False
+        Me.ps4ver.Location = New System.Drawing.Point(71, 20)
         Me.ps4ver.Name = "ps4ver"
-        Me.ps4ver.Size = New System.Drawing.Size(43, 17)
-        Me.ps4ver.TabIndex = 8
-        Me.ps4ver.Text = "9.50"
+        Me.ps4ver.Size = New System.Drawing.Size(49, 20)
+        Me.ps4ver.TabIndex = 12
+        '
+        'ps4ver_server
+        '
+        Me.ps4ver_server.Enabled = False
+        Me.ps4ver_server.Location = New System.Drawing.Point(71, 43)
+        Me.ps4ver_server.Name = "ps4ver_server"
+        Me.ps4ver_server.Size = New System.Drawing.Size(49, 20)
+        Me.ps4ver_server.TabIndex = 11
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(14, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(51, 13)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Server:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(24, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Local:"
         '
         'OF1
         '
@@ -321,7 +353,7 @@ Partial Class Form1
         Me.R2.AutoSize = True
         Me.R2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R2.ForeColor = System.Drawing.Color.Black
-        Me.R2.Location = New System.Drawing.Point(124, 44)
+        Me.R2.Location = New System.Drawing.Point(140, 44)
         Me.R2.Margin = New System.Windows.Forms.Padding(2)
         Me.R2.Name = "R2"
         Me.R2.Size = New System.Drawing.Size(71, 17)
@@ -336,7 +368,7 @@ Partial Class Form1
         Me.R1.Checked = True
         Me.R1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R1.ForeColor = System.Drawing.Color.Black
-        Me.R1.Location = New System.Drawing.Point(124, 20)
+        Me.R1.Location = New System.Drawing.Point(140, 20)
         Me.R1.Margin = New System.Windows.Forms.Padding(2)
         Me.R1.Name = "R1"
         Me.R1.Size = New System.Drawing.Size(49, 17)
@@ -549,11 +581,14 @@ Partial Class Form1
         '
         'Downloader2
         '
+        Me.Downloader2.Controls.Add(Me.ps5ver_server)
+        Me.Downloader2.Controls.Add(Me.ps5ver)
+        Me.Downloader2.Controls.Add(Me.Label12)
+        Me.Downloader2.Controls.Add(Me.Label5)
         Me.Downloader2.Controls.Add(Me.OF2)
         Me.Downloader2.Controls.Add(Me.R5)
         Me.Downloader2.Controls.Add(Me.R4)
         Me.Downloader2.Controls.Add(Me.D3_OS)
-        Me.Downloader2.Controls.Add(Me.Label5)
         Me.Downloader2.Location = New System.Drawing.Point(40, 5)
         Me.Downloader2.Margin = New System.Windows.Forms.Padding(2)
         Me.Downloader2.Name = "Downloader2"
@@ -563,13 +598,47 @@ Partial Class Form1
         Me.Downloader2.TabStop = False
         Me.Downloader2.Text = "Download tool"
         '
+        'ps5ver_server
+        '
+        Me.ps5ver_server.Enabled = False
+        Me.ps5ver_server.Location = New System.Drawing.Point(62, 41)
+        Me.ps5ver_server.Name = "ps5ver_server"
+        Me.ps5ver_server.Size = New System.Drawing.Size(94, 21)
+        Me.ps5ver_server.TabIndex = 12
+        '
+        'ps5ver
+        '
+        Me.ps5ver.Enabled = False
+        Me.ps5ver.Location = New System.Drawing.Point(62, 19)
+        Me.ps5ver.Name = "ps5ver"
+        Me.ps5ver.Size = New System.Drawing.Size(94, 21)
+        Me.ps5ver.TabIndex = 11
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(7, 44)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(51, 13)
+        Me.Label12.TabIndex = 10
+        Me.Label12.Text = "Server:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(17, 22)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(41, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Local:"
+        '
         'OF2
         '
         Me.OF2.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.OF2.Location = New System.Drawing.Point(218, 44)
+        Me.OF2.Location = New System.Drawing.Point(242, 44)
         Me.OF2.Margin = New System.Windows.Forms.Padding(2)
         Me.OF2.Name = "OF2"
-        Me.OF2.Size = New System.Drawing.Size(117, 25)
+        Me.OF2.Size = New System.Drawing.Size(93, 25)
         Me.OF2.TabIndex = 8
         Me.OF2.Text = "Open"
         Me.ToolTip1.SetToolTip(Me.OF2, "Open file directory")
@@ -580,7 +649,7 @@ Partial Class Form1
         Me.R5.AutoSize = True
         Me.R5.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.R5.Location = New System.Drawing.Point(145, 43)
+        Me.R5.Location = New System.Drawing.Point(166, 43)
         Me.R5.Margin = New System.Windows.Forms.Padding(2)
         Me.R5.Name = "R5"
         Me.R5.Size = New System.Drawing.Size(71, 17)
@@ -595,7 +664,7 @@ Partial Class Form1
         Me.R4.Checked = True
         Me.R4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.R4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.R4.Location = New System.Drawing.Point(145, 19)
+        Me.R4.Location = New System.Drawing.Point(166, 19)
         Me.R4.Margin = New System.Windows.Forms.Padding(2)
         Me.R4.Name = "R4"
         Me.R4.Size = New System.Drawing.Size(49, 17)
@@ -610,26 +679,14 @@ Partial Class Form1
         Me.D3_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.D3_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.D3_OS.ForeColor = System.Drawing.Color.Blue
-        Me.D3_OS.Location = New System.Drawing.Point(218, 15)
+        Me.D3_OS.Location = New System.Drawing.Point(242, 15)
         Me.D3_OS.Margin = New System.Windows.Forms.Padding(2)
         Me.D3_OS.Name = "D3_OS"
-        Me.D3_OS.Size = New System.Drawing.Size(117, 25)
+        Me.D3_OS.Size = New System.Drawing.Size(93, 25)
         Me.D3_OS.TabIndex = 1
         Me.D3_OS.Text = "Download"
         Me.ToolTip1.SetToolTip(Me.D3_OS, "Download firmware file")
         Me.D3_OS.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label5.Location = New System.Drawing.Point(10, 36)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(129, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "FW 22.01-05.00.00"
         '
         'TabPage2
         '
@@ -1368,7 +1425,6 @@ Partial Class Form1
     Friend WithEvents R5 As RadioButton
     Friend WithEvents R4 As RadioButton
     Friend WithEvents D3_OS As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents BackgroundWorker4 As System.ComponentModel.BackgroundWorker
     Friend WithEvents O1 As Button
     Friend WithEvents O2 As Button
@@ -1403,7 +1459,6 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker5 As System.ComponentModel.BackgroundWorker
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents ps4ver As Label
     Friend WithEvents RB2 As RadioButton
     Friend WithEvents RB1 As RadioButton
     Friend WithEvents SelectFile As GroupBox
@@ -1432,4 +1487,12 @@ Partial Class Form1
     Friend WithEvents Button9 As Button
     Friend WithEvents Button10 As Button
     Friend WithEvents Button11 As Button
+    Friend WithEvents ps4ver As TextBox
+    Friend WithEvents ps4ver_server As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents ps5ver_server As TextBox
+    Friend WithEvents ps5ver As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label5 As Label
 End Class
