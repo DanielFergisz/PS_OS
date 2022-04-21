@@ -131,6 +131,10 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.refresh_ps4_full = New System.Windows.Forms.Timer(Me.components)
+        Me.refresh_ps4_update = New System.Windows.Forms.Timer(Me.components)
+        Me.refresh_ps5_update = New System.Windows.Forms.Timer(Me.components)
+        Me.refresh_ps5_full = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SelectFile.SuspendLayout()
@@ -1330,6 +1334,22 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.Filter = "Eboot File|*.pbp"
         '
+        'refresh_ps4_full
+        '
+        Me.refresh_ps4_full.Interval = 3000
+        '
+        'refresh_ps4_update
+        '
+        Me.refresh_ps4_update.Interval = 3000
+        '
+        'refresh_ps5_update
+        '
+        Me.refresh_ps5_update.Interval = 3000
+        '
+        'refresh_ps5_full
+        '
+        Me.refresh_ps5_full.Interval = 3000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1495,4 +1515,8 @@ Partial Class Form1
     Friend WithEvents ps5ver As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents refresh_ps4_full As Timer
+    Friend WithEvents refresh_ps4_update As Timer
+    Friend WithEvents refresh_ps5_update As Timer
+    Friend WithEvents refresh_ps5_full As Timer
 End Class
