@@ -296,11 +296,11 @@ Public Class Form1
                 Log1.Text = "Server error !!"
             End Try
 
-            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0316/rec_028896220519726f78007ef3b9c7cd2e4df67f87babe533f61e908569220084f/PS5UPDATE.PUP"
-            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0316/sys_10de0a8b4663fb08050aa587abe8240859f9ad05a36f370aac9717300dc15ad3/PS5UPDATE.PUP"
+            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0407/rec_67db0571283561fc1e348c42070ae4b8f7c658ffb1c723616497f8d791311c89/PS5UPDATE.PUP"
+            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0407/sys_8f5af819889a046acd2e3186cfa9924d954cdb0c9a67d9863627339326088a77/PS5UPDATE.PUP"
 
-            PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0307/rec_e3b319239ae0cd4e585db81e4e35dabc/PS4UPDATE.PUP"
-            PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0307/sys_1e2874a9203dfb8b1c01c18a42e1fcca/PS4UPDATE.PUP"
+            PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0406/rec_6a868c6b52780aaad92dcbfdafa00dfb/PS4UPDATE.PUP"
+            PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0406/sys_fe4ee3b360950fa1f5dad7dd09f20543/PS4UPDATE.PUP"
 
 
         Else
@@ -413,7 +413,7 @@ Public Class Form1
 
             If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\") Then
             Else
-                Log1.Text = "Creating directories: PS4\UPDATE\" + ps4ver.Text + ".."
+                Log1.Text = "Creating directories: PS4\UPDATE\.."
                 System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\")
                 If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PS4\UPDATE\") Then
                     Log1.Text = "Creating directories: PS4\UPDATE\.. OK"
@@ -422,7 +422,16 @@ Public Class Form1
                     Exit Sub
                 End If
             End If
-            BackgroundWorker1.RunWorkerAsync()
+
+            If ps4ver.Text = "" Then
+                ProgressBar1.Style = ProgressBarStyle.Blocks
+                D_OS.Enabled = True
+                W_OS.Enabled = True
+                Update.Enabled = True
+                Log1.Text = "Please download firmware file first !!"
+            Else
+                BackgroundWorker1.RunWorkerAsync()
+            End If
         End If
     End Sub
 
@@ -550,6 +559,8 @@ Public Class Form1
                 If File.Exists("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
                     Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                     FileCopy("PS4\FULL\" + ps4ver.Text + "\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+                Else
+                    Log1.Text = "Please download firmware file first !!"
                 End If
             End If
 
@@ -557,6 +568,8 @@ Public Class Form1
                 If File.Exists("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP") Then
                     Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                     FileCopy("PS4\UPDATE\" + ps4ver.Text + "\PS4UPDATE.PUP", D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+                Else
+                    Log1.Text = "Please download firmware file first !!"
                 End If
             End If
         End If
@@ -565,6 +578,8 @@ Public Class Form1
             If File.Exists(DirF.Text) Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy(DirF.Text, D_D & "PS4\UPDATE\PS4UPDATE.PUP")
+            Else
+                Log1.Text = "Please select firmware file first !!"
             End If
         End If
     End Sub
@@ -824,7 +839,16 @@ Public Class Form1
                     Exit Sub
                 End If
             End If
-            BackgroundWorker4.RunWorkerAsync()
+
+            If ps5ver.Text = "" Then
+                ProgressBar1.Style = ProgressBarStyle.Blocks
+                D3_OS.Enabled = True
+                W3_OS.Enabled = True
+                Update.Enabled = True
+                Log1.Text = "Please download firmware file first !!"
+            Else
+                BackgroundWorker4.RunWorkerAsync()
+            End If
         End If
     End Sub
 
@@ -834,16 +858,20 @@ Public Class Form1
 
         If RB3.Checked = True Then
             If R4.Checked = True Then
-                If File.Exists("PS5\FULL\PS5UPDATE.PUP") Then
+                If File.Exists("PS5\FULL\" + ps5ver.Text + "\PS5UPDATE.PUP") Then
                     Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                    FileCopy("PS5\FULL\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                    FileCopy("PS5\FULL\" + ps5ver.Text + "\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                Else
+                    Log1.Text = "Please download firmware file first !!"
                 End If
             End If
 
             If R5.Checked = True Then
-                If File.Exists("PS5\UPDATE\PS5UPDATE.PUP") Then
+                If File.Exists("PS5\UPDATE\" + ps5ver.Text + "\PS5UPDATE.PUP") Then
                     Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
-                    FileCopy("PS5\UPDATE\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                    FileCopy("PS5\UPDATE\" + ps5ver.Text + "\PS5UPDATE.PUP", D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+                Else
+                    Log1.Text = "Please download firmware file first !!"
                 End If
             End If
         End If
@@ -852,6 +880,8 @@ Public Class Form1
             If File.Exists(DirF2.Text) Then
                 Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
                 FileCopy(DirF2.Text, D_D4 & "PS5\UPDATE\PS5UPDATE.PUP")
+            Else
+                Log1.Text = "Please select firmware file first !!"
             End If
         End If
     End Sub
