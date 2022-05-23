@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As Int32 = "130" 'App Version
+    Dim appVer As Int32 = "131" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -296,11 +296,11 @@ Public Class Form1
                 Log1.Text = "Server error !!"
             End Try
 
-            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0407/rec_67db0571283561fc1e348c42070ae4b8f7c658ffb1c723616497f8d791311c89/PS5UPDATE.PUP"
-            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0407/sys_8f5af819889a046acd2e3186cfa9924d954cdb0c9a67d9863627339326088a77/PS5UPDATE.PUP"
+            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0510/rec_2dfb283635f849a80d32d2b83fa3ba7af00518bdb9a2f6567a1e3566e4f0131d/PS5UPDATE.PUP"
+            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0510/sys_f4c194a6ed3f1b54244c6d92a2f2fb754001b949edfbf87eb92e56b1e601cb3d/PS5UPDATE.PUP"
 
-            PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0406/rec_6a868c6b52780aaad92dcbfdafa00dfb/PS4UPDATE.PUP"
-            PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0406/sys_fe4ee3b360950fa1f5dad7dd09f20543/PS4UPDATE.PUP"
+            PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0510/rec_4ca1c1dc093563044c620cbf0e7afa2e/PS4UPDATE.PUP"
+            PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0510/sys_406e1bb5c202bc990d8e5799a20d0995/PS4UPDATE.PUP"
 
 
         Else
@@ -479,7 +479,7 @@ Public Class Form1
             Log1.Text = "Downloading file, please wait.."
             If ask = MsgBoxResult.Yes Then
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-                wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2021_0601_a0b63a3e4ae92ed176d6b9a67ce447f0/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
+                wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2022_0510_95307e1b51d3bcc33a274db91488d29f/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
             End If
             If ask = MsgBoxResult.No Then
                 W_OS.Enabled = True
@@ -499,7 +499,7 @@ Public Class Form1
         Else
             Log1.Text = "Downloading file, please wait.."
             AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2021_0601_a0b63a3e4ae92ed176d6b9a67ce447f0/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
+            wClient.DownloadFileAsync(New System.Uri("http://deu01.ps3.update.playstation.net/update/ps3/image/eu/2022_0510_95307e1b51d3bcc33a274db91488d29f/PS3UPDAT.PUP"), appPath + "\PS3\PS3UPDAT.PUP")
         End If
         wClient.Dispose()
     End Sub
@@ -944,7 +944,7 @@ Public Class Form1
             Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
             If ask = MsgBoxResult.Yes Then
                 AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-                wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
+                wClient.DownloadFileAsync(New System.Uri("http://deu01.psv.update.playstation.net/update/psv/image/2022_0209/rel_f2c7b12fe85496ec88a0391b514d6e3b/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
             End If
             If ask = MsgBoxResult.No Then
                 W_OS.Enabled = True
@@ -964,7 +964,7 @@ Public Class Form1
         Else
             Log1.Text = "Downloading file, please wait.." ' downloading firmware
             AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-            wClient.DownloadFileAsync(New System.Uri("http://dus01.psv.update.playstation.net/update/psv/image/2019_0924/rel_034ab948bbf1a002e0a058c602184b32/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
+            wClient.DownloadFileAsync(New System.Uri("http://deu01.psv.update.playstation.net/update/psv/image/2022_0209/rel_f2c7b12fe85496ec88a0391b514d6e3b/PSVUPDAT.PUP"), appPath + "\PSV\PSVUPDAT.PUP")
         End If
         wClient.Dispose()
 

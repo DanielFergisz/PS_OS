@@ -909,7 +909,7 @@ Partial Class Form1
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(73, 17)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "FW 4.88"
+        Me.Label3.Text = "FW 4.89"
         '
         'TabPage4
         '
@@ -986,7 +986,7 @@ Partial Class Form1
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 17)
         Me.Label7.TabIndex = 4
-        Me.Label7.Text = "FW 3.73"
+        Me.Label7.Text = "FW 3.74"
         '
         'TabPage5
         '
@@ -1371,7 +1371,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.30"
+        Me.Text = "PS_OS v1.31"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
