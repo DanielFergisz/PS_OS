@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As Int32 = "131" 'App Version
+    Dim appVer As Int32 = "132" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -35,15 +35,17 @@ Public Class Form1
     End Function
     '##################### PS4 Download ###########################
     Private Sub D_OS_Click(sender As Object, e As EventArgs) Handles D_OS.Click  'PS4
-        W_OS.Enabled = False
-        W2_OS.Enabled = False
-        W3_OS.Enabled = False
-        W4_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
+        D6_OS.Enabled = False
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
+        W4_OS.Enabled = False
+        W5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -69,11 +71,13 @@ Public Class Form1
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
                     W4_OS.Enabled = True
+                    W5_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
                     D5_OS.Enabled = True
+                    D6_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -122,11 +126,13 @@ Public Class Form1
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
                     W4_OS.Enabled = True
+                    W5_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
                     D5_OS.Enabled = True
+                    D6_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -172,11 +178,13 @@ Public Class Form1
         W2_OS.Enabled = True
         W3_OS.Enabled = True
         W4_OS.Enabled = True
+        W5_OS.Enabled = True
         D_OS.Enabled = True
         D2_OS.Enabled = True
         D3_OS.Enabled = True
         D4_OS.Enabled = True
         D5_OS.Enabled = True
+        D6_OS.Enabled = True
         Update.Enabled = True
     End Sub
     Private Sub Disks_DropDown(sender As Object, e As EventArgs) Handles Disks.DropDown
@@ -296,8 +304,8 @@ Public Class Form1
                 Log1.Text = "Server error !!"
             End Try
 
-            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0510/rec_2dfb283635f849a80d32d2b83fa3ba7af00518bdb9a2f6567a1e3566e4f0131d/PS5UPDATE.PUP"
-            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0510/sys_f4c194a6ed3f1b54244c6d92a2f2fb754001b949edfbf87eb92e56b1e601cb3d/PS5UPDATE.PUP"
+            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0628/rec_777ce352ff323f6bd88176511fae35e816c53b8c94b19862c2e6364e9a719e69/PS5UPDATE.PUP"
+            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0628/sys_3be91a0cfa6adaf4dab5699daa57551ad7e94490a07c7ab955230cee09ed0097/PS5UPDATE.PUP"
 
             PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0510/rec_4ca1c1dc093563044c620cbf0e7afa2e/PS4UPDATE.PUP"
             PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0510/sys_406e1bb5c202bc990d8e5799a20d0995/PS4UPDATE.PUP"
@@ -310,6 +318,8 @@ Public Class Form1
             D3_OS.Enabled = False
             D4_OS.Enabled = False
             D5_OS.Enabled = False
+            D6_OS.Enabled = False
+
             RB1.Enabled = False
             RB3.Enabled = False
             RB5.Enabled = False
@@ -348,6 +358,14 @@ Public Class Form1
         If Directory.Exists("PSP\6.60") = True Then
         Else
             Directory.CreateDirectory("PSP\6.60")
+        End If
+        If Directory.Exists("PSP\Go_6.60") = True Then
+        Else
+            Directory.CreateDirectory("PSP\Go_6.60")
+        End If
+        If Directory.Exists("PSP\Go_6.61") = True Then
+        Else
+            Directory.CreateDirectory("PSP\Go_6.61")
         End If
 
         If File.Exists("PS_OS.exe.old") Then
@@ -456,19 +474,31 @@ Public Class Form1
         Else
             R8.ForeColor = Color.Black
         End If
+        If File.Exists("PSP\Go_6.61\EBOOT.PBP") Then
+            R9.ForeColor = Color.DarkGreen
+        Else
+            R9.ForeColor = Color.Black
+        End If
+        If File.Exists("PSP\Go_6.60\EBOOT.PBP") Then
+            R10.ForeColor = Color.DarkGreen
+        Else
+            R10.ForeColor = Color.Black
+        End If
     End Sub
 
     '############################## PS3 ##################################
     Private Sub D2_OS_Click(sender As Object, e As EventArgs) Handles D2_OS.Click
-        W_OS.Enabled = False
-        W2_OS.Enabled = False
-        W3_OS.Enabled = False
-        W4_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
+        D6_OS.Enabled = False
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
+        W4_OS.Enabled = False
+        W5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -486,11 +516,13 @@ Public Class Form1
                 W2_OS.Enabled = True
                 W3_OS.Enabled = True
                 W4_OS.Enabled = True
+                W5_OS.Enabled = True
                 D_OS.Enabled = True
                 D2_OS.Enabled = True
                 D3_OS.Enabled = True
                 D4_OS.Enabled = True
                 D5_OS.Enabled = True
+                D6_OS.Enabled = True
                 Update.Enabled = True
                 ProgressBar1.Style = ProgressBarStyle.Blocks
                 Log1.Text = "Download canceled "
@@ -683,15 +715,17 @@ Public Class Form1
     End Sub
     '//////////////////// PS5 ///////////////////////////
     Private Sub D3_OS_Click(sender As Object, e As EventArgs) Handles D3_OS.Click
-        W_OS.Enabled = False
-        W2_OS.Enabled = False
-        W3_OS.Enabled = False
-        W4_OS.Enabled = False
         D_OS.Enabled = False
         D2_OS.Enabled = False
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
+        D6_OS.Enabled = False
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
+        W4_OS.Enabled = False
+        W5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.." ' pobieranie pliku
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -716,11 +750,13 @@ Public Class Form1
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
                     W4_OS.Enabled = True
+                    W5_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
                     D5_OS.Enabled = True
+                    D6_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -765,11 +801,13 @@ Public Class Form1
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
                     W4_OS.Enabled = True
+                    W5_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
                     D5_OS.Enabled = True
+                    D6_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -930,10 +968,12 @@ Public Class Form1
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
+        D6_OS.Enabled = False
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
         W4_OS.Enabled = False
+        W5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -951,11 +991,13 @@ Public Class Form1
                 W2_OS.Enabled = True
                 W3_OS.Enabled = True
                 W4_OS.Enabled = True
+                W5_OS.Enabled = True
                 D_OS.Enabled = True
                 D2_OS.Enabled = True
                 D3_OS.Enabled = True
                 D4_OS.Enabled = True
                 D5_OS.Enabled = True
+                D6_OS.Enabled = True
                 Update.Enabled = True
                 ProgressBar1.Style = ProgressBarStyle.Blocks
                 Log1.Text = "Download canceled "
@@ -1019,10 +1061,12 @@ Public Class Form1
         D3_OS.Enabled = False
         D4_OS.Enabled = False
         D5_OS.Enabled = False
+        D6_OS.Enabled = False
         W_OS.Enabled = False
         W2_OS.Enabled = False
         W3_OS.Enabled = False
         W4_OS.Enabled = False
+        W5_OS.Enabled = False
         Update.Enabled = False
         Log1.Text = "Checking file.."
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -1041,11 +1085,13 @@ Public Class Form1
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
                     W4_OS.Enabled = True
+                    W5_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
                     D5_OS.Enabled = True
+                    D6_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -1070,11 +1116,13 @@ Public Class Form1
                     W2_OS.Enabled = True
                     W3_OS.Enabled = True
                     W4_OS.Enabled = True
+                    W5_OS.Enabled = True
                     D_OS.Enabled = True
                     D2_OS.Enabled = True
                     D3_OS.Enabled = True
                     D4_OS.Enabled = True
                     D5_OS.Enabled = True
+                    D6_OS.Enabled = True
                     Update.Enabled = True
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                     Log1.Text = "Download canceled "
@@ -1365,5 +1413,239 @@ Public Class Form1
         For Each Dir As String In Directory.GetDirectories("PS5\UPDATE\")
             ps5ver.Text = Mid(Dir, 12, 14)
         Next
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles D6_OS.Click
+        D_OS.Enabled = False
+        D2_OS.Enabled = False
+        D3_OS.Enabled = False
+        D4_OS.Enabled = False
+        D5_OS.Enabled = False
+        D6_OS.Enabled = False
+        W_OS.Enabled = False
+        W2_OS.Enabled = False
+        W3_OS.Enabled = False
+        W4_OS.Enabled = False
+        W5_OS.Enabled = False
+        Update.Enabled = False
+        Log1.Text = "Checking file.."
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+        Dim wClient As New WebClient()
+        AddHandler wClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+        If R9.Checked = True Then
+            If File.Exists("PSP\Go_6.61\EBOOT.PBP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                    wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/Go_6.61/EBOOT.PBP"), appPath + "\PSP\Go_6.61\EBOOT.PBP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    W4_OS.Enabled = True
+                    W5_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    D5_OS.Enabled = True
+                    D6_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/Go_6.61/EBOOT.PBP"), appPath + "\PSP\Go_6.61\EBOOT.PBP")
+            End If
+        End If
+        If R10.Checked = True Then
+            If File.Exists("PSP\Go_6.60\EBOOT.PBP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.." ' pobieranie pliku
+                If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                    wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/Go_6.60/EBOOT.PBP"), appPath + "\PSP\Go_6.60\EBOOT.PBP")
+                End If
+                If ask = MsgBoxResult.No Then
+                    W_OS.Enabled = True
+                    W2_OS.Enabled = True
+                    W3_OS.Enabled = True
+                    W4_OS.Enabled = True
+                    W5_OS.Enabled = True
+                    D_OS.Enabled = True
+                    D2_OS.Enabled = True
+                    D3_OS.Enabled = True
+                    D4_OS.Enabled = True
+                    D5_OS.Enabled = True
+                    D6_OS.Enabled = True
+                    Update.Enabled = True
+                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Log1.Text = "Download canceled "
+                    Exit Sub
+                End If
+            Else
+                Log1.Text = "Downloading file, please wait.." ' downloading firmware
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+                wClient.DownloadFileAsync(New System.Uri("http://repairbox.pl/PS_OS/PSP/Go_6.60/EBOOT.PBP"), appPath + "\PSP\Go_6.60\EBOOT.PBP")
+            End If
+        End If
+        wClient.Dispose()
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        If R9.Checked = True Then
+            Process.Start("PSP\Go_6.61")
+        End If
+        If R10.Checked = True Then
+            Process.Start("PSP\Go_6.60\")
+        End If
+    End Sub
+
+    Private Sub RB9_CheckedChanged(sender As Object, e As EventArgs) Handles RB9.CheckedChanged
+        If RB9.Checked = True Then
+            Downloader5.Enabled = True
+            SelectFile5.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RB10_CheckedChanged(sender As Object, e As EventArgs) Handles RB10.CheckedChanged
+        If RB10.Checked = True Then
+            Downloader5.Enabled = False
+            SelectFile5.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        If OpenFileDialog3.ShowDialog() = DialogResult.OK Then
+            Dim path5 As String = OpenFileDialog3.FileName
+            DirF5.Text = path5
+        End If
+    End Sub
+
+    Private Sub W5_OS_Click(sender As Object, e As EventArgs) Handles W5_OS.Click
+        D6_OS.Enabled = False
+        W5_OS.Enabled = False 'PSP go
+        Update.Enabled = False
+        ProgPrec.Text = "[ 0% ]"
+        If Disks5.Text.Length = 0 Then
+            Log1.Text = "Please select drive first !!"
+            D6_OS.Enabled = True
+            W5_OS.Enabled = True
+            Update.Enabled = True
+        Else
+            ProgressBar1.Style = ProgressBarStyle.Marquee
+            If F5.Checked = True Then
+                Log1.Text = "Formating..."   'Formatowanie dysku 
+                Dim startInfo As New ProcessStartInfo()
+                startInfo.FileName = "format.com"
+                startInfo.Arguments = Mid(Disks5.Text, 1, 2) & " /fs:FAT32 /v:PlayStation /q "
+                startInfo.UseShellExecute = False
+                startInfo.CreateNoWindow = True
+                startInfo.RedirectStandardOutput = True
+                startInfo.RedirectStandardInput = True
+
+                Dim p As Process = Process.Start(startInfo)
+
+                Dim processInputStream As StreamWriter = p.StandardInput
+                processInputStream.Write(vbCr & vbLf)
+
+                p.WaitForExit()
+            End If
+
+            If System.IO.Directory.Exists(Mid(Disks5.Text, 1, 3) & "PSP\GAME\UPDATE") Then
+            Else
+                Log1.Text = "Creating directories: PSP\GAME\UPDATE.."
+                System.IO.Directory.CreateDirectory(Mid(Disks5.Text, 1, 3) & "PSP\GAME\UPDATE")
+                If System.IO.Directory.Exists(Mid(Disks5.Text, 1, 3) & "PSP\GAME\UPDATE") Then
+                    Log1.Text = "Creating directories: PSP\GAME\UPDATE.. OK"
+                Else
+                    Log1.Text = "FAIL"
+                    Exit Sub
+                End If
+            End If
+            BackgroundWorker6.RunWorkerAsync()
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker6_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker6.DoWork
+        Dim D_D6 As String
+        Me.Invoke(New MethodInvoker(Sub() D_D6 = Mid(Disks5.Text, 1, 3)))
+
+        If RB9.Checked = True Then
+            If R9.Checked = True Then
+                If File.Exists("PSP\Go_6.61\EBOOT.PBP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
+                    FileCopy("PSP\Go_6.61\EBOOT.PBP", D_D6 & "PSP\GAME\UPDATE\EBOOT.PBP")
+                End If
+            End If
+
+            If R10.Checked = True Then
+                If File.Exists("PSP\Go_6.60\EBOOT.PBP") Then
+                    Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing SD, please wait.."))
+                    FileCopy("PSP\Go_6.60\EBOOT.PBP", D_D6 & "PSP\GAME\UPDATE\EBOOT.PBP")
+                End If
+            End If
+        End If
+
+        If RB10.Checked = True Then
+            If File.Exists(DirF4.Text) Then
+                Me.Invoke(New MethodInvoker(Sub() Log1.Text = "Preparing USB, please wait.."))
+                FileCopy(DirF5.Text, D_D6 & "PSP\GAME\UPDATE\EBOOT.PBP")
+            End If
+        End If
+    End Sub
+
+    Private Sub Disks5_DropDown(sender As Object, e As EventArgs) Handles Disks5.DropDown
+        Disks5.Items.Clear()
+
+        For Each drive As IO.DriveInfo In IO.DriveInfo.GetDrives()
+
+            ' Detection drive type
+            Dim drive_type As String = ""
+            If drive.DriveType = DriveType.Fixed Then
+                drive_type = "Local Disk"
+            ElseIf drive.DriveType = DriveType.CDRom Then
+                drive_type = "CD-Rom drive"
+            ElseIf drive.DriveType = DriveType.Network Then
+                drive_type = "Network drive"
+            ElseIf drive.DriveType = DriveType.Removable Then
+                drive_type = "Removable Disk"
+            ElseIf drive.DriveType = DriveType.Unknown Then
+                drive_type = "Unknown"
+            End If
+
+            Me.Disks5.Items.Add(drive.Name & " [" & drive_type & "]")
+
+        Next
+
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        If Disks5.Text.Length = 0 Then
+            Log1.Text = "Please select drive first !!!"
+        Else
+            Process.Start(Mid(Disks5.Text, 1, 3))
+            Log1.Text = "Opening..."
+        End If
+    End Sub
+    Private Sub BackgroundWorker6_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker6.RunWorkerCompleted
+        If File.Exists(Mid(Disks5.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") Then
+            Log1.Text = "Done."
+        Else
+            Log1.Text = "Fail !!"
+        End If
+        ProgressBar1.Style = ProgressBarStyle.Blocks
+        D6_OS.Enabled = True
+        W5_OS.Enabled = True
+        Update.Enabled = True
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Button11_Click(sender, e) 'Kliknięcie w button
     End Sub
 End Class

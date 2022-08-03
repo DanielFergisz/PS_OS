@@ -111,6 +111,24 @@ Partial Class Form1
         Me.R7 = New System.Windows.Forms.RadioButton()
         Me.D5_OS = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.RB9 = New System.Windows.Forms.RadioButton()
+        Me.RB10 = New System.Windows.Forms.RadioButton()
+        Me.SelectFile5 = New System.Windows.Forms.GroupBox()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.DirF5 = New System.Windows.Forms.TextBox()
+        Me.F5 = New System.Windows.Forms.CheckBox()
+        Me.W5_OS = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Disks5 = New System.Windows.Forms.ComboBox()
+        Me.Downloader5 = New System.Windows.Forms.GroupBox()
+        Me.R10 = New System.Windows.Forms.RadioButton()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.R9 = New System.Windows.Forms.RadioButton()
+        Me.D6_OS = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Log1 = New System.Windows.Forms.TextBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -135,6 +153,8 @@ Partial Class Form1
         Me.refresh_ps4_update = New System.Windows.Forms.Timer(Me.components)
         Me.refresh_ps5_update = New System.Windows.Forms.Timer(Me.components)
         Me.refresh_ps5_full = New System.Windows.Forms.Timer(Me.components)
+        Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
+        Me.BackgroundWorker6 = New System.ComponentModel.BackgroundWorker()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SelectFile.SuspendLayout()
@@ -150,6 +170,9 @@ Partial Class Form1
         Me.TabPage5.SuspendLayout()
         Me.SelectFile4.SuspendLayout()
         Me.Downloader4.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.SelectFile5.SuspendLayout()
+        Me.Downloader5.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -160,6 +183,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
@@ -712,7 +736,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Size = New System.Drawing.Size(410, 233)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "PlayStation 3"
+        Me.TabPage2.Text = " PS3 "
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Button10
@@ -1005,7 +1029,7 @@ Partial Class Form1
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Size = New System.Drawing.Size(410, 233)
         Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "PSP"
+        Me.TabPage5.Text = " PSP "
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'Button11
@@ -1140,7 +1164,7 @@ Partial Class Form1
         Me.Downloader4.Size = New System.Drawing.Size(351, 78)
         Me.Downloader4.TabIndex = 9
         Me.Downloader4.TabStop = False
-        Me.Downloader4.Text = "Download tool"
+        Me.Downloader4.Text = "Download tool: 1000 / 2000 / 3000 / Street"
         '
         'R8
         '
@@ -1206,6 +1230,226 @@ Partial Class Form1
         Me.Label9.Size = New System.Drawing.Size(73, 17)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Firmware"
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.Button17)
+        Me.TabPage6.Controls.Add(Me.Button12)
+        Me.TabPage6.Controls.Add(Me.RB9)
+        Me.TabPage6.Controls.Add(Me.RB10)
+        Me.TabPage6.Controls.Add(Me.SelectFile5)
+        Me.TabPage6.Controls.Add(Me.F5)
+        Me.TabPage6.Controls.Add(Me.W5_OS)
+        Me.TabPage6.Controls.Add(Me.Label13)
+        Me.TabPage6.Controls.Add(Me.Disks5)
+        Me.TabPage6.Controls.Add(Me.Downloader5)
+        Me.TabPage6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(410, 233)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = " PSP Go "
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'Button17
+        '
+        Me.Button17.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button17.Location = New System.Drawing.Point(363, 143)
+        Me.Button17.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(28, 24)
+        Me.Button17.TabIndex = 31
+        Me.Button17.Text = "..."
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button12.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button12.Location = New System.Drawing.Point(15, 195)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(59, 21)
+        Me.Button12.TabIndex = 30
+        Me.Button12.Text = "Help"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'RB9
+        '
+        Me.RB9.AutoSize = True
+        Me.RB9.Checked = True
+        Me.RB9.Location = New System.Drawing.Point(16, 41)
+        Me.RB9.Name = "RB9"
+        Me.RB9.Size = New System.Drawing.Size(14, 13)
+        Me.RB9.TabIndex = 29
+        Me.RB9.TabStop = True
+        Me.RB9.UseVisualStyleBackColor = True
+        '
+        'RB10
+        '
+        Me.RB10.AutoSize = True
+        Me.RB10.Location = New System.Drawing.Point(16, 108)
+        Me.RB10.Name = "RB10"
+        Me.RB10.Size = New System.Drawing.Size(14, 13)
+        Me.RB10.TabIndex = 28
+        Me.RB10.UseVisualStyleBackColor = True
+        '
+        'SelectFile5
+        '
+        Me.SelectFile5.Controls.Add(Me.Button13)
+        Me.SelectFile5.Controls.Add(Me.DirF5)
+        Me.SelectFile5.Enabled = False
+        Me.SelectFile5.Location = New System.Drawing.Point(40, 85)
+        Me.SelectFile5.Name = "SelectFile5"
+        Me.SelectFile5.Size = New System.Drawing.Size(351, 53)
+        Me.SelectFile5.TabIndex = 27
+        Me.SelectFile5.TabStop = False
+        Me.SelectFile5.Text = "Firmware file"
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(296, 20)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(42, 20)
+        Me.Button13.TabIndex = 1
+        Me.Button13.Text = "..."
+        Me.ToolTip1.SetToolTip(Me.Button13, "Choose a file")
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'DirF5
+        '
+        Me.DirF5.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.DirF5.Location = New System.Drawing.Point(15, 20)
+        Me.DirF5.Name = "DirF5"
+        Me.DirF5.Size = New System.Drawing.Size(275, 20)
+        Me.DirF5.TabIndex = 0
+        '
+        'F5
+        '
+        Me.F5.AutoSize = True
+        Me.F5.Location = New System.Drawing.Point(120, 175)
+        Me.F5.Margin = New System.Windows.Forms.Padding(2)
+        Me.F5.Name = "F5"
+        Me.F5.Size = New System.Drawing.Size(108, 17)
+        Me.F5.TabIndex = 26
+        Me.F5.Text = "Format: FAT32"
+        Me.F5.UseVisualStyleBackColor = True
+        '
+        'W5_OS
+        '
+        Me.W5_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.W5_OS.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.W5_OS.ForeColor = System.Drawing.Color.DarkRed
+        Me.W5_OS.Location = New System.Drawing.Point(245, 175)
+        Me.W5_OS.Margin = New System.Windows.Forms.Padding(2)
+        Me.W5_OS.Name = "W5_OS"
+        Me.W5_OS.Size = New System.Drawing.Size(146, 41)
+        Me.W5_OS.TabIndex = 25
+        Me.W5_OS.Text = "Prepare SD Card"
+        Me.ToolTip1.SetToolTip(Me.W5_OS, "Copy firmware to SD")
+        Me.W5_OS.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(12, 148)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(86, 13)
+        Me.Label13.TabIndex = 24
+        Me.Label13.Text = "Select  Drive:"
+        '
+        'Disks5
+        '
+        Me.Disks5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Disks5.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Disks5.FormattingEnabled = True
+        Me.Disks5.Location = New System.Drawing.Point(102, 146)
+        Me.Disks5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Disks5.Name = "Disks5"
+        Me.Disks5.Size = New System.Drawing.Size(249, 20)
+        Me.Disks5.TabIndex = 23
+        '
+        'Downloader5
+        '
+        Me.Downloader5.Controls.Add(Me.R10)
+        Me.Downloader5.Controls.Add(Me.Button15)
+        Me.Downloader5.Controls.Add(Me.R9)
+        Me.Downloader5.Controls.Add(Me.D6_OS)
+        Me.Downloader5.Controls.Add(Me.Label14)
+        Me.Downloader5.Location = New System.Drawing.Point(40, 5)
+        Me.Downloader5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Downloader5.Name = "Downloader5"
+        Me.Downloader5.Padding = New System.Windows.Forms.Padding(2)
+        Me.Downloader5.Size = New System.Drawing.Size(351, 78)
+        Me.Downloader5.TabIndex = 22
+        Me.Downloader5.TabStop = False
+        Me.Downloader5.Text = "Download tool: Go [ N1000 ]"
+        '
+        'R10
+        '
+        Me.R10.AutoSize = True
+        Me.R10.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R10.Location = New System.Drawing.Point(127, 47)
+        Me.R10.Name = "R10"
+        Me.R10.Size = New System.Drawing.Size(61, 17)
+        Me.R10.TabIndex = 10
+        Me.R10.TabStop = True
+        Me.R10.Text = "v6.60"
+        Me.R10.UseVisualStyleBackColor = True
+        '
+        'Button15
+        '
+        Me.Button15.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Button15.ForeColor = System.Drawing.Color.Black
+        Me.Button15.Location = New System.Drawing.Point(218, 44)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(117, 25)
+        Me.Button15.TabIndex = 9
+        Me.Button15.Text = "Open"
+        Me.ToolTip1.SetToolTip(Me.Button15, "Open file directory")
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'R9
+        '
+        Me.R9.AutoSize = True
+        Me.R9.Checked = True
+        Me.R9.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.R9.Location = New System.Drawing.Point(127, 23)
+        Me.R9.Margin = New System.Windows.Forms.Padding(2)
+        Me.R9.Name = "R9"
+        Me.R9.Size = New System.Drawing.Size(61, 17)
+        Me.R9.TabIndex = 5
+        Me.R9.TabStop = True
+        Me.R9.Text = "v6.61"
+        Me.R9.UseVisualStyleBackColor = True
+        '
+        'D6_OS
+        '
+        Me.D6_OS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.D6_OS.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.D6_OS.ForeColor = System.Drawing.Color.Blue
+        Me.D6_OS.Location = New System.Drawing.Point(218, 15)
+        Me.D6_OS.Margin = New System.Windows.Forms.Padding(2)
+        Me.D6_OS.Name = "D6_OS"
+        Me.D6_OS.Size = New System.Drawing.Size(117, 25)
+        Me.D6_OS.TabIndex = 1
+        Me.D6_OS.Text = "Download"
+        Me.ToolTip1.SetToolTip(Me.D6_OS, "Download firmware file")
+        Me.D6_OS.UseVisualStyleBackColor = True
+        Me.D6_OS.UseWaitCursor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label14.Location = New System.Drawing.Point(35, 34)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(73, 17)
+        Me.Label14.TabIndex = 4
+        Me.Label14.Text = "Firmware"
         '
         'Log1
         '
@@ -1350,6 +1594,13 @@ Partial Class Form1
         '
         Me.refresh_ps5_full.Interval = 3000
         '
+        'OpenFileDialog3
+        '
+        Me.OpenFileDialog3.Filter = "Eboot File|*.pbp"
+        '
+        'BackgroundWorker6
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1371,7 +1622,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.31"
+        Me.Text = "PS_OS v1.32"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1400,6 +1651,12 @@ Partial Class Form1
         Me.SelectFile4.PerformLayout()
         Me.Downloader4.ResumeLayout(False)
         Me.Downloader4.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
+        Me.SelectFile5.ResumeLayout(False)
+        Me.SelectFile5.PerformLayout()
+        Me.Downloader5.ResumeLayout(False)
+        Me.Downloader5.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1519,4 +1776,24 @@ Partial Class Form1
     Friend WithEvents refresh_ps4_update As Timer
     Friend WithEvents refresh_ps5_update As Timer
     Friend WithEvents refresh_ps5_full As Timer
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents Button12 As Button
+    Friend WithEvents RB9 As RadioButton
+    Friend WithEvents RB10 As RadioButton
+    Friend WithEvents SelectFile5 As GroupBox
+    Friend WithEvents Button13 As Button
+    Friend WithEvents DirF5 As TextBox
+    Friend WithEvents F5 As CheckBox
+    Friend WithEvents W5_OS As Button
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Disks5 As ComboBox
+    Friend WithEvents Downloader5 As GroupBox
+    Friend WithEvents R10 As RadioButton
+    Friend WithEvents Button15 As Button
+    Friend WithEvents R9 As RadioButton
+    Friend WithEvents D6_OS As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Button17 As Button
+    Friend WithEvents OpenFileDialog3 As OpenFileDialog
+    Friend WithEvents BackgroundWorker6 As System.ComponentModel.BackgroundWorker
 End Class
