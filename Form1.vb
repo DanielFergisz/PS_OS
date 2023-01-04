@@ -4,7 +4,7 @@ Imports System.Net
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As Int32 = "132" 'App Version
+    Dim appVer As Int32 = "133" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -304,11 +304,11 @@ Public Class Form1
                 Log1.Text = "Server error !!"
             End Try
 
-            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0628/rec_777ce352ff323f6bd88176511fae35e816c53b8c94b19862c2e6364e9a719e69/PS5UPDATE.PUP"
-            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0628/sys_3be91a0cfa6adaf4dab5699daa57551ad7e94490a07c7ab955230cee09ed0097/PS5UPDATE.PUP"
+            PS5_F_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0916/rec_464b1093d824179a5302e2ea6b43aaa4c6ecb491cf92f97d79add37ed5225fd9/PS5UPDATE.PUP"
+            PS5_U_Local = "https://pc.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/image/2022_0916/sys_9c582f4f83ff2510f00f231ab675f950afa44118fd960f867671b2a2d3ffb23d/PS5UPDATE.PUP"
 
-            PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0510/rec_4ca1c1dc093563044c620cbf0e7afa2e/PS4UPDATE.PUP"
-            PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0510/sys_406e1bb5c202bc990d8e5799a20d0995/PS4UPDATE.PUP"
+            PS4_F_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0912/rec_87668869af230ac26f859278d10402b1/PS4UPDATE.PUP"
+            PS4_U_Local = "https://pc.ps4.update.playstation.net/update/ps4/image/2022_0912/sys_56493c6f9834eb1caf5a5a187862ace5/PS4UPDATE.PUP"
 
 
         Else
@@ -375,7 +375,7 @@ Public Class Form1
 
         '////////////// read version ////////////////
         For Each Dir4 As String In Directory.GetDirectories("PS4\FULL\")
-            ps4ver.Text = Mid(Dir4, 10, 4)
+            ps4ver.Text = Mid(Dir4, 10, 5)
         Next
 
         For Each Dir5 As String In Directory.GetDirectories("PS5\FULL\")
@@ -1353,7 +1353,7 @@ Public Class Form1
         ps4ver.Clear()
         If Directory.Exists("PS4\FULL\") Then
             For Each Dir As String In Directory.GetDirectories("PS4\FULL\")
-                ps4ver.Text = Mid(Dir, 10, 4)
+                ps4ver.Text = Mid(Dir, 10, 5)
             Next
         End If
     End Sub
@@ -1361,7 +1361,7 @@ Public Class Form1
     Private Sub R2_CheckedChanged(sender As Object, e As EventArgs) Handles R2.CheckedChanged
         ps4ver.Clear()
         For Each Dir As String In Directory.GetDirectories("PS4\UPDATE\")
-            ps4ver.Text = Mid(Dir, 12, 4)
+            ps4ver.Text = Mid(Dir, 12, 5)
         Next
     End Sub
 
@@ -1386,7 +1386,7 @@ Public Class Form1
         ps4ver.Clear()
 
         For Each Dir As String In Directory.GetDirectories("PS4\FULL\")
-            ps4ver.Text = Mid(Dir, 10, 4)
+            ps4ver.Text = Mid(Dir, 10, 5)
         Next
 
     End Sub
@@ -1395,7 +1395,7 @@ Public Class Form1
         refresh_ps4_update.Enabled = False
         ps4ver.Clear()
         For Each Dir As String In Directory.GetDirectories("PS4\UPDATE\")
-            ps4ver.Text = Mid(Dir, 12, 4)
+            ps4ver.Text = Mid(Dir, 12, 5)
         Next
     End Sub
 

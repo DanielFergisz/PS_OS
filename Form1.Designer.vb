@@ -335,7 +335,7 @@ Partial Class Form1
         Me.ps4ver.Enabled = False
         Me.ps4ver.Location = New System.Drawing.Point(71, 20)
         Me.ps4ver.Name = "ps4ver"
-        Me.ps4ver.Size = New System.Drawing.Size(49, 20)
+        Me.ps4ver.Size = New System.Drawing.Size(52, 20)
         Me.ps4ver.TabIndex = 12
         '
         'ps4ver_server
@@ -343,7 +343,7 @@ Partial Class Form1
         Me.ps4ver_server.Enabled = False
         Me.ps4ver_server.Location = New System.Drawing.Point(71, 43)
         Me.ps4ver_server.Name = "ps4ver_server"
-        Me.ps4ver_server.Size = New System.Drawing.Size(49, 20)
+        Me.ps4ver_server.Size = New System.Drawing.Size(52, 20)
         Me.ps4ver_server.TabIndex = 11
         '
         'Label11
@@ -631,7 +631,7 @@ Partial Class Form1
         Me.ps5ver_server.Enabled = False
         Me.ps5ver_server.Location = New System.Drawing.Point(62, 41)
         Me.ps5ver_server.Name = "ps5ver_server"
-        Me.ps5ver_server.Size = New System.Drawing.Size(94, 21)
+        Me.ps5ver_server.Size = New System.Drawing.Size(95, 21)
         Me.ps5ver_server.TabIndex = 12
         '
         'ps5ver
@@ -639,7 +639,7 @@ Partial Class Form1
         Me.ps5ver.Enabled = False
         Me.ps5ver.Location = New System.Drawing.Point(62, 19)
         Me.ps5ver.Name = "ps5ver"
-        Me.ps5ver.Size = New System.Drawing.Size(94, 21)
+        Me.ps5ver.Size = New System.Drawing.Size(95, 21)
         Me.ps5ver.TabIndex = 11
         '
         'Label12
@@ -1622,7 +1622,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PS_OS v1.32"
+        Me.Text = "PS_OS v1.33"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
