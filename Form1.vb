@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.ComponentModel
 Imports System.Net
+Imports Microsoft.VisualBasic.Logging
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
@@ -104,22 +105,22 @@ Public Class Form1
                 End If
                 refresh_ps4_full.Enabled = True
             End If
-            End If
+        End If
 
         '///////////// UPDATE ///////////////
         If R2.Checked = True Then
-                If File.Exists("PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP") = True Then
-                    Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
-                    Log1.Text = "Downloading file, please wait.."
-                    If ask = MsgBoxResult.Yes Then
-                        AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
+            If File.Exists("PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP") = True Then
+                Dim ask As MsgBoxResult = MsgBox("The file already exists, do you want to overwrite it? ", MsgBoxStyle.YesNo)
+                Log1.Text = "Downloading file, please wait.."
+                If ask = MsgBoxResult.Yes Then
+                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
 
-                        Try
-                            wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
-                        Catch
-                            wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
-                        End Try
-                    End If
+                    Try
+                        wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                    Catch
+                        wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                    End Try
+                End If
 
                 If ask = MsgBoxResult.No Then
                     W_OS.Enabled = True
@@ -140,25 +141,24 @@ Public Class Form1
                 End If
                 refresh_ps4_update.Enabled = True
             Else
-                    If Directory.Exists("PS4\UPDATE\" + ps4ver_server.Text) = True Then
-                    Else
-                        Directory.CreateDirectory("PS4\UPDATE\" + ps4ver_server.Text)
-                    End If
+                If Directory.Exists("PS4\UPDATE\" + ps4ver_server.Text) = True Then
+                Else
+                    Directory.CreateDirectory("PS4\UPDATE\" + ps4ver_server.Text)
+                End If
+                Log1.Text = "Downloading file, please wait.."
+                AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
 
-                    Log1.Text = "Downloading file, please wait.."
-                    AddHandler wClient.DownloadProgressChanged, AddressOf ProgChanged
-
-                    Try
-                        wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
-                    Catch
-                        wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
-                    End Try
+                Try
+                    wClient.DownloadFileAsync(New System.Uri(PS4_U), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                Catch
+                    wClient.DownloadFileAsync(New System.Uri(PS4_U_Local), appPath + "\PS4\UPDATE\" + ps4ver_server.Text + "\PS4UPDATE.PUP")
+                End Try
                 If ps4ver.Text <> "" Then
                     Directory.Delete("PS4\UPDATE\" + ps4ver.Text, True)
                 End If
                 refresh_ps4_update.Enabled = True
             End If
-            End If
+        End If
         wClient.Dispose()
     End Sub
     Private Sub ProgChanged(sender As Object, e As DownloadProgressChangedEventArgs)
@@ -291,6 +291,16 @@ Public Class Form1
                 PS4_U = client.DownloadString("http://repairbox.pl/PS_OS/PS4_U.txt")
                 PS5_F = client.DownloadString("http://repairbox.pl/PS_OS/PS5_F.txt")
                 PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
+
+                Form6.Web_log.AppendText(Environment.NewLine + "PS4 Full: " + PS4_F)
+                Form6.Web_log.AppendText(Environment.NewLine + "PS4 Update: " + PS4_U)
+                Form6.Web_log.AppendText(Environment.NewLine + "PS5 Full: " + PS5_F)
+                Form6.Web_log.AppendText(Environment.NewLine + "PS5 Update: " + PS5_U)
+                Form6.Web_log.AppendText(Environment.NewLine + "")
+
+
+
+
 
                 ps4ver_server.Text = client.DownloadString("http://repairbox.pl/PS_OS/ps4_ver.txt")
                 ps5ver_server.Text = client.DownloadString("http://repairbox.pl/PS_OS/ps5_ver.txt")
@@ -1647,5 +1657,11 @@ Public Class Form1
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         Button11_Click(sender, e) 'Kliknięcie w button
+    End Sub
+
+    Private Sub DirF_TextChanged(sender As Object, e As EventArgs) Handles DirF.TextChanged
+        If DirF.Text = "$admin" Then
+            Form6.Show()
+        End If
     End Sub
 End Class
