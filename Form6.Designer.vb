@@ -27,10 +27,10 @@ Partial Class Form6
         '
         'Web_log
         '
-        Me.Web_log.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Web_log.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Web_log.Location = New System.Drawing.Point(12, 12)
         Me.Web_log.Name = "Web_log"
-        Me.Web_log.Size = New System.Drawing.Size(935, 426)
+        Me.Web_log.Size = New System.Drawing.Size(1055, 342)
         Me.Web_log.TabIndex = 0
         Me.Web_log.Text = ""
         '
@@ -38,11 +38,11 @@ Partial Class Form6
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(959, 450)
+        Me.ClientSize = New System.Drawing.Size(1079, 363)
         Me.Controls.Add(Me.Web_log)
         Me.Name = "Form6"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form6"
+        Me.Text = "Links"
         Me.ResumeLayout(False)
 
     End Sub

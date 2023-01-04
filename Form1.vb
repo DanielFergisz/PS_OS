@@ -5,7 +5,7 @@ Imports Microsoft.VisualBasic.Logging
 
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "")
-    Dim appVer As Int32 = "133" 'App Version
+    Dim appVer As Int32 = "134" 'App Version
 
     '################ Download Address ###############
     Dim PS4_F As String
@@ -292,10 +292,13 @@ Public Class Form1
                 PS5_F = client.DownloadString("http://repairbox.pl/PS_OS/PS5_F.txt")
                 PS5_U = client.DownloadString("http://repairbox.pl/PS_OS/PS5_U.txt")
 
-                Form6.Web_log.AppendText(Environment.NewLine + "PS4 Full: " + PS4_F)
-                Form6.Web_log.AppendText(Environment.NewLine + "PS4 Update: " + PS4_U)
-                Form6.Web_log.AppendText(Environment.NewLine + "PS5 Full: " + PS5_F)
-                Form6.Web_log.AppendText(Environment.NewLine + "PS5 Update: " + PS5_U)
+                Form6.Web_log.AppendText(Environment.NewLine + "PS4 Full:  " + PS4_F)
+                Form6.Web_log.AppendText(Environment.NewLine + "")
+                Form6.Web_log.AppendText(Environment.NewLine + "PS4 Update:  " + PS4_U)
+                Form6.Web_log.AppendText(Environment.NewLine + "")
+                Form6.Web_log.AppendText(Environment.NewLine + "PS5 Full:  " + PS5_F)
+                Form6.Web_log.AppendText(Environment.NewLine + "")
+                Form6.Web_log.AppendText(Environment.NewLine + "PS5 Update:  " + PS5_U)
                 Form6.Web_log.AppendText(Environment.NewLine + "")
 
 
@@ -1661,6 +1664,7 @@ Public Class Form1
 
     Private Sub DirF_TextChanged(sender As Object, e As EventArgs) Handles DirF.TextChanged
         If DirF.Text = "$admin" Then
+            DirF.Clear()
             Form6.Show()
         End If
     End Sub
