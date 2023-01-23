@@ -384,6 +384,11 @@ Public Class Form1
         If File.Exists("PS_OS.exe.old") Then
             File.Delete("PS_OS.exe.old")
         End If
+
+        If File.Exists("PsFirm.exe.old") Then
+            File.Delete("PsFirm.exe.old")
+        End If
+
         Del_UP.Enabled = True
 
         '////////////// read version ////////////////
@@ -679,7 +684,7 @@ Public Class Form1
         Dim newVersion As String = client.DownloadString("http://repairbox.pl/PS_OS/latestVersion.txt")
 
         If newVersion > appVer Then ' wersja porównywana z wersją na serwerze
-            client.DownloadFile("http://repairbox.pl/PS_OS/Updater_PS.exe", appPath + "\Updater_PS.exe")
+            client.DownloadFile("http://repairbox.pl/PS_OS/PS_Updater_X.exe", appPath + "\PS_Updater_X.exe")
             client.Dispose()
             Log1.Text = "Downloading Updater: v" + newVersion + "..."
             T_Update.Enabled = True
